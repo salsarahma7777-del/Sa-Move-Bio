@@ -26,6 +26,16 @@ export default function App() {
       <div className="max-w-[700px] mx-auto p-4 md:p-8 relative z-10">
         <Header />
         <ProgressBar currentPage={currentPage} totalPages={totalPages} />
+
+        {currentPage > 1 && (
+          <button
+            data-testid="btn-back-page"
+            onClick={() => goToPage(currentPage - 1)}
+            className="mb-4 flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 border border-gray-200 text-[#355070] font-semibold shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 text-sm"
+          >
+            ← Kembali
+          </button>
+        )}
         
         <div key={currentPage} className="animate-fade-slide-up">
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 relative">
