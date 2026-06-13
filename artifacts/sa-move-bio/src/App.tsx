@@ -492,9 +492,9 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           {/* Histology Plate: Three Muscle Types */}
           <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md">
             {/* Scientific plate header */}
-            <div className="bg-[#111827] px-4 py-2 flex items-center justify-between border-t-[color:var(--color-rose-200)] border-r-[color:var(--color-rose-200)] border-b-[color:var(--color-rose-200)] border-l-[color:var(--color-rose-200)]">
-              <span className="text-white font-mono text-[11px] font-bold tracking-widest">PERBANDINGAN HISTOLOGI JARINGAN OTOT — PEWARNAAN H&amp;E</span>
-              <span className="text-gray-400 font-mono text-[9px]">400× · Biologi Medis</span>
+            <div className="bg-rose-50 px-4 py-2 flex items-center justify-between border-b border-rose-200">
+              <span className="text-rose-800 font-mono text-[11px] font-bold tracking-widest">PERBANDINGAN HISTOLOGI JARINGAN OTOT — PEWARNAAN H&amp;E</span>
+              <span className="text-rose-400 font-mono text-[9px]">400× · Biologi Medis</span>
             </div>
 
             {/* === PANEL 1: OTOT LURIK === */}
@@ -503,9 +503,9 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
 
               {/* ===== PANEL 1: OTOT LURIK ===== */}
               <div className="flex flex-col">
-                <div className="bg-[#1a0808] px-3 py-1.5 flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-[#fca5a5] font-bold tracking-widest uppercase">Otot Lurik</span>
-                  <span className="text-[8px] font-mono text-gray-500 ml-auto italic">Musculus skeletalis</span>
+                <div className="bg-red-50 px-3 py-1.5 flex items-center gap-2 border-b border-red-200">
+                  <span className="text-[10px] font-mono text-red-700 font-bold tracking-widest uppercase">Otot Lurik</span>
+                  <span className="text-[8px] font-mono text-red-400 ml-auto italic">Musculus skeletalis</span>
                 </div>
                 <svg viewBox="0 0 200 180" width="100%" xmlns="http://www.w3.org/2000/svg">
                   {/* slide glass — very pale eosinophilic wash */}
@@ -577,16 +577,16 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                   <text x="2" y="27" fontSize="5" fill="#1e1b4b" fontFamily="monospace">inti</text>
                   <text x="2" y="33" fontSize="5" fill="#1e1b4b" fontFamily="monospace">perifer</text>
                 </svg>
-                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed border-t-[color:var(--color-rose-200)] border-r-[color:var(--color-rose-200)] border-b-[color:var(--color-rose-200)] border-l-[color:var(--color-rose-200)]">
-                  <strong className="text-[#fca5a5]">Otot Lurik</strong> — sel silindris panjang, inti di tepi (perifer), bergaris melintang jelas. <strong>Volunter</strong>; kontraksi cepat, mudah lelah. Lokasi: bisep, trisep, quadriceps.
+                <div className="bg-red-50 px-3 py-2 text-[9px] font-mono text-red-900 leading-relaxed border-t border-red-200">
+                  <strong className="text-red-700">Otot Lurik</strong> — sel silindris panjang, inti di tepi (perifer), bergaris melintang jelas. <strong>Volunter</strong>; kontraksi cepat, mudah lelah. Lokasi: bisep, trisep, quadriceps.
                 </div>
               </div>
 
               {/* ===== PANEL 2: OTOT POLOS ===== */}
               <div className="flex flex-col">
-                <div className="bg-[#0d0818] px-3 py-1.5 flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-[#c4b5fd] font-bold tracking-widest uppercase">Otot Polos</span>
-                  <span className="text-[8px] font-mono text-gray-500 ml-auto italic">Musculus levis</span>
+                <div className="bg-violet-50 px-3 py-1.5 flex items-center gap-2 border-b border-violet-200">
+                  <span className="text-[10px] font-mono text-violet-700 font-bold tracking-widest uppercase">Otot Polos</span>
+                  <span className="text-[8px] font-mono text-violet-400 ml-auto italic">Musculus levis</span>
                 </div>
                 <svg viewBox="0 0 200 180" width="100%" xmlns="http://www.w3.org/2000/svg">
                   {/* slide background — palest pink wash */}
@@ -646,16 +646,16 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                   <text x="108" y="170" fontSize="5" fill="#5b21b6" fontFamily="monospace">gelendong</text>
                   <text x="108" y="176" fontSize="5" fill="#5b21b6" fontFamily="monospace">(fusiform)</text>
                 </svg>
-                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed">
-                  <strong className="text-[#c4b5fd]">Otot Polos</strong> — sel gelendong (fusiform), inti di tengah, <strong>tidak bergaris melintang</strong>. <strong>Involunter</strong>; kontraksi lambat, tahan lama. Lokasi: lambung, usus, pembuluh darah.
+                <div className="bg-violet-50 px-3 py-2 text-[9px] font-mono text-violet-900 leading-relaxed border-t border-violet-200">
+                  <strong className="text-violet-700">Otot Polos</strong> — sel gelendong (fusiform), inti di tengah, <strong>tidak bergaris melintang</strong>. <strong>Involunter</strong>; kontraksi lambat, tahan lama. Lokasi: lambung, usus, pembuluh darah.
                 </div>
               </div>
 
               {/* ===== PANEL 3: OTOT JANTUNG ===== */}
               <div className="flex flex-col">
-                <div className="bg-[#1a0a00] px-3 py-1.5 flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-[#fcd34d] font-bold tracking-widest uppercase">Otot Jantung</span>
-                  <span className="text-[8px] font-mono text-gray-500 ml-auto italic">Myocardium</span>
+                <div className="bg-amber-50 px-3 py-1.5 flex items-center gap-2 border-b border-amber-200">
+                  <span className="text-[10px] font-mono text-amber-700 font-bold tracking-widest uppercase">Otot Jantung</span>
+                  <span className="text-[8px] font-mono text-amber-400 ml-auto italic">Myocardium</span>
                 </div>
                 <svg viewBox="0 0 200 180" width="100%" xmlns="http://www.w3.org/2000/svg">
                   <rect width="200" height="180" fill="#fef3e2"/>
@@ -719,18 +719,18 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                   <line x1="42" y1="47" x2="180" y2="12" stroke="#1e1b4b" strokeWidth="0.6"/>
                   <text x="144" y="10" fontSize="5" fill="#1e1b4b" fontFamily="monospace">inti sentral</text>
                 </svg>
-                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed">
-                  <strong className="text-[#fcd34d]">Otot Jantung</strong> — sel bercabang, inti di tengah, bergaris melintang, terdapat <strong>diskus interkalasi</strong>. <strong>Involunter-ritmis</strong>; tidak pernah lelah. Lokasi: miokardium (dinding jantung).
+                <div className="bg-amber-50 px-3 py-2 text-[9px] font-mono text-amber-900 leading-relaxed border-t border-amber-200">
+                  <strong className="text-amber-700">Otot Jantung</strong> — sel bercabang, inti di tengah, bergaris melintang, terdapat <strong>diskus interkalasi</strong>. <strong>Involunter-ritmis</strong>; tidak pernah lelah. Lokasi: miokardium (dinding jantung).
                 </div>
               </div>
             </div>
 
             {/* Legend bar */}
-            <div className="bg-[#111827] px-4 py-1.5 flex items-center gap-6 border-t border-gray-700 border-t-[color:var(--color-rose-200)] border-r-[color:var(--color-rose-200)] border-b-[color:var(--color-rose-200)] border-l-[color:var(--color-rose-200)]">
-              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#ef9090'}}/><span className="text-gray-300">Eosinofil — sitoplasma (warna Eosin)</span></span>
-              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#3730a3'}}/><span className="text-gray-300">Hematoksilin — inti sel</span></span>
-              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#7a3010'}}/><span className="text-gray-300">Diskus interkalasi</span></span>
-              <span className="text-[8px] font-mono text-gray-500 ml-auto">Pewarnaan H&amp;E · SA.Move.Bio</span>
+            <div className="bg-rose-50 px-4 py-1.5 flex items-center gap-6 border-t border-rose-200">
+              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#ef9090'}}/><span className="text-rose-700">Eosinofil — sitoplasma (warna Eosin)</span></span>
+              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#3730a3'}}/><span className="text-violet-700">Hematoksilin — inti sel</span></span>
+              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#7a3010'}}/><span className="text-amber-700">Diskus interkalasi</span></span>
+              <span className="text-[8px] font-mono text-rose-400 ml-auto">Pewarnaan H&amp;E · SA.Move.Bio</span>
             </div>
           </div>
           {/* Antagonist & Synergist illustration */}
