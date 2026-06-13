@@ -36,3 +36,15 @@ id = "WhKq-1nq8GkwCJUnAjLkP"
 uri = "file://artifacts/sa-move-bio/public/joint-types.png"
 type = "image"
 title = "five joint types Indonesian labeled with movement arrows"
+
+[[generated]]
+id = "7ggw23lsdGh-Ic1wjrxr-"
+uri = "file://artifacts/sa-move-bio/public/muscles-anterior.png"
+type = "image"
+title = "full body muscles anterior Indonesian labeled"
+
+[[generated]]
+id = "8Lv6gZh6ccWFrBXnlwpxb"
+uri = "file://artifacts/sa-move-bio/public/muscles-posterior.png"
+type = "image"
+title = "full body muscles posterior Indonesian labeled"

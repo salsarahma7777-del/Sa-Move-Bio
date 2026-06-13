@@ -402,22 +402,17 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col items-center bg-red-50 rounded-2xl p-3 border border-red-100">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Muscles_anterior_labeled.jpg/200px-Muscles_anterior_labeled.jpg"
+                src="/muscles-anterior.png"
                 alt="Otot Anterior"
-                loading="lazy"
                 className="max-h-[220px] object-contain"
               />
               <p className="text-xs text-red-700 mt-2 font-semibold text-center">Tampak Depan (Anterior)</p>
             </div>
             <div className="flex flex-col items-center bg-rose-50 rounded-2xl p-3 border border-rose-100">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Muscles_posterior_labeled.jpg/200px-Muscles_posterior_labeled.jpg"
+                src="/muscles-posterior.png"
                 alt="Otot Posterior"
-                loading="lazy"
                 className="max-h-[220px] object-contain"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Muscles_anterior_labeled.jpg/200px-Muscles_anterior_labeled.jpg';
-                }}
               />
               <p className="text-xs text-rose-700 mt-2 font-semibold text-center">Tampak Belakang (Posterior)</p>
             </div>
