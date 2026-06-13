@@ -227,7 +227,7 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
           {/* Bone types gallery */}
           <div>
             <h3 className="font-bold text-[#355070] text-base mb-3">📐 Jenis-Jenis Tulang</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 mb-4">
               {[
                 {
                   name: "Tulang Pipa",
@@ -270,6 +270,17 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
                   <p className="text-xs text-gray-600">{bone.desc}</p>
                 </div>
               ))}
+            </div>
+            {/* AI bone types overview illustration */}
+            <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              <img
+                src="/bone-types.png"
+                alt="Ilustrasi Jenis-Jenis Tulang: Tulang Pipa, Tulang Pipih, Tulang Pendek, Tulang Tidak Beraturan"
+                className="w-full object-contain"
+              />
+              <p className="text-xs text-center text-gray-500 py-2 bg-gray-50 border-t border-gray-100">
+                Ilustrasi perbandingan keempat jenis tulang manusia
+              </p>
             </div>
           </div>
 
