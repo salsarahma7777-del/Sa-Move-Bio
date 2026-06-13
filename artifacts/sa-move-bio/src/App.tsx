@@ -211,10 +211,9 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
             <h3 className="font-bold text-amber-900 mb-3 text-base">🔬 Struktur Tulang (Penampang)</h3>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Illu_compact_spongy_bone.jpg/320px-Illu_compact_spongy_bone.jpg"
-                alt="Struktur Tulang Kompak dan Spons"
-                loading="lazy"
-                className="max-h-[180px] object-contain rounded-xl bg-white shadow-sm"
+                src="/bone-cross-section.png"
+                alt="Penampang Tulang — Periosteum, Tulang Kompak, Tulang Spons, Sumsum Tulang"
+                className="max-h-[220px] object-contain rounded-xl bg-white shadow-sm"
               />
               <ul className="text-sm space-y-2 text-amber-900">
                 <li><strong>Periosteum</strong> — lapisan terluar pelindung tulang</li>

@@ -12,3 +12,9 @@ id = "cSUXpdGp6wSEd8FkgdQD4"
 uri = "file://artifacts/sa-move-bio/public/skeleton-anatomy.png"
 type = "image"
 title = "human skeleton anterior labeled"
+
+[[generated]]
+id = "bxlmDLaL5aSctjP2e9ayQ"
+uri = "file://artifacts/sa-move-bio/public/bone-cross-section.png"
+type = "image"
+title = "bone cross section anatomy labeled"
