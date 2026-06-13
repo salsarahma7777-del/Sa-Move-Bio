@@ -8,6 +8,7 @@ import Quiz from './components/Quiz';
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 22;
+  const [siswa, setSiswa] = useState({ nama: '', noAbsen: '', kelas: '' });
 
   const goToPage = (page: number) => {
     setCurrentPage(page);
@@ -40,7 +41,7 @@ export default function App() {
         
         <div key={currentPage} className="animate-fade-slide-up">
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 relative">
-            <PageContent page={currentPage} goToPage={goToPage} />
+            <PageContent page={currentPage} goToPage={goToPage} siswa={siswa} setSiswa={setSiswa} />
           </div>
         </div>
       </div>
@@ -48,16 +49,88 @@ export default function App() {
   );
 }
 
-function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) => void }) {
+function PageContent({ page, goToPage, siswa, setSiswa }: {
+  page: number;
+  goToPage: (p: number) => void;
+  siswa: { nama: string; noAbsen: string; kelas: string };
+  setSiswa: React.Dispatch<React.SetStateAction<{ nama: string; noAbsen: string; kelas: string }>>;
+}) {
   switch (page) {
-    case 1:
+    case 1: {
+      const isValid = siswa.nama.trim() !== '' && siswa.noAbsen.trim() !== '' && siswa.kelas.trim() !== '';
       return (
-        <div className="text-center space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070]">🚀 Start</h2>
-          <p className="text-lg text-gray-600">Selamat datang pada media pembelajaran SA.Move.Bio (Smart Movement Biology).</p>
-          <NavigationButton text="Mulai" onClick={() => goToPage(2)} />
+        <div className="space-y-6">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-[#355070]">🚀 Identitas Siswa</h2>
+            <p className="text-gray-500 mt-2 text-sm">Isi data diri sebelum memulai pembelajaran</p>
+          </div>
+
+          <div className="bg-teal-50 border border-teal-100 rounded-2xl p-5 space-y-4">
+            {/* Nama */}
+            <div>
+              <label className="block text-sm font-bold text-teal-800 mb-1.5">👤 Nama Lengkap</label>
+              <input
+                type="text"
+                placeholder="Masukkan nama lengkap..."
+                value={siswa.nama}
+                onChange={(e) => setSiswa(s => ({ ...s, nama: e.target.value }))}
+                className="w-full rounded-xl border border-teal-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 transition"
+              />
+            </div>
+
+            {/* No Absen + Kelas side by side */}
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-bold text-teal-800 mb-1.5">🔢 No. Absen</label>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="Contoh: 12"
+                  value={siswa.noAbsen}
+                  onChange={(e) => setSiswa(s => ({ ...s, noAbsen: e.target.value }))}
+                  className="w-full rounded-xl border border-teal-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 transition"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-teal-800 mb-1.5">🏫 Kelas</label>
+                <input
+                  type="text"
+                  placeholder="Contoh: VIII-A"
+                  value={siswa.kelas}
+                  onChange={(e) => setSiswa(s => ({ ...s, kelas: e.target.value }))}
+                  className="w-full rounded-xl border border-teal-200 bg-white px-4 py-2.5 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-400 transition"
+                />
+              </div>
+            </div>
+
+            {/* Preview card */}
+            {isValid && (
+              <div className="bg-white border border-teal-200 rounded-xl px-4 py-3 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center text-lg font-black shrink-0">
+                  {siswa.nama.charAt(0).toUpperCase()}
+                </div>
+                <div>
+                  <p className="font-bold text-teal-900 text-sm">{siswa.nama}</p>
+                  <p className="text-xs text-gray-500">No. Absen {siswa.noAbsen} &nbsp;·&nbsp; Kelas {siswa.kelas}</p>
+                </div>
+                <span className="ml-auto text-emerald-500 text-lg">✓</span>
+              </div>
+            )}
+          </div>
+
+          <button
+            onClick={() => { if (isValid) goToPage(2); }}
+            disabled={!isValid}
+            className={`w-full py-3 rounded-full font-bold text-base transition-all shadow-sm
+              ${isValid
+                ? 'bg-teal-500 text-white hover:bg-teal-600 hover:-translate-y-0.5 hover:shadow-md cursor-pointer'
+                : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
+          >
+            {isValid ? 'Mulai Pembelajaran →' : 'Lengkapi data diri terlebih dahulu'}
+          </button>
         </div>
       );
+    }
     case 2:
       return (
         <div className="space-y-6">
