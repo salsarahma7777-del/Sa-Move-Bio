@@ -17,12 +17,12 @@ export default function App() {
   return (
     <div 
       className="min-h-[100dvh] w-full relative overflow-x-hidden font-sans text-gray-800 border-t-[color:var(--color-orange-50)] border-r-[color:var(--color-orange-50)] border-b-[color:var(--color-orange-50)] border-l-[color:var(--color-orange-50)]"
-      style={{ background: 'linear-gradient(135deg, #DFF6FF, #E8DFFB, #FFE5D4, #FFF4C1)' }}
+      style={{ background: 'linear-gradient(135deg, #FFFDF5, #FFF8E8, #FFFBF0, #FFF5E0)' }}
     >
       {/* Decorative blobs */}
-      <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-25 pointer-events-none z-0"></div>
-      <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-peach-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-25 pointer-events-none z-0" style={{ backgroundColor: '#FFE5D4' }}></div>
-      <div className="fixed top-[40%] left-[60%] w-[30%] h-[30%] bg-lavender-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-25 pointer-events-none z-0" style={{ backgroundColor: '#E8DFFB' }}></div>
+      <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full mix-blend-multiply filter blur-[80px] opacity-20 pointer-events-none z-0" style={{ backgroundColor: '#F5E6C8' }}></div>
+      <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full mix-blend-multiply filter blur-[80px] opacity-20 pointer-events-none z-0" style={{ backgroundColor: '#EDD9A3' }}></div>
+      <div className="fixed top-[40%] left-[60%] w-[30%] h-[30%] rounded-full mix-blend-multiply filter blur-[80px] opacity-15 pointer-events-none z-0" style={{ backgroundColor: '#F9EDD2' }}></div>
       <NavBar currentPage={currentPage} goToPage={goToPage} />
       <div className="max-w-[700px] mx-auto p-4 md:p-8 relative z-10">
         <Header />
