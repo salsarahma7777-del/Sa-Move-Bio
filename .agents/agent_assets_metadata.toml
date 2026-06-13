@@ -48,3 +48,9 @@ id = "8Lv6gZh6ccWFrBXnlwpxb"
 uri = "file://artifacts/sa-move-bio/public/muscles-posterior.png"
 type = "image"
 title = "full body muscles posterior Indonesian labeled"
+
+[[generated]]
+id = "3WE-PP-cZfQTVO42hL5-K"
+uri = "file://artifacts/sa-move-bio/public/muscle-types.png"
+type = "image"
+title = "three muscle tissue types histology microscopy panels"

@@ -421,6 +421,19 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
           {/* Three muscle types with microscopy images */}
           <div>
             <h3 className="font-bold text-[#355070] text-base mb-3">🔬 Tiga Jenis Otot</h3>
+
+            {/* AI muscle types overview illustration */}
+            <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mb-3">
+              <img
+                src="/muscle-types.png"
+                alt="Ilustrasi Tiga Jenis Otot: Otot Lurik, Otot Polos, Otot Jantung"
+                className="w-full object-contain"
+              />
+              <p className="text-xs text-center text-gray-500 py-2 bg-gray-50 border-t border-gray-100">
+                Perbandingan jaringan Otot Lurik, Otot Polos, dan Otot Jantung di bawah mikroskop
+              </p>
+            </div>
+
             <div className="space-y-3">
               {[
                 {
