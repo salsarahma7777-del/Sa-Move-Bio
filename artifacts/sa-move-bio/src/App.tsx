@@ -418,66 +418,195 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
             </div>
           </div>
 
-          {/* Three muscle types with microscopy images */}
-          <div>
-            <h3 className="font-bold text-[#355070] text-base mb-3">🔬 Tiga Jenis Otot</h3>
-
-            {/* AI muscle types overview illustration */}
-            <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mb-3">
-              <img
-                src="/muscle-types.png"
-                alt="Ilustrasi Tiga Jenis Otot: Otot Lurik, Otot Polos, Otot Jantung"
-                className="w-full object-contain"
-              />
-              <p className="text-xs text-center text-gray-500 py-2 bg-gray-50 border-t border-gray-100">
-                Perbandingan jaringan Otot Lurik, Otot Polos, dan Otot Jantung di bawah mikroskop
-              </p>
+          {/* Infographic: Three Muscle Types */}
+          <div className="bg-white border border-gray-100 rounded-3xl shadow-sm overflow-hidden">
+            {/* Infographic Header */}
+            <div className="bg-gradient-to-r from-[#355070] to-[#4a6fa5] px-4 py-3 flex items-center gap-2">
+              <span className="text-2xl">🔬</span>
+              <div>
+                <h3 className="font-black text-white text-base tracking-wide">INFOGRAFIS: TIGA JENIS OTOT MANUSIA</h3>
+                <p className="text-blue-200 text-[10px] font-medium">Perbandingan Struktur &amp; Fungsi Berdasarkan Pengamatan Mikroskop</p>
+              </div>
             </div>
 
-            <div className="space-y-3">
-              {[
-                {
-                  name: "Otot Lurik (Skelet)",
-                  desc: "Bekerja secara sadar (volunter). Melekat pada tulang rangka. Memiliki garis-garis melintang yang terlihat di mikroskop. Contoh: bisep, trisep, otot paha.",
-                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Skeletal_muscle_-_longitudinal_section.jpg/220px-Skeletal_muscle_-_longitudinal_section.jpg",
-                  color: "bg-red-50 border-red-200",
-                  badge: "bg-red-500",
-                  label: "SADAR / VOLUNTER",
-                },
-                {
-                  name: "Otot Polos",
-                  desc: "Bekerja secara tidak sadar (involunter). Terdapat pada organ dalam: lambung, usus, pembuluh darah. Bentuk sel gelendong tanpa garis melintang.",
-                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Smooth_muscle_2.jpg/220px-Smooth_muscle_2.jpg",
-                  color: "bg-purple-50 border-purple-200",
-                  badge: "bg-purple-500",
-                  label: "TIDAK SADAR / INVOLUNTER",
-                },
-                {
-                  name: "Otot Jantung",
-                  desc: "Bekerja secara tidak sadar, khusus pada jantung. Kontraksi ritmis & terus-menerus sepanjang hayat. Memiliki percabangan sel (sinsitium) yang unik.",
-                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Illu_cardiac_muscle.jpg/220px-Illu_cardiac_muscle.jpg",
-                  color: "bg-orange-50 border-orange-200",
-                  badge: "bg-orange-500",
-                  label: "TIDAK SADAR / JANTUNG",
-                },
-              ].map((m, i) => (
-                <div key={i} className={`${m.color} border rounded-2xl p-3 flex gap-3 items-start`}>
+            {/* Three columns */}
+            <div className="grid grid-cols-3 divide-x divide-gray-100">
+
+              {/* --- Otot Lurik --- */}
+              <div className="flex flex-col">
+                {/* Column header */}
+                <div className="bg-rose-100 px-2 py-2 text-center border-b border-rose-200">
+                  <div className="text-xl mb-0.5">🦵</div>
+                  <p className="font-black text-rose-800 text-[11px] leading-tight">Otot Lurik</p>
+                  <p className="text-rose-600 text-[9px] font-semibold">(Skelet)</p>
+                  <span className="inline-block mt-1 bg-rose-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">SADAR / VOLUNTER</span>
+                </div>
+                {/* Microscope image */}
+                <div className="bg-rose-50 p-2 flex flex-col items-center border-b border-rose-100">
                   <img
-                    src={m.img}
-                    alt={m.name}
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Skeletal_muscle_-_longitudinal_section.jpg/220px-Skeletal_muscle_-_longitudinal_section.jpg"
+                    alt="Mikroskop Otot Lurik"
                     loading="lazy"
-                    className="w-24 h-20 object-cover rounded-xl shrink-0 shadow-sm bg-white"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    className="w-full h-[80px] object-cover rounded-lg shadow-sm bg-white"
+                    onError={(e) => {
+                      const el = e.target as HTMLImageElement;
+                      el.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Skeletal_muscle_tissue.jpg/220px-Skeletal_muscle_tissue.jpg";
+                    }}
                   />
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="font-bold text-gray-800 text-sm">{m.name}</span>
-                      <span className={`text-white text-[10px] font-bold px-2 py-0.5 rounded-full ${m.badge}`}>{m.label}</span>
+                  <p className="text-[8px] text-rose-500 mt-1 font-medium text-center">Tampak mikroskop — garis melintang jelas</p>
+                </div>
+                {/* Properties */}
+                <div className="p-2 space-y-1.5 flex-1 bg-white">
+                  {[
+                    { icon: "🎯", label: "Kendali", val: "Sadar (volunter)" },
+                    { icon: "📍", label: "Lokasi", val: "Melekat pada tulang rangka" },
+                    { icon: "🔬", label: "Bentuk sel", val: "Silindris panjang, berinti banyak" },
+                    { icon: "〰️", label: "Pola", val: "Ada garis-garis melintang (lurik)" },
+                    { icon: "⚡", label: "Kerja", val: "Cepat, mudah lelah" },
+                  ].map((p, i) => (
+                    <div key={i} className="flex gap-1 items-start">
+                      <span className="text-[10px] mt-0.5 shrink-0">{p.icon}</span>
+                      <div className="min-w-0">
+                        <span className="text-[8px] font-bold text-rose-700 block leading-none">{p.label}</span>
+                        <span className="text-[9px] text-gray-600 leading-tight block">{p.val}</span>
+                      </div>
                     </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">{m.desc}</p>
+                  ))}
+                </div>
+                {/* Example */}
+                <div className="bg-rose-50 border-t border-rose-100 px-2 py-1.5">
+                  <p className="text-[8px] font-bold text-rose-700 mb-0.5">Contoh:</p>
+                  <div className="flex flex-wrap gap-1">
+                    {["Bisep", "Trisep", "Otot paha", "Deltoid"].map((ex) => (
+                      <span key={ex} className="bg-rose-200 text-rose-800 text-[7px] font-bold px-1.5 py-0.5 rounded-full">{ex}</span>
+                    ))}
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* --- Otot Polos --- */}
+              <div className="flex flex-col">
+                <div className="bg-violet-100 px-2 py-2 text-center border-b border-violet-200">
+                  <div className="text-xl mb-0.5">🫀</div>
+                  <p className="font-black text-violet-800 text-[11px] leading-tight">Otot Polos</p>
+                  <p className="text-violet-600 text-[9px] font-semibold">(Visceral)</p>
+                  <span className="inline-block mt-1 bg-violet-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">TIDAK SADAR / INVOLUNTER</span>
+                </div>
+                <div className="bg-violet-50 p-2 flex flex-col items-center border-b border-violet-100">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Smooth_muscle_2.jpg/220px-Smooth_muscle_2.jpg"
+                    alt="Mikroskop Otot Polos"
+                    loading="lazy"
+                    className="w-full h-[80px] object-cover rounded-lg shadow-sm bg-white"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <p className="text-[8px] text-violet-500 mt-1 font-medium text-center">Tampak mikroskop — permukaan halus</p>
+                </div>
+                <div className="p-2 space-y-1.5 flex-1 bg-white">
+                  {[
+                    { icon: "🎯", label: "Kendali", val: "Tidak sadar (involunter)" },
+                    { icon: "📍", label: "Lokasi", val: "Dinding organ dalam tubuh" },
+                    { icon: "🔬", label: "Bentuk sel", val: "Gelendong, berinti tunggal" },
+                    { icon: "〰️", label: "Pola", val: "Tidak ada garis melintang (polos)" },
+                    { icon: "⚡", label: "Kerja", val: "Lambat, tidak mudah lelah" },
+                  ].map((p, i) => (
+                    <div key={i} className="flex gap-1 items-start">
+                      <span className="text-[10px] mt-0.5 shrink-0">{p.icon}</span>
+                      <div className="min-w-0">
+                        <span className="text-[8px] font-bold text-violet-700 block leading-none">{p.label}</span>
+                        <span className="text-[9px] text-gray-600 leading-tight block">{p.val}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-violet-50 border-t border-violet-100 px-2 py-1.5">
+                  <p className="text-[8px] font-bold text-violet-700 mb-0.5">Contoh:</p>
+                  <div className="flex flex-wrap gap-1">
+                    {["Lambung", "Usus", "Pembuluh darah", "Kandung kemih"].map((ex) => (
+                      <span key={ex} className="bg-violet-200 text-violet-800 text-[7px] font-bold px-1.5 py-0.5 rounded-full">{ex}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* --- Otot Jantung --- */}
+              <div className="flex flex-col">
+                <div className="bg-amber-100 px-2 py-2 text-center border-b border-amber-200">
+                  <div className="text-xl mb-0.5">❤️</div>
+                  <p className="font-black text-amber-800 text-[11px] leading-tight">Otot Jantung</p>
+                  <p className="text-amber-600 text-[9px] font-semibold">(Kardiak)</p>
+                  <span className="inline-block mt-1 bg-amber-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">TIDAK SADAR / JANTUNG</span>
+                </div>
+                <div className="bg-amber-50 p-2 flex flex-col items-center border-b border-amber-100">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Illu_cardiac_muscle.jpg/220px-Illu_cardiac_muscle.jpg"
+                    alt="Mikroskop Otot Jantung"
+                    loading="lazy"
+                    className="w-full h-[80px] object-cover rounded-lg shadow-sm bg-white"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <p className="text-[8px] text-amber-600 mt-1 font-medium text-center">Tampak mikroskop — percabangan sel</p>
+                </div>
+                <div className="p-2 space-y-1.5 flex-1 bg-white">
+                  {[
+                    { icon: "🎯", label: "Kendali", val: "Tidak sadar (otonom)" },
+                    { icon: "📍", label: "Lokasi", val: "Hanya di dinding jantung" },
+                    { icon: "🔬", label: "Bentuk sel", val: "Silindris, bercabang, berinti 1–2" },
+                    { icon: "〰️", label: "Pola", val: "Ada garis lurik + diskus interkalasi" },
+                    { icon: "⚡", label: "Kerja", val: "Ritmis, terus-menerus seumur hidup" },
+                  ].map((p, i) => (
+                    <div key={i} className="flex gap-1 items-start">
+                      <span className="text-[10px] mt-0.5 shrink-0">{p.icon}</span>
+                      <div className="min-w-0">
+                        <span className="text-[8px] font-bold text-amber-700 block leading-none">{p.label}</span>
+                        <span className="text-[9px] text-gray-600 leading-tight block">{p.val}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-amber-50 border-t border-amber-100 px-2 py-1.5">
+                  <p className="text-[8px] font-bold text-amber-700 mb-0.5">Contoh:</p>
+                  <div className="flex flex-wrap gap-1">
+                    {["Miokardium", "Atrium", "Ventrikel"].map((ex) => (
+                      <span key={ex} className="bg-amber-200 text-amber-800 text-[7px] font-bold px-1.5 py-0.5 rounded-full">{ex}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Comparison table */}
+            <div className="border-t border-gray-100 bg-gray-50">
+              <p className="text-[9px] font-black text-gray-500 uppercase tracking-widest text-center py-1.5">Tabel Perbandingan Cepat</p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-[9px]">
+                  <thead>
+                    <tr className="bg-[#355070] text-white">
+                      <th className="px-2 py-1.5 text-left font-bold">Aspek</th>
+                      <th className="px-2 py-1.5 text-center font-bold text-rose-200">Lurik</th>
+                      <th className="px-2 py-1.5 text-center font-bold text-violet-200">Polos</th>
+                      <th className="px-2 py-1.5 text-center font-bold text-amber-200">Jantung</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ["Kendali", "Sadar ✅", "Tidak sadar ❌", "Tidak sadar ❌"],
+                      ["Inti sel", "Banyak (perifer)", "Satu (tengah)", "1–2 (tengah)"],
+                      ["Garis melintang", "Ada ✅", "Tidak ada ❌", "Ada ✅"],
+                      ["Kecepatan kerja", "Cepat ⚡", "Lambat 🐢", "Ritmis ❤️"],
+                      ["Kelelahan", "Mudah lelah", "Tidak mudah", "Tidak pernah"],
+                    ].map(([asp, lurik, polos, jantung], i) => (
+                      <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                        <td className="px-2 py-1 font-bold text-gray-700">{asp}</td>
+                        <td className="px-2 py-1 text-center text-rose-700">{lurik}</td>
+                        <td className="px-2 py-1 text-center text-violet-700">{polos}</td>
+                        <td className="px-2 py-1 text-center text-amber-700">{jantung}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-[8px] text-gray-400 text-center py-1.5 italic">Sumber: Histologi Jaringan Otot — Biologi SMP/SMA</p>
             </div>
           </div>
 
