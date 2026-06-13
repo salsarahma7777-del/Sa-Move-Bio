@@ -744,20 +744,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </div>
             </div>
 
-            {/* Anatomy image + two explanation cards */}
+            {/* Anatomical SVG illustration */}
             <div className="flex flex-col sm:flex-row gap-0">
-              {/* Central anatomy image */}
-              <div className="flex flex-col items-center justify-center bg-white px-4 py-4 sm:w-[45%] border-b sm:border-b-0 sm:border-r border-teal-100">
-                <img
-                  src="/muscle-anatomy.png"
-                  alt="Anatomi Otot Manusia"
-                  className="max-h-[320px] object-contain drop-shadow-sm"
-                />
-                <p className="text-[9px] text-gray-400 italic text-center mt-2">Anatomi otot manusia — tampak depan &amp; belakang</p>
-              </div>
-
-              {/* Right side: anatomical SVG illustration */}
-              <div className="sm:w-[55%] bg-white overflow-hidden">
+              {/* Full-width anatomical SVG */}
+              <div className="w-full bg-white overflow-hidden">
                 <svg viewBox="0 0 430 595" width="100%" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <marker id="ma-blk" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#374151"/></marker>
