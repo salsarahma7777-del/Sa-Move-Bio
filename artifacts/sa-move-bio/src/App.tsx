@@ -700,198 +700,107 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
               <span className="text-2xl">⚡</span>
               <div>
                 <h3 className="font-black text-white text-base tracking-wide">CARA KERJA OTOT: ANTAGONIS &amp; SINERGIS</h3>
-                <p className="text-teal-100 text-[10px] font-medium">Ilustrasi Anatomi Lengan — Mekanisme Gerak Otot Manusia</p>
+                <p className="text-teal-100 text-[10px] font-medium">Anatomi Otot Manusia — Mekanisme Gerak Otot</p>
               </div>
             </div>
 
-            {/* Two-panel SVG illustration */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-teal-100">
-
-              {/* === LEFT: ANTAGONIS === */}
-              <div className="bg-[#f0fdf9]">
-                <div className="flex items-center gap-2 px-4 py-2 bg-teal-50 border-b border-teal-100">
-                  <span className="text-base">🔄</span>
-                  <span className="font-black text-teal-800 text-sm">Antagonis</span>
-                  <span className="ml-auto text-[9px] text-teal-600 font-semibold bg-teal-100 px-2 py-0.5 rounded-full">Berlawanan arah</span>
-                </div>
-                <div className="p-3 flex justify-center">
-                  <svg viewBox="0 0 320 280" width="100%" style={{maxWidth:340}} xmlns="http://www.w3.org/2000/svg">
-                    <rect width="320" height="280" fill="#f0fdf9" rx="10"/>
-
-                    {/* ---- FLEKSI (top half) ---- */}
-                    <text x="160" y="16" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#0f766e" fontFamily="sans-serif">FLEKSI — Lengan Membengkok</text>
-
-                    {/* Arm bones - flexed position */}
-                    {/* Upper arm (humerus) - vertical */}
-                    <rect x="118" y="22" width="18" height="70" rx="6" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.2"/>
-                    {/* Forearm (radius+ulna) - angled up ~60deg from elbow */}
-                    <g transform="rotate(-55, 127, 92)">
-                      <rect x="118" y="92" width="18" height="65" rx="6" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.2"/>
-                    </g>
-                    {/* Elbow joint */}
-                    <circle cx="127" cy="92" r="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="1.2"/>
-
-                    {/* BISEP — kontraksi (shortened, thick arc over front) */}
-                    <path d="M122,28 Q98,58 110,86" stroke="#ef4444" strokeWidth="9" fill="none" strokeLinecap="round" opacity="0.85"/>
-                    <path d="M122,28 Q98,58 110,86" stroke="#fca5a5" strokeWidth="6" fill="none" strokeLinecap="round"/>
-                    {/* TRISEP — relaksasi (longer, thin arc over back) */}
-                    <path d="M132,28 Q158,55 145,86" stroke="#6366f1" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.5" strokeDasharray="4,3"/>
-                    <path d="M132,28 Q158,55 145,86" stroke="#a5b4fc" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="4,3"/>
-
-                    {/* Bisep label */}
-                    <line x1="96" y1="55" x2="62" y2="48" stroke="#dc2626" strokeWidth="0.8"/>
-                    <rect x="4" y="38" width="58" height="20" rx="4" fill="#fef2f2" stroke="#fca5a5" strokeWidth="0.8"/>
-                    <text x="33" y="47" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626" fontFamily="sans-serif">BISEP</text>
-                    <text x="33" y="55" textAnchor="middle" fontSize="6.5" fill="#dc2626" fontFamily="sans-serif">KONTRAKSI 💪</text>
-
-                    {/* Trisep label */}
-                    <line x1="157" y1="55" x2="192" y2="48" stroke="#4f46e5" strokeWidth="0.8"/>
-                    <rect x="192" y="38" width="58" height="20" rx="4" fill="#eef2ff" stroke="#a5b4fc" strokeWidth="0.8"/>
-                    <text x="221" y="47" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#4f46e5" fontFamily="sans-serif">TRISEP</text>
-                    <text x="221" y="55" textAnchor="middle" fontSize="6.5" fill="#4f46e5" fontFamily="sans-serif">RELAKSASI 〰️</text>
-
-                    {/* Movement arrow - flexion */}
-                    <path d="M155,108 Q170,95 160,78" stroke="#0f766e" strokeWidth="2" fill="none" markerEnd="url(#arrowTeal)"/>
-                    <text x="170" y="108" fontSize="8" fontWeight="bold" fill="#0f766e" fontFamily="sans-serif">Fleksi ↑</text>
-
-                    {/* Divider */}
-                    <line x1="10" y1="138" x2="310" y2="138" stroke="#99f6e4" strokeWidth="1.5" strokeDasharray="5,3"/>
-
-                    {/* ---- EKSTENSI (bottom half) ---- */}
-                    <text x="160" y="152" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#0f766e" fontFamily="sans-serif">EKSTENSI — Lengan Meluruskan</text>
-
-                    {/* Arm bones - extended position */}
-                    <rect x="118" y="160" width="18" height="70" rx="6" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.2"/>
-                    {/* Forearm extended downward */}
-                    <rect x="118" y="230" width="18" height="38" rx="6" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.2"/>
-                    {/* Elbow joint */}
-                    <circle cx="127" cy="230" r="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="1.2"/>
-
-                    {/* TRISEP — kontraksi (thick) */}
-                    <path d="M132,164 Q158,196 145,224" stroke="#6366f1" strokeWidth="9" fill="none" strokeLinecap="round" opacity="0.85"/>
-                    <path d="M132,164 Q158,196 145,224" stroke="#a5b4fc" strokeWidth="6" fill="none" strokeLinecap="round"/>
-                    {/* BISEP — relaksasi (dashed) */}
-                    <path d="M122,164 Q98,196 110,224" stroke="#ef4444" strokeWidth="5" fill="none" strokeLinecap="round" opacity="0.45" strokeDasharray="4,3"/>
-                    <path d="M122,164 Q98,196 110,224" stroke="#fca5a5" strokeWidth="3" fill="none" strokeLinecap="round" strokeDasharray="4,3"/>
-
-                    {/* Labels ekstensi */}
-                    <line x1="157" y1="195" x2="192" y2="185" stroke="#4f46e5" strokeWidth="0.8"/>
-                    <rect x="192" y="175" width="58" height="20" rx="4" fill="#eef2ff" stroke="#a5b4fc" strokeWidth="0.8"/>
-                    <text x="221" y="184" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#4f46e5" fontFamily="sans-serif">TRISEP</text>
-                    <text x="221" y="192" textAnchor="middle" fontSize="6.5" fill="#4f46e5" fontFamily="sans-serif">KONTRAKSI 💪</text>
-
-                    <line x1="96" y1="195" x2="62" y2="185" stroke="#dc2626" strokeWidth="0.8"/>
-                    <rect x="4" y="175" width="58" height="20" rx="4" fill="#fef2f2" stroke="#fca5a5" strokeWidth="0.8"/>
-                    <text x="33" y="184" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626" fontFamily="sans-serif">BISEP</text>
-                    <text x="33" y="192" textAnchor="middle" fontSize="6.5" fill="#dc2626" fontFamily="sans-serif">RELAKSASI 〰️</text>
-
-                    {/* Movement arrow - extension */}
-                    <path d="M155,242 Q172,252 162,268" stroke="#0f766e" strokeWidth="2" fill="none" markerEnd="url(#arrowTeal)"/>
-                    <text x="164" y="245" fontSize="8" fontWeight="bold" fill="#0f766e" fontFamily="sans-serif">Ekstensi ↓</text>
-
-                    {/* Arrow marker */}
-                    <defs>
-                      <marker id="arrowTeal" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                        <path d="M0,0 L6,3 L0,6 Z" fill="#0f766e"/>
-                      </marker>
-                    </defs>
-                  </svg>
-                </div>
-                <div className="px-4 pb-3 text-[10px] text-teal-700 bg-teal-50 border-t border-teal-100 py-2 leading-relaxed">
-                  <strong>Antagonis:</strong> Dua otot bekerja berlawanan arah. Saat <span className="text-red-600 font-bold">bisep berkontraksi</span> (memendek) → <span className="text-indigo-600 font-bold">trisep berelaksasi</span> (memanjang), lengan <em>fleksi</em>. Sebaliknya saat <em>ekstensi</em>.
-                </div>
+            {/* Anatomy image + two explanation cards */}
+            <div className="flex flex-col sm:flex-row gap-0">
+              {/* Central anatomy image */}
+              <div className="flex flex-col items-center justify-center bg-white px-4 py-4 sm:w-[45%] border-b sm:border-b-0 sm:border-r border-teal-100">
+                <img
+                  src="/muscle-anatomy.png"
+                  alt="Anatomi Otot Manusia"
+                  className="max-h-[320px] object-contain drop-shadow-sm"
+                />
+                <p className="text-[9px] text-gray-400 italic text-center mt-2">Anatomi otot manusia — tampak depan &amp; belakang</p>
               </div>
 
-              {/* === RIGHT: SINERGIS === */}
-              <div className="bg-[#f0fff4]">
-                <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 border-b border-emerald-100">
-                  <span className="text-base">🤝</span>
-                  <span className="font-black text-emerald-800 text-sm">Sinergis</span>
-                  <span className="ml-auto text-[9px] text-emerald-600 font-semibold bg-emerald-100 px-2 py-0.5 rounded-full">Bekerja bersama</span>
+              {/* Right side: two explanation panels */}
+              <div className="flex flex-col sm:w-[55%] divide-y divide-teal-100">
+
+                {/* === ANTAGONIS === */}
+                <div className="flex-1 bg-teal-50 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🔄</span>
+                    <span className="font-black text-teal-800 text-sm">Antagonis</span>
+                    <span className="ml-auto text-[9px] text-teal-600 font-bold bg-teal-100 px-2 py-0.5 rounded-full">Berlawanan Arah</span>
+                  </div>
+                  <p className="text-xs text-teal-900 leading-relaxed mb-3">
+                    Dua otot bekerja <strong>berlawanan arah</strong>. Saat satu berkontraksi, yang lain berelaksasi.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="bg-white rounded-xl p-3 border border-teal-100">
+                      <p className="text-[10px] font-black text-teal-700 mb-1.5">💪 FLEKSI — Lengan Membengkok</p>
+                      <div className="flex gap-2">
+                        <div className="flex-1 bg-red-50 rounded-lg p-2 text-center border border-red-100">
+                          <p className="text-[9px] font-black text-red-700">BISEP</p>
+                          <p className="text-[8px] text-red-500 font-semibold">Kontraksi ↑</p>
+                          <p className="text-[8px] text-gray-500">(memendek)</p>
+                        </div>
+                        <div className="flex items-center text-gray-300 font-bold text-sm">↔</div>
+                        <div className="flex-1 bg-indigo-50 rounded-lg p-2 text-center border border-indigo-100">
+                          <p className="text-[9px] font-black text-indigo-700">TRISEP</p>
+                          <p className="text-[8px] text-indigo-400 font-semibold">Relaksasi ↓</p>
+                          <p className="text-[8px] text-gray-500">(memanjang)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-xl p-3 border border-teal-100">
+                      <p className="text-[10px] font-black text-teal-700 mb-1.5">〰️ EKSTENSI — Lengan Meluruskan</p>
+                      <div className="flex gap-2">
+                        <div className="flex-1 bg-indigo-50 rounded-lg p-2 text-center border border-indigo-100">
+                          <p className="text-[9px] font-black text-indigo-700">TRISEP</p>
+                          <p className="text-[8px] text-indigo-500 font-semibold">Kontraksi ↑</p>
+                          <p className="text-[8px] text-gray-500">(memendek)</p>
+                        </div>
+                        <div className="flex items-center text-gray-300 font-bold text-sm">↔</div>
+                        <div className="flex-1 bg-red-50 rounded-lg p-2 text-center border border-red-100">
+                          <p className="text-[9px] font-black text-red-700">BISEP</p>
+                          <p className="text-[8px] text-red-400 font-semibold">Relaksasi ↓</p>
+                          <p className="text-[8px] text-gray-500">(memanjang)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-3 flex justify-center">
-                  <svg viewBox="0 0 320 280" width="100%" style={{maxWidth:340}} xmlns="http://www.w3.org/2000/svg">
-                    <rect width="320" height="280" fill="#f0fff4" rx="10"/>
-                    <text x="160" y="16" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">SINERGIS — Otot Bekerja Bersama</text>
 
-                    {/* Central arm bones */}
-                    {/* Humerus */}
-                    <rect x="148" y="24" width="22" height="90" rx="8" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.3"/>
-                    {/* Elbow */}
-                    <ellipse cx="159" cy="114" rx="14" ry="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="1.2"/>
-                    {/* Forearm */}
-                    <rect x="148" y="122" width="22" height="90" rx="8" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="1.3"/>
-                    {/* Wrist */}
-                    <ellipse cx="159" cy="212" rx="13" ry="8" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="1.2"/>
-
-                    {/* Muscle 1 - Bisep brachii (front, major) */}
-                    <path d="M148,32 Q118,68 136,108" stroke="#10b981" strokeWidth="12" fill="none" strokeLinecap="round" opacity="0.7"/>
-                    <path d="M148,32 Q118,68 136,108" stroke="#6ee7b7" strokeWidth="8" fill="none" strokeLinecap="round"/>
-
-                    {/* Muscle 2 - Brachialis (deeper, front) */}
-                    <path d="M150,55 Q122,82 138,112" stroke="#059669" strokeWidth="7" fill="none" strokeLinecap="round" opacity="0.6"/>
-                    <path d="M150,55 Q122,82 138,112" stroke="#a7f3d0" strokeWidth="4" fill="none" strokeLinecap="round"/>
-
-                    {/* Muscle 3 - Brachioradialis (forearm, front) */}
-                    <path d="M148,118 Q120,150 130,195" stroke="#047857" strokeWidth="8" fill="none" strokeLinecap="round" opacity="0.65"/>
-                    <path d="M148,118 Q120,150 130,195" stroke="#6ee7b7" strokeWidth="5" fill="none" strokeLinecap="round"/>
-
-                    {/* Muscle 4 - Coracobrachialis (inner) */}
-                    <path d="M158,28 Q175,60 168,108" stroke="#34d399" strokeWidth="6" fill="none" strokeLinecap="round" opacity="0.5" strokeDasharray="5,2"/>
-                    <path d="M158,28 Q175,60 168,108" stroke="#a7f3d0" strokeWidth="4" fill="none" strokeLinecap="round" strokeDasharray="5,2"/>
-
-                    {/* Callout arrows + labels */}
-                    {/* Bisep brachii */}
-                    <line x1="122" y1="65" x2="68" y2="55" stroke="#059669" strokeWidth="0.9"/>
-                    <rect x="4" y="42" width="64" height="22" rx="4" fill="#d1fae5" stroke="#6ee7b7" strokeWidth="0.8"/>
-                    <text x="36" y="52" textAnchor="middle" fontSize="7.5" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">Bisep Brachii</text>
-                    <text x="36" y="61" textAnchor="middle" fontSize="6.5" fill="#047857" fontFamily="sans-serif">Fleksor utama</text>
-
-                    {/* Brachialis */}
-                    <line x1="124" y1="84" x2="68" y2="90" stroke="#059669" strokeWidth="0.9"/>
-                    <rect x="4" y="79" width="64" height="22" rx="4" fill="#d1fae5" stroke="#6ee7b7" strokeWidth="0.8"/>
-                    <text x="36" y="89" textAnchor="middle" fontSize="7.5" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">Brachialis</text>
-                    <text x="36" y="98" textAnchor="middle" fontSize="6.5" fill="#047857" fontFamily="sans-serif">Fleksor kuat</text>
-
-                    {/* Brachioradialis */}
-                    <line x1="122" y1="155" x2="68" y2="155" stroke="#059669" strokeWidth="0.9"/>
-                    <rect x="4" y="144" width="64" height="22" rx="4" fill="#d1fae5" stroke="#6ee7b7" strokeWidth="0.8"/>
-                    <text x="36" y="154" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">Brachioradialis</text>
-                    <text x="36" y="163" textAnchor="middle" fontSize="6.5" fill="#047857" fontFamily="sans-serif">Stabilisator</text>
-
-                    {/* Coracobrachialis */}
-                    <line x1="172" y1="58" x2="230" y2="50" stroke="#059669" strokeWidth="0.9"/>
-                    <rect x="230" y="39" width="70" height="22" rx="4" fill="#d1fae5" stroke="#6ee7b7" strokeWidth="0.8"/>
-                    <text x="265" y="49" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">Coracobrachialis</text>
-                    <text x="265" y="58" textAnchor="middle" fontSize="6.5" fill="#047857" fontFamily="sans-serif">Pembantu fleksi</text>
-
-                    {/* Shared movement arrow */}
-                    <path d="M200,135 Q222,118 212,95" stroke="#065f46" strokeWidth="2" fill="none" markerEnd="url(#arrowGreen)"/>
-                    <text x="205" y="148" fontSize="8.5" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">Fleksi</text>
-                    <text x="202" y="158" fontSize="7" fill="#047857" fontFamily="sans-serif">bersama ↑</text>
-
-                    {/* "Semua otot berkontraksi bersama" note */}
-                    <rect x="170" y="200" width="140" height="38" rx="6" fill="#d1fae5" stroke="#6ee7b7" strokeWidth="1"/>
-                    <text x="240" y="213" textAnchor="middle" fontSize="7.5" fontWeight="bold" fill="#065f46" fontFamily="sans-serif">Semua berkontraksi</text>
-                    <text x="240" y="223" textAnchor="middle" fontSize="7" fill="#047857" fontFamily="sans-serif">secara bersamaan untuk</text>
-                    <text x="240" y="233" textAnchor="middle" fontSize="7" fill="#047857" fontFamily="sans-serif">menghasilkan 1 gerakan</text>
-
-                    <defs>
-                      <marker id="arrowGreen" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                        <path d="M0,0 L6,3 L0,6 Z" fill="#065f46"/>
-                      </marker>
-                    </defs>
-                  </svg>
-                </div>
-                <div className="px-4 pb-3 text-[10px] text-emerald-700 bg-emerald-50 border-t border-emerald-100 py-2 leading-relaxed">
-                  <strong>Sinergis:</strong> Beberapa otot bekerja <em>bersama-sama</em> untuk menghasilkan satu gerakan yang sama. Contoh: fleksi siku melibatkan <span className="font-bold">Bisep brachii + Brachialis + Brachioradialis</span> secara serentak.
+                {/* === SINERGIS === */}
+                <div className="flex-1 bg-emerald-50 p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🤝</span>
+                    <span className="font-black text-emerald-800 text-sm">Sinergis</span>
+                    <span className="ml-auto text-[9px] text-emerald-600 font-bold bg-emerald-100 px-2 py-0.5 rounded-full">Bekerja Bersama</span>
+                  </div>
+                  <p className="text-xs text-emerald-900 leading-relaxed mb-3">
+                    Beberapa otot bekerja <strong>bersama-sama</strong> untuk menghasilkan satu gerakan yang sama secara serentak.
+                  </p>
+                  <div className="bg-white rounded-xl p-3 border border-emerald-100 mb-2">
+                    <p className="text-[10px] font-black text-emerald-700 mb-2">💪 Contoh: Fleksi Siku</p>
+                    <div className="space-y-1.5">
+                      {[
+                        { name: "Bisep Brachii", role: "Fleksor utama", color: "bg-emerald-100 text-emerald-800" },
+                        { name: "Brachialis", role: "Fleksor kuat di bawah bisep", color: "bg-teal-100 text-teal-800" },
+                        { name: "Brachioradialis", role: "Stabilisator lengan bawah", color: "bg-cyan-100 text-cyan-800" },
+                        { name: "Coracobrachialis", role: "Pembantu fleksi bahu", color: "bg-sky-100 text-sky-800" },
+                      ].map((m) => (
+                        <div key={m.name} className="flex items-center gap-2">
+                          <span className={`text-[8px] font-black px-2 py-0.5 rounded-full shrink-0 ${m.color}`}>{m.name}</span>
+                          <span className="text-[8px] text-gray-500">{m.role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="bg-emerald-100 rounded-xl px-3 py-2 text-center">
+                    <p className="text-[9px] font-black text-emerald-800">Semua berkontraksi bersama → 1 Gerakan Fleksi</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Footer */}
             <div className="bg-gray-50 border-t border-teal-100 px-4 py-2">
-              <p className="text-[9px] text-gray-400 italic text-center">Ilustrasi mekanisme kerja otot lengan — Atlas Anatomi Manusia · Biologi SMP/SMA</p>
+              <p className="text-[9px] text-gray-400 italic text-center">Anatomi otot manusia — Cara kerja otot antagonis &amp; sinergis · Biologi SMP/SMA</p>
             </div>
           </div>
 
