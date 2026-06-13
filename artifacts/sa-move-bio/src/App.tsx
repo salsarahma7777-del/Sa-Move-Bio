@@ -424,189 +424,272 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
             <div className="bg-gradient-to-r from-[#355070] to-[#4a6fa5] px-4 py-3 flex items-center gap-2">
               <span className="text-2xl">🔬</span>
               <div>
-                <h3 className="font-black text-white text-base tracking-wide">INFOGRAFIS: TIGA JENIS OTOT MANUSIA</h3>
-                <p className="text-blue-200 text-[10px] font-medium">Perbandingan Struktur &amp; Fungsi Berdasarkan Pengamatan Mikroskop</p>
+                <h3 className="font-black text-white text-base tracking-wide">ILUSTRASI ANATOMI: TIGA JENIS OTOT MANUSIA</h3>
+                <p className="text-blue-200 text-[10px] font-medium">Struktur Sel &amp; Jaringan Otot — Gaya Atlas Biologi Medis</p>
               </div>
             </div>
 
-            {/* Three columns */}
-            <div className="grid grid-cols-3 divide-x divide-gray-100">
-
-              {/* --- Otot Lurik --- */}
-              <div className="flex flex-col">
-                {/* Column header */}
-                <div className="bg-rose-100 px-2 py-2 text-center border-b border-rose-200">
-                  <div className="text-xl mb-0.5">🦵</div>
-                  <p className="font-black text-rose-800 text-[11px] leading-tight">Otot Lurik</p>
-                  <p className="text-rose-600 text-[9px] font-semibold">(Skelet)</p>
-                  <span className="inline-block mt-1 bg-rose-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">SADAR / VOLUNTER</span>
+            {/* === PANEL 1: OTOT LURIK === */}
+            <div className="border-b border-gray-100">
+              <div className="flex items-center gap-3 bg-rose-50 px-4 py-2 border-b border-rose-100">
+                <span className="text-lg">🦵</span>
+                <div className="flex-1">
+                  <span className="font-black text-rose-800 text-sm">Otot Lurik</span>
+                  <span className="text-rose-500 text-xs font-semibold ml-1">(Otot Skelet)</span>
                 </div>
-                {/* Microscope image */}
-                <div className="bg-rose-50 p-2 flex flex-col items-center border-b border-rose-100">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Skeletal_muscle_-_longitudinal_section.jpg/220px-Skeletal_muscle_-_longitudinal_section.jpg"
-                    alt="Mikroskop Otot Lurik"
-                    loading="lazy"
-                    className="w-full h-[80px] object-cover rounded-lg shadow-sm bg-white"
-                    onError={(e) => {
-                      const el = e.target as HTMLImageElement;
-                      el.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Skeletal_muscle_tissue.jpg/220px-Skeletal_muscle_tissue.jpg";
-                    }}
-                  />
-                  <p className="text-[8px] text-rose-500 mt-1 font-medium text-center">Tampak mikroskop — garis melintang jelas</p>
-                </div>
-                {/* Properties */}
-                <div className="p-2 space-y-1.5 flex-1 bg-white">
-                  {[
-                    { icon: "🎯", label: "Kendali", val: "Sadar (volunter)" },
-                    { icon: "📍", label: "Lokasi", val: "Melekat pada tulang rangka" },
-                    { icon: "🔬", label: "Bentuk sel", val: "Silindris panjang, berinti banyak" },
-                    { icon: "〰️", label: "Pola", val: "Ada garis-garis melintang (lurik)" },
-                    { icon: "⚡", label: "Kerja", val: "Cepat, mudah lelah" },
-                  ].map((p, i) => (
-                    <div key={i} className="flex gap-1 items-start">
-                      <span className="text-[10px] mt-0.5 shrink-0">{p.icon}</span>
-                      <div className="min-w-0">
-                        <span className="text-[8px] font-bold text-rose-700 block leading-none">{p.label}</span>
-                        <span className="text-[9px] text-gray-600 leading-tight block">{p.val}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {/* Example */}
-                <div className="bg-rose-50 border-t border-rose-100 px-2 py-1.5">
-                  <p className="text-[8px] font-bold text-rose-700 mb-0.5">Contoh:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {["Bisep", "Trisep", "Otot paha", "Deltoid"].map((ex) => (
-                      <span key={ex} className="bg-rose-200 text-rose-800 text-[7px] font-bold px-1.5 py-0.5 rounded-full">{ex}</span>
-                    ))}
-                  </div>
-                </div>
+                <span className="bg-rose-500 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-wide">SADAR / VOLUNTER</span>
               </div>
-
-              {/* --- Otot Polos --- */}
-              <div className="flex flex-col">
-                <div className="bg-violet-100 px-2 py-2 text-center border-b border-violet-200">
-                  <div className="text-xl mb-0.5">🫀</div>
-                  <p className="font-black text-violet-800 text-[11px] leading-tight">Otot Polos</p>
-                  <p className="text-violet-600 text-[9px] font-semibold">(Visceral)</p>
-                  <span className="inline-block mt-1 bg-violet-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">TIDAK SADAR / INVOLUNTER</span>
-                </div>
-                <div className="bg-violet-50 p-2 flex flex-col items-center border-b border-violet-100">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Smooth_muscle_2.jpg/220px-Smooth_muscle_2.jpg"
-                    alt="Mikroskop Otot Polos"
-                    loading="lazy"
-                    className="w-full h-[80px] object-cover rounded-lg shadow-sm bg-white"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                  />
-                  <p className="text-[8px] text-violet-500 mt-1 font-medium text-center">Tampak mikroskop — permukaan halus</p>
-                </div>
-                <div className="p-2 space-y-1.5 flex-1 bg-white">
-                  {[
-                    { icon: "🎯", label: "Kendali", val: "Tidak sadar (involunter)" },
-                    { icon: "📍", label: "Lokasi", val: "Dinding organ dalam tubuh" },
-                    { icon: "🔬", label: "Bentuk sel", val: "Gelendong, berinti tunggal" },
-                    { icon: "〰️", label: "Pola", val: "Tidak ada garis melintang (polos)" },
-                    { icon: "⚡", label: "Kerja", val: "Lambat, tidak mudah lelah" },
-                  ].map((p, i) => (
-                    <div key={i} className="flex gap-1 items-start">
-                      <span className="text-[10px] mt-0.5 shrink-0">{p.icon}</span>
-                      <div className="min-w-0">
-                        <span className="text-[8px] font-bold text-violet-700 block leading-none">{p.label}</span>
-                        <span className="text-[9px] text-gray-600 leading-tight block">{p.val}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-violet-50 border-t border-violet-100 px-2 py-1.5">
-                  <p className="text-[8px] font-bold text-violet-700 mb-0.5">Contoh:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {["Lambung", "Usus", "Pembuluh darah", "Kandung kemih"].map((ex) => (
-                      <span key={ex} className="bg-violet-200 text-violet-800 text-[7px] font-bold px-1.5 py-0.5 rounded-full">{ex}</span>
+              <div className="flex gap-0">
+                {/* SVG illustration */}
+                <div className="bg-[#fff8f8] border-r border-rose-100 p-3 flex items-center justify-center" style={{minWidth: 200}}>
+                  <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
+                    {/* Background */}
+                    <rect width="200" height="160" fill="#fff8f8" rx="8"/>
+                    {/* Label: tampak penampang membujur */}
+                    <text x="100" y="12" textAnchor="middle" fontSize="7" fill="#9f1239" fontStyle="italic" fontFamily="serif">Penampang Membujur — Mikroskop Cahaya</text>
+                    {/* Fiber 1 */}
+                    <rect x="10" y="22" width="180" height="32" rx="5" fill="#fecdd3" stroke="#fb7185" strokeWidth="1.2"/>
+                    {/* striations fiber 1 */}
+                    {[24,34,44,54,64,74,84,94,104,114,124,134,144,154,164,174].map((x,i) => (
+                      <line key={i} x1={x} y1="22" x2={x} y2="54" stroke="#f43f5e" strokeWidth="0.7" opacity="0.5"/>
                     ))}
+                    {/* Nuclei fiber 1 - peripheral */}
+                    <ellipse cx="30" cy="25" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    <ellipse cx="90" cy="52" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    <ellipse cx="155" cy="25" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    {/* Fiber 2 */}
+                    <rect x="10" y="60" width="180" height="32" rx="5" fill="#fda4af" stroke="#fb7185" strokeWidth="1.2"/>
+                    {[24,34,44,54,64,74,84,94,104,114,124,134,144,154,164,174].map((x,i) => (
+                      <line key={i} x1={x} y1="60" x2={x} y2="92" stroke="#f43f5e" strokeWidth="0.7" opacity="0.5"/>
+                    ))}
+                    <ellipse cx="60" cy="63" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    <ellipse cx="130" cy="89" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    {/* Fiber 3 */}
+                    <rect x="10" y="98" width="180" height="32" rx="5" fill="#fecdd3" stroke="#fb7185" strokeWidth="1.2"/>
+                    {[24,34,44,54,64,74,84,94,104,114,124,134,144,154,164,174].map((x,i) => (
+                      <line key={i} x1={x} y1="98" x2={x} y2="130" stroke="#f43f5e" strokeWidth="0.7" opacity="0.5"/>
+                    ))}
+                    <ellipse cx="45" cy="101" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    <ellipse cx="170" cy="127" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
+                    {/* Callout: garis melintang */}
+                    <line x1="74" y1="38" x2="74" y2="148" stroke="#f43f5e" strokeWidth="0.8" strokeDasharray="2,2"/>
+                    <text x="76" y="152" fontSize="6.5" fill="#be123c" fontWeight="bold" fontFamily="sans-serif">Garis melintang (lurik)</text>
+                    {/* Callout: inti sel */}
+                    <line x1="30" y1="25" x2="8" y2="15" stroke="#9f1239" strokeWidth="0.8"/>
+                    <text x="2" y="12" fontSize="6" fill="#9f1239" fontFamily="sans-serif" fontWeight="bold">Inti (perifer)</text>
+                  </svg>
+                </div>
+                {/* Description panel */}
+                <div className="flex-1 p-4 flex flex-col justify-between bg-white">
+                  <div>
+                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
+                      Bekerja secara <strong className="text-rose-700">sadar (volunter)</strong> — dikontrol oleh sistem saraf somatik. Melekat pada tulang rangka melalui tendon, menggerakkan tubuh sesuai kehendak.
+                    </p>
+                    <div className="space-y-1.5">
+                      {[
+                        ["Bentuk sel", "Silindris panjang (100–300 µm), berinti banyak di tepi sel"],
+                        ["Pola", "Ada garis melintang gelap-terang (pita A dan pita I)"],
+                        ["Kecepatan", "Kontraksi cepat, namun mudah lelah"],
+                        ["Stimulasi", "Sinyal dari otak melalui saraf motorik"],
+                      ].map(([k, v], i) => (
+                        <div key={i} className="flex gap-2 items-baseline">
+                          <span className="text-[9px] font-black text-rose-600 shrink-0 w-16">{k}</span>
+                          <span className="text-[10px] text-gray-600 leading-snug">{v}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              {/* --- Otot Jantung --- */}
-              <div className="flex flex-col">
-                <div className="bg-amber-100 px-2 py-2 text-center border-b border-amber-200">
-                  <div className="text-xl mb-0.5">❤️</div>
-                  <p className="font-black text-amber-800 text-[11px] leading-tight">Otot Jantung</p>
-                  <p className="text-amber-600 text-[9px] font-semibold">(Kardiak)</p>
-                  <span className="inline-block mt-1 bg-amber-500 text-white text-[8px] font-bold px-2 py-0.5 rounded-full">TIDAK SADAR / JANTUNG</span>
-                </div>
-                <div className="bg-amber-50 p-2 flex flex-col items-center border-b border-amber-100">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Illu_cardiac_muscle.jpg/220px-Illu_cardiac_muscle.jpg"
-                    alt="Mikroskop Otot Jantung"
-                    loading="lazy"
-                    className="w-full h-[80px] object-cover rounded-lg shadow-sm bg-white"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                  />
-                  <p className="text-[8px] text-amber-600 mt-1 font-medium text-center">Tampak mikroskop — percabangan sel</p>
-                </div>
-                <div className="p-2 space-y-1.5 flex-1 bg-white">
-                  {[
-                    { icon: "🎯", label: "Kendali", val: "Tidak sadar (otonom)" },
-                    { icon: "📍", label: "Lokasi", val: "Hanya di dinding jantung" },
-                    { icon: "🔬", label: "Bentuk sel", val: "Silindris, bercabang, berinti 1–2" },
-                    { icon: "〰️", label: "Pola", val: "Ada garis lurik + diskus interkalasi" },
-                    { icon: "⚡", label: "Kerja", val: "Ritmis, terus-menerus seumur hidup" },
-                  ].map((p, i) => (
-                    <div key={i} className="flex gap-1 items-start">
-                      <span className="text-[10px] mt-0.5 shrink-0">{p.icon}</span>
-                      <div className="min-w-0">
-                        <span className="text-[8px] font-bold text-amber-700 block leading-none">{p.label}</span>
-                        <span className="text-[9px] text-gray-600 leading-tight block">{p.val}</span>
-                      </div>
+                  <div className="mt-3 pt-3 border-t border-rose-50">
+                    <p className="text-[9px] font-bold text-rose-700 mb-1.5">Contoh lokasi:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {["Bisep", "Trisep", "Otot paha (quadriceps)", "Deltoid", "Gastroknemius"].map(ex => (
+                        <span key={ex} className="bg-rose-100 text-rose-800 text-[9px] font-semibold px-2 py-0.5 rounded-full">{ex}</span>
+                      ))}
                     </div>
-                  ))}
-                </div>
-                <div className="bg-amber-50 border-t border-amber-100 px-2 py-1.5">
-                  <p className="text-[8px] font-bold text-amber-700 mb-0.5">Contoh:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {["Miokardium", "Atrium", "Ventrikel"].map((ex) => (
-                      <span key={ex} className="bg-amber-200 text-amber-800 text-[7px] font-bold px-1.5 py-0.5 rounded-full">{ex}</span>
-                    ))}
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Comparison table */}
-            <div className="border-t border-gray-100 bg-gray-50">
-              <p className="text-[9px] font-black text-gray-500 uppercase tracking-widest text-center py-1.5">Tabel Perbandingan Cepat</p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-[9px]">
-                  <thead>
-                    <tr className="bg-[#355070] text-white">
-                      <th className="px-2 py-1.5 text-left font-bold">Aspek</th>
-                      <th className="px-2 py-1.5 text-center font-bold text-rose-200">Lurik</th>
-                      <th className="px-2 py-1.5 text-center font-bold text-violet-200">Polos</th>
-                      <th className="px-2 py-1.5 text-center font-bold text-amber-200">Jantung</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      ["Kendali", "Sadar ✅", "Tidak sadar ❌", "Tidak sadar ❌"],
-                      ["Inti sel", "Banyak (perifer)", "Satu (tengah)", "1–2 (tengah)"],
-                      ["Garis melintang", "Ada ✅", "Tidak ada ❌", "Ada ✅"],
-                      ["Kecepatan kerja", "Cepat ⚡", "Lambat 🐢", "Ritmis ❤️"],
-                      ["Kelelahan", "Mudah lelah", "Tidak mudah", "Tidak pernah"],
-                    ].map(([asp, lurik, polos, jantung], i) => (
-                      <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td className="px-2 py-1 font-bold text-gray-700">{asp}</td>
-                        <td className="px-2 py-1 text-center text-rose-700">{lurik}</td>
-                        <td className="px-2 py-1 text-center text-violet-700">{polos}</td>
-                        <td className="px-2 py-1 text-center text-amber-700">{jantung}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            {/* === PANEL 2: OTOT POLOS === */}
+            <div className="border-b border-gray-100">
+              <div className="flex items-center gap-3 bg-violet-50 px-4 py-2 border-b border-violet-100">
+                <span className="text-lg">🫁</span>
+                <div className="flex-1">
+                  <span className="font-black text-violet-800 text-sm">Otot Polos</span>
+                  <span className="text-violet-500 text-xs font-semibold ml-1">(Otot Visceral)</span>
+                </div>
+                <span className="bg-violet-500 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-wide">TIDAK SADAR / INVOLUNTER</span>
               </div>
-              <p className="text-[8px] text-gray-400 text-center py-1.5 italic">Sumber: Histologi Jaringan Otot — Biologi SMP/SMA</p>
+              <div className="flex gap-0">
+                {/* SVG illustration */}
+                <div className="bg-[#faf8ff] border-r border-violet-100 p-3 flex items-center justify-center" style={{minWidth: 200}}>
+                  <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="160" fill="#faf8ff" rx="8"/>
+                    <text x="100" y="12" textAnchor="middle" fontSize="7" fill="#5b21b6" fontStyle="italic" fontFamily="serif">Penampang Membujur — Sel Gelendong</text>
+                    {/* Smooth muscle cells - spindle shaped, arranged in staggered rows */}
+                    {/* Row 1 */}
+                    <ellipse cx="35" cy="38" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="35" cy="38" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    <ellipse cx="100" cy="32" rx="28" ry="11" fill="#c4b5fd" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="100" cy="32" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    <ellipse cx="165" cy="40" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="165" cy="40" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    {/* Row 2 - offset */}
+                    <ellipse cx="60" cy="65" rx="28" ry="11" fill="#ede9fe" stroke="#a78bfa" strokeWidth="1"/>
+                    <ellipse cx="60" cy="65" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    <ellipse cx="130" cy="60" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="130" cy="60" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    {/* Row 3 */}
+                    <ellipse cx="35" cy="90" rx="28" ry="11" fill="#c4b5fd" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="35" cy="90" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    <ellipse cx="100" cy="95" rx="28" ry="11" fill="#ddd6fe" stroke="#a78bfa" strokeWidth="1"/>
+                    <ellipse cx="100" cy="95" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    <ellipse cx="165" cy="88" rx="28" ry="11" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="165" cy="88" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    {/* Row 4 */}
+                    <ellipse cx="60" cy="118" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
+                    <ellipse cx="60" cy="118" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    <ellipse cx="140" cy="122" rx="28" ry="11" fill="#c4b5fd" stroke="#a78bfa" strokeWidth="1"/>
+                    <ellipse cx="140" cy="122" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
+                    {/* Callouts */}
+                    <line x1="35" y1="34" x2="8" y2="14" stroke="#7c3aed" strokeWidth="0.8"/>
+                    <text x="2" y="12" fontSize="6" fill="#5b21b6" fontWeight="bold" fontFamily="sans-serif">Inti (tengah)</text>
+                    <line x1="130" y1="56" x2="160" y2="145" stroke="#7c3aed" strokeWidth="0.8" strokeDasharray="2,2"/>
+                    <text x="105" y="153" fontSize="6.5" fill="#5b21b6" fontWeight="bold" fontFamily="sans-serif">Bentuk gelendong (fusiform)</text>
+                    <text x="105" y="161" fontSize="6" fill="#6d28d9" fontFamily="sans-serif">Tidak ada garis melintang</text>
+                  </svg>
+                </div>
+                {/* Description panel */}
+                <div className="flex-1 p-4 flex flex-col justify-between bg-white">
+                  <div>
+                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
+                      Bekerja secara <strong className="text-violet-700">tidak sadar (involunter)</strong> — dikontrol oleh sistem saraf otonom. Ditemukan di dinding organ dalam, mengatur pergerakan internal tubuh tanpa disadari.
+                    </p>
+                    <div className="space-y-1.5">
+                      {[
+                        ["Bentuk sel", "Gelendong (fusiform), runcing di kedua ujung, berinti satu di tengah"],
+                        ["Pola", "Tidak ada garis melintang — permukaan polos dan halus"],
+                        ["Kecepatan", "Kontraksi lambat, tahan lama, tidak mudah lelah"],
+                        ["Stimulasi", "Sistem saraf otonom, hormon, rangsang lokal"],
+                      ].map(([k, v], i) => (
+                        <div key={i} className="flex gap-2 items-baseline">
+                          <span className="text-[9px] font-black text-violet-600 shrink-0 w-16">{k}</span>
+                          <span className="text-[10px] text-gray-600 leading-snug">{v}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-violet-50">
+                    <p className="text-[9px] font-bold text-violet-700 mb-1.5">Contoh lokasi:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {["Lambung", "Usus halus", "Usus besar", "Pembuluh darah", "Kandung kemih", "Rahim"].map(ex => (
+                        <span key={ex} className="bg-violet-100 text-violet-800 text-[9px] font-semibold px-2 py-0.5 rounded-full">{ex}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* === PANEL 3: OTOT JANTUNG === */}
+            <div>
+              <div className="flex items-center gap-3 bg-amber-50 px-4 py-2 border-b border-amber-100">
+                <span className="text-lg">❤️</span>
+                <div className="flex-1">
+                  <span className="font-black text-amber-800 text-sm">Otot Jantung</span>
+                  <span className="text-amber-500 text-xs font-semibold ml-1">(Otot Kardiak)</span>
+                </div>
+                <span className="bg-amber-500 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-wide">TIDAK SADAR / JANTUNG</span>
+              </div>
+              <div className="flex gap-0">
+                {/* SVG illustration */}
+                <div className="bg-[#fffbeb] border-r border-amber-100 p-3 flex items-center justify-center" style={{minWidth: 200}}>
+                  <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="160" fill="#fffbeb" rx="8"/>
+                    <text x="100" y="12" textAnchor="middle" fontSize="7" fill="#92400e" fontStyle="italic" fontFamily="serif">Jaringan Otot Jantung — Sinsitium Fungsional</text>
+                    {/* Cardiac muscle - branched network */}
+                    {/* Main horizontal fiber */}
+                    <path d="M10,55 Q40,50 60,55 L120,55 Q150,50 190,55" stroke="#f59e0b" strokeWidth="14" fill="none" strokeLinecap="round" opacity="0.35"/>
+                    <path d="M10,55 Q40,50 60,55 L120,55 Q150,50 190,55" stroke="#fcd34d" strokeWidth="12" fill="none" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M10,55 Q40,50 60,55 L120,55 Q150,50 190,55" stroke="#fde68a" strokeWidth="10" fill="none" strokeLinecap="round"/>
+                    {/* striations on fiber 1 */}
+                    {[25,40,55,70,85,100,115,130,145,160,175].map((x,i) => (
+                      <line key={i} x1={x} y1="49" x2={x} y2="61" stroke="#d97706" strokeWidth="0.8" opacity="0.6"/>
+                    ))}
+                    {/* Branch from top */}
+                    <path d="M80,55 Q85,35 95,25 Q105,18 120,22" stroke="#fcd34d" strokeWidth="10" fill="none" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M80,55 Q85,35 95,25 Q105,18 120,22" stroke="#fde68a" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    {[0.2,0.45,0.7,0.9].map((t,i) => {
+                      const x = 80 + t*(120-80);
+                      const y = 55 + t*(22-55) - Math.sin(t*Math.PI)*8;
+                      return <line key={i} x1={x-4} y1={y-4} x2={x+4} y2={y+4} stroke="#d97706" strokeWidth="0.8" opacity="0.6"/>;
+                    })}
+                    {/* Branch downward */}
+                    <path d="M130,55 Q135,75 130,95 Q125,110 135,120" stroke="#fcd34d" strokeWidth="10" fill="none" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M130,55 Q135,75 130,95 Q125,110 135,120" stroke="#fde68a" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    {/* Second horizontal fiber */}
+                    <path d="M10,105 Q50,100 80,105 L140,108 Q165,112 190,105" stroke="#fcd34d" strokeWidth="10" fill="none" strokeLinecap="round" opacity="0.5"/>
+                    <path d="M10,105 Q50,100 80,105 L140,108 Q165,112 190,105" stroke="#fde68a" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    {[25,40,55,70,85,100,115,130,145,160,175].map((x,i) => (
+                      <line key={i} x1={x} y1="100" x2={x} y2="112" stroke="#d97706" strokeWidth="0.8" opacity="0.6"/>
+                    ))}
+                    {/* Nuclei - central */}
+                    <ellipse cx="50" cy="55" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
+                    <ellipse cx="155" cy="55" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
+                    <ellipse cx="105" cy="30" rx="7" ry="3.5" fill="#b45309" opacity="0.7"/>
+                    <ellipse cx="130" cy="90" rx="7" ry="3.5" fill="#b45309" opacity="0.7"/>
+                    <ellipse cx="60" cy="105" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
+                    <ellipse cx="160" cy="105" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
+                    {/* Intercalated discs */}
+                    <line x1="90" y1="49" x2="90" y2="61" stroke="#92400e" strokeWidth="2.5" opacity="0.9"/>
+                    <line x1="160" y1="49" x2="160" y2="61" stroke="#92400e" strokeWidth="2.5" opacity="0.9"/>
+                    <line x1="95" y1="100" x2="95" y2="112" stroke="#92400e" strokeWidth="2.5" opacity="0.9"/>
+                    {/* Callout: diskus interkalasi */}
+                    <line x1="90" y1="55" x2="65" y2="140" stroke="#92400e" strokeWidth="0.8" strokeDasharray="2,2"/>
+                    <text x="4" y="143" fontSize="6.5" fill="#92400e" fontWeight="bold" fontFamily="sans-serif">Diskus interkalasi</text>
+                    <text x="4" y="150" fontSize="6" fill="#92400e" fontFamily="sans-serif">(persambungan sel)</text>
+                    {/* Callout: percabangan */}
+                    <line x1="80" y1="40" x2="20" y2="15" stroke="#b45309" strokeWidth="0.8"/>
+                    <text x="2" y="12" fontSize="6" fill="#92400e" fontWeight="bold" fontFamily="sans-serif">Percabangan</text>
+                  </svg>
+                </div>
+                {/* Description panel */}
+                <div className="flex-1 p-4 flex flex-col justify-between bg-white">
+                  <div>
+                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
+                      Bekerja secara <strong className="text-amber-700">tidak sadar, ritmis, dan terus-menerus</strong> sepanjang hayat — dikendalikan oleh nodus SA (pacu jantung alami). Memiliki struktur unik berupa percabangan sel yang membentuk jaringan sinsitium.
+                    </p>
+                    <div className="space-y-1.5">
+                      {[
+                        ["Bentuk sel", "Silindris bercabang, berinti 1–2 di tengah (sinsitium)"],
+                        ["Pola", "Ada garis lurik + diskus interkalasi di antara sel"],
+                        ["Kecepatan", "Kontraksi ritmis, tidak pernah lelah selama hidup"],
+                        ["Stimulasi", "Nodus SA/AV, sistem konduksi jantung, saraf otonom"],
+                      ].map(([k, v], i) => (
+                        <div key={i} className="flex gap-2 items-baseline">
+                          <span className="text-[9px] font-black text-amber-600 shrink-0 w-16">{k}</span>
+                          <span className="text-[10px] text-gray-600 leading-snug">{v}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-amber-50">
+                    <p className="text-[9px] font-bold text-amber-700 mb-1.5">Contoh lokasi:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {["Miokardium", "Dinding Atrium", "Dinding Ventrikel", "Septum jantung"].map(ex => (
+                        <span key={ex} className="bg-amber-100 text-amber-800 text-[9px] font-semibold px-2 py-0.5 rounded-full">{ex}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="bg-gray-50 border-t border-gray-100 px-4 py-2 flex items-center gap-2">
+              <span className="text-[9px] text-gray-400 italic flex-1">Ilustrasi anatomi sel otot — Biologi SMP/SMA · Sumber: Atlas Histologi &amp; Sobotta</span>
+              <span className="text-[9px] text-gray-400">© SA.Move.Bio</span>
             </div>
           </div>
 
