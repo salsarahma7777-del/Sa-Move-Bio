@@ -30,3 +30,9 @@ id = "c7aC4f4aFsoIuUG7Ssl57"
 uri = "file://artifacts/sa-move-bio/public/synovial-joint.png"
 type = "image"
 title = "synovial joint cross section Indonesian labeled"
+
+[[generated]]
+id = "WhKq-1nq8GkwCJUnAjLkP"
+uri = "file://artifacts/sa-move-bio/public/joint-types.png"
+type = "image"
+title = "five joint types Indonesian labeled with movement arrows"

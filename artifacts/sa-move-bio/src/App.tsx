@@ -377,6 +377,18 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
             </div>
           </div>
 
+          {/* AI joint types overview illustration */}
+          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <img
+              src="/joint-types.png"
+              alt="Ilustrasi 5 Jenis Sendi: Sendi Engsel, Peluru, Putar, Pelana, Geser dengan panah arah gerak"
+              className="w-full object-contain"
+            />
+            <p className="text-xs text-center text-gray-500 py-2 bg-gray-50 border-t border-gray-100">
+              Ilustrasi perbandingan kelima jenis sendi beserta arah geraknya
+            </p>
+          </div>
+
           <NavigationButton text="Lanjut →" onClick={() => goToPage(9)} />
         </div>
       );
