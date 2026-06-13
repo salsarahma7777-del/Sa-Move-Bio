@@ -6,3 +6,9 @@ id = "gzo--0U-0iLO7XCcOmZhs"
 uri = "file://artifacts/sa-move-bio/public/anatomy-musculoskeletal.png"
 type = "image"
 title = "human musculoskeletal anatomy"
+
+[[generated]]
+id = "cSUXpdGp6wSEd8FkgdQD4"
+uri = "file://artifacts/sa-move-bio/public/skeleton-anatomy.png"
+type = "image"
+title = "human skeleton anterior labeled"

@@ -184,12 +184,11 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
             <div className="flex flex-col items-center bg-blue-50 rounded-2xl p-4 border border-blue-100">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/91/Human_skeleton_front_en.svg"
+                src="/skeleton-anatomy.png"
                 alt="Kerangka Manusia"
-                loading="lazy"
-                className="max-h-[260px] object-contain"
+                className="max-h-[280px] object-contain"
               />
-              <p className="text-xs text-blue-700 mt-2 font-medium text-center">Rangka Tubuh Manusia</p>
+              <p className="text-xs text-blue-700 mt-2 font-medium text-center">Rangka Tubuh Manusia (Tampak Depan)</p>
             </div>
             <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100">
               <h3 className="font-bold text-blue-900 mb-3 text-base border-b border-blue-200 pb-2">⚙️ Fungsi Tulang</h3>
