@@ -9,6 +9,7 @@ const TABS = [
   { label: 'Video',     startPage: 12 },
   { label: 'Orientasi', startPage: 13 },
   { label: 'Kuis',      startPage: 19 },
+  { label: 'Post-Test', startPage: 20 },
   { label: 'Kesimpulan',startPage: 21 },
 ];
 

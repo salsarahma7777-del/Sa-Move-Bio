@@ -711,10 +711,10 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
     case 20:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📋 Post-Test</h2>
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 text-center text-blue-900">
-            <p className="font-medium text-xl mb-4">Silakan mengerjakan post-test yang dibagikan oleh guru melalui Google Form atau lembar soal.</p>
-            <p className="text-blue-700 opacity-80">Post-test tidak ditampilkan pada media ini.</p>
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📝 Post-Test</h2>
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 text-center text-amber-800">
+            <p className="font-medium text-lg">Silakan mengerjakan post-test yang akan dibagikan oleh guru.</p>
+            <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
           <NavigationButton text="Lanjut →" onClick={() => goToPage(21)} />
         </div>
