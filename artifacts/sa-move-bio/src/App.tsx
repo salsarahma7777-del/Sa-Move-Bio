@@ -276,67 +276,202 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
     case 8:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🔗 Sendi dan Macam-Macam Sendi</h2>
-          <div className="flex justify-center mb-6">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gray333.png/400px-Gray333.png" 
-              alt="Sendi Manusia" 
-              loading="lazy" 
-              className="max-h-[300px] object-contain rounded-2xl shadow-sm bg-white"
-            />
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">🔗 Sendi dan Macam-Macam Sendi</h2>
+          <p className="text-center text-gray-600 mb-4">Sendi adalah hubungan antara dua tulang atau lebih. Sendi memungkinkan terjadinya gerakan yang beragam.</p>
+
+          {/* Synovial joint anatomy */}
+          <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4">
+            <h3 className="font-bold text-orange-900 mb-3 text-base">🔬 Anatomi Sendi Sinovial</h3>
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gray333.png/300px-Gray333.png"
+                alt="Sendi Sinovial"
+                loading="lazy"
+                className="max-h-[200px] object-contain rounded-xl bg-white shadow-sm"
+              />
+              <ul className="text-sm space-y-2 text-orange-900">
+                <li>🦴 <strong>Tulang</strong> — dua tulang yang bersendi</li>
+                <li>🟡 <strong>Kartilago</strong> — bantalan tulang rawan</li>
+                <li>💧 <strong>Cairan Sinovial</strong> — pelumas sendi</li>
+                <li>🎀 <strong>Ligamen</strong> — penghubung tulang dengan tulang</li>
+                <li>🔲 <strong>Kapsul Sendi</strong> — pembungkus sendi</li>
+              </ul>
+            </div>
           </div>
-          <p className="text-gray-700 text-center text-lg mb-6 bg-gray-50 p-4 rounded-xl">
-            Sendi adalah hubungan antara dua tulang atau lebih yang memungkinkan terjadinya gerakan.
-          </p>
-          <h3 className="font-bold text-xl text-[#355070] mb-4">Jenis Sendi</h3>
-          <div className="space-y-3">
-            {[
-              { n: "Sendi Engsel", d: "(siku, lutut) — gerak satu arah" },
-              { n: "Sendi Peluru", d: "(bahu, panggul) — gerak bebas ke segala arah" },
-              { n: "Sendi Putar", d: "(leher) — gerak memutar" },
-              { n: "Sendi Geser", d: "— gerak menggeser" },
-              { n: "Sendi Pelana", d: "— gerak dua arah" },
-            ].map((s, i) => (
-              <div key={i} className="flex gap-4 items-center bg-white border border-gray-100 shadow-sm p-4 rounded-xl">
-                <div className="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-lg">🔗</div>
-                <div>
-                  <span className="font-bold text-gray-800">{s.n}</span> <span className="text-gray-600">{s.d}</span>
+
+          {/* Joint types grid with images */}
+          <div>
+            <h3 className="font-bold text-[#355070] text-base mb-3">📌 Jenis-Jenis Sendi Berdasarkan Geraknya</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                {
+                  name: "Sendi Engsel",
+                  desc: "Gerak 1 arah (fleksi-ekstensi)",
+                  example: "Contoh: siku & lutut",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Gray329.png/200px-Gray329.png",
+                  color: "bg-blue-50 border-blue-100",
+                  badge: "bg-blue-200 text-blue-800",
+                },
+                {
+                  name: "Sendi Peluru",
+                  desc: "Gerak bebas ke segala arah",
+                  example: "Contoh: bahu & panggul",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Gray341.png/200px-Gray341.png",
+                  color: "bg-purple-50 border-purple-100",
+                  badge: "bg-purple-200 text-purple-800",
+                },
+                {
+                  name: "Sendi Putar",
+                  desc: "Gerak memutar pada sumbu",
+                  example: "Contoh: leher (atlas-axis)",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gray304.png/200px-Gray304.png",
+                  color: "bg-teal-50 border-teal-100",
+                  badge: "bg-teal-200 text-teal-800",
+                },
+                {
+                  name: "Sendi Pelana",
+                  desc: "Gerak dua arah (maju-mundur & kiri-kanan)",
+                  example: "Contoh: ibu jari tangan",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Gray326.png/200px-Gray326.png",
+                  color: "bg-rose-50 border-rose-100",
+                  badge: "bg-rose-200 text-rose-800",
+                },
+              ].map((s, i) => (
+                <div key={i} className={`${s.color} border rounded-2xl p-3 flex gap-3 items-start`}>
+                  <img
+                    src={s.img}
+                    alt={s.name}
+                    loading="lazy"
+                    className="w-20 h-20 object-contain rounded-lg bg-white shrink-0 shadow-sm"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <div>
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${s.badge}`}>{s.name}</span>
+                    <p className="text-sm font-medium text-gray-800 mt-1">{s.desc}</p>
+                    <p className="text-xs text-gray-500 mt-0.5 italic">{s.example}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Sendi Geser as extra */}
+          <div className="bg-gray-50 border border-gray-100 rounded-xl p-3 flex gap-3 items-center">
+            <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-lg shrink-0">🔗</div>
+            <div>
+              <span className="font-bold text-gray-800 text-sm">Sendi Geser</span>
+              <p className="text-xs text-gray-600">Gerak menggeser satu tulang di atas tulang lain. Contoh: tulang pergelangan tangan (karpal).</p>
+            </div>
+          </div>
+
           <NavigationButton text="Lanjut →" onClick={() => goToPage(9)} />
         </div>
       );
     case 9:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">💪 Otot dan Mekanisme Kerja Otot</h2>
-          <div className="flex justify-center mb-6">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Muscles_anterior_labeled.jpg/320px-Muscles_anterior_labeled.jpg" 
-              alt="Otot Manusia" 
-              loading="lazy" 
-              className="max-h-[300px] object-contain rounded-2xl shadow-sm bg-white"
-            />
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">💪 Otot dan Mekanisme Kerja Otot</h2>
+          <p className="text-center text-gray-600 mb-4">Otot adalah alat gerak <strong>aktif</strong> yang bekerja dengan cara berkontraksi (memendek) dan berelaksasi (memanjang).</p>
+
+          {/* Anterior + Posterior muscle views */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col items-center bg-red-50 rounded-2xl p-3 border border-red-100">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Muscles_anterior_labeled.jpg/200px-Muscles_anterior_labeled.jpg"
+                alt="Otot Anterior"
+                loading="lazy"
+                className="max-h-[220px] object-contain"
+              />
+              <p className="text-xs text-red-700 mt-2 font-semibold text-center">Tampak Depan (Anterior)</p>
+            </div>
+            <div className="flex flex-col items-center bg-rose-50 rounded-2xl p-3 border border-rose-100">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Muscles_posterior_labeled.jpg/200px-Muscles_posterior_labeled.jpg"
+                alt="Otot Posterior"
+                loading="lazy"
+                className="max-h-[220px] object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Muscles_anterior_labeled.jpg/200px-Muscles_anterior_labeled.jpg';
+                }}
+              />
+              <p className="text-xs text-rose-700 mt-2 font-semibold text-center">Tampak Belakang (Posterior)</p>
+            </div>
           </div>
-          <p className="text-gray-700 text-center text-lg mb-6 bg-red-50 p-4 rounded-xl text-red-900">
-            Otot merupakan alat gerak aktif yang dapat berkontraksi dan relaksasi.
-          </p>
-          <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-6 mb-6">
-            <h3 className="font-bold text-xl text-[#355070] mb-4 border-b pb-2">Jenis Otot</h3>
-            <ul className="space-y-3 text-gray-700">
-              <li><strong className="text-red-600">Otot Lurik</strong> — gerak sadar, melekat pada tulang</li>
-              <li><strong className="text-red-600">Otot Polos</strong> — gerak tidak sadar, pada organ dalam</li>
-              <li><strong className="text-red-600">Otot Jantung</strong> — gerak tidak sadar, khusus jantung</li>
-            </ul>
+
+          {/* Three muscle types with microscopy images */}
+          <div>
+            <h3 className="font-bold text-[#355070] text-base mb-3">🔬 Tiga Jenis Otot</h3>
+            <div className="space-y-3">
+              {[
+                {
+                  name: "Otot Lurik (Skelet)",
+                  desc: "Bekerja secara sadar (volunter). Melekat pada tulang rangka. Memiliki garis-garis melintang yang terlihat di mikroskop. Contoh: bisep, trisep, otot paha.",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Skeletal_muscle_-_longitudinal_section.jpg/220px-Skeletal_muscle_-_longitudinal_section.jpg",
+                  color: "bg-red-50 border-red-200",
+                  badge: "bg-red-500",
+                  label: "SADAR / VOLUNTER",
+                },
+                {
+                  name: "Otot Polos",
+                  desc: "Bekerja secara tidak sadar (involunter). Terdapat pada organ dalam: lambung, usus, pembuluh darah. Bentuk sel gelendong tanpa garis melintang.",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Smooth_muscle_2.jpg/220px-Smooth_muscle_2.jpg",
+                  color: "bg-purple-50 border-purple-200",
+                  badge: "bg-purple-500",
+                  label: "TIDAK SADAR / INVOLUNTER",
+                },
+                {
+                  name: "Otot Jantung",
+                  desc: "Bekerja secara tidak sadar, khusus pada jantung. Kontraksi ritmis & terus-menerus sepanjang hayat. Memiliki percabangan sel (sinsitium) yang unik.",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Illu_cardiac_muscle.jpg/220px-Illu_cardiac_muscle.jpg",
+                  color: "bg-orange-50 border-orange-200",
+                  badge: "bg-orange-500",
+                  label: "TIDAK SADAR / JANTUNG",
+                },
+              ].map((m, i) => (
+                <div key={i} className={`${m.color} border rounded-2xl p-3 flex gap-3 items-start`}>
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    loading="lazy"
+                    className="w-24 h-20 object-cover rounded-xl shrink-0 shadow-sm bg-white"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <span className="font-bold text-gray-800 text-sm">{m.name}</span>
+                      <span className={`text-white text-[10px] font-bold px-2 py-0.5 rounded-full ${m.badge}`}>{m.label}</span>
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed">{m.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="bg-teal-50 p-6 rounded-2xl">
-            <h3 className="font-bold text-lg text-teal-900 mb-2">Cara Kerja Otot</h3>
-            <p className="text-teal-800">
-              Gerak terjadi karena kontraksi dan relaksasi otot yang bekerja secara antagonis maupun sinergis.
-            </p>
+
+          {/* Antagonist pairs */}
+          <div className="bg-teal-50 border border-teal-100 rounded-2xl p-4">
+            <h3 className="font-bold text-teal-900 mb-3 text-base">⚡ Cara Kerja Otot: Antagonis & Sinergis</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-white rounded-xl p-3 border border-teal-100">
+                <p className="font-bold text-teal-800 text-sm mb-1">🔄 Antagonis</p>
+                <p className="text-xs text-gray-600">Dua otot bekerja berlawanan. Saat bisep kontraksi → trisep relaksasi (lengan membengkok), dan sebaliknya.</p>
+                <div className="flex gap-2 mt-2">
+                  <span className="bg-teal-100 text-teal-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Bisep</span>
+                  <span className="text-xs text-gray-400">vs</span>
+                  <span className="bg-teal-100 text-teal-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Trisep</span>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-3 border border-teal-100">
+                <p className="font-bold text-teal-800 text-sm mb-1">🤝 Sinergis</p>
+                <p className="text-xs text-gray-600">Beberapa otot bekerja bersama-sama untuk menghasilkan satu gerakan yang sama.</p>
+                <div className="flex gap-2 mt-2">
+                  <span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Fleksi</span>
+                  <span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Ekstensi</span>
+                </div>
+              </div>
+            </div>
           </div>
+
           <NavigationButton text="Lanjut →" onClick={() => goToPage(10)} />
         </div>
       );
