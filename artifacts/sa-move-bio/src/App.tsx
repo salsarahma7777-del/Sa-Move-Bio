@@ -470,7 +470,6 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">💪 Otot dan Mekanisme Kerja Otot</h2>
           <p className="text-center text-gray-600 mb-4">Otot adalah alat gerak <strong>aktif</strong> yang bekerja dengan cara berkontraksi (memendek) dan berelaksasi (memanjang).</p>
-
           {/* Anterior + Posterior muscle views */}
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col items-center bg-red-50 rounded-2xl p-3 border border-red-100">
@@ -490,11 +489,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               <p className="text-xs text-rose-700 mt-2 font-semibold text-center">Tampak Belakang (Posterior)</p>
             </div>
           </div>
-
           {/* Histology Plate: Three Muscle Types */}
           <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md">
             {/* Scientific plate header */}
-            <div className="bg-[#111827] px-4 py-2 flex items-center justify-between">
+            <div className="bg-[#111827] px-4 py-2 flex items-center justify-between border-t-[color:var(--color-rose-200)] border-r-[color:var(--color-rose-200)] border-b-[color:var(--color-rose-200)] border-l-[color:var(--color-rose-200)]">
               <span className="text-white font-mono text-[11px] font-bold tracking-widest">PERBANDINGAN HISTOLOGI JARINGAN OTOT — PEWARNAAN H&amp;E</span>
               <span className="text-gray-400 font-mono text-[9px]">400× · Biologi Medis</span>
             </div>
@@ -579,7 +577,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                   <text x="2" y="27" fontSize="5" fill="#1e1b4b" fontFamily="monospace">inti</text>
                   <text x="2" y="33" fontSize="5" fill="#1e1b4b" fontFamily="monospace">perifer</text>
                 </svg>
-                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed">
+                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed border-t-[color:var(--color-rose-200)] border-r-[color:var(--color-rose-200)] border-b-[color:var(--color-rose-200)] border-l-[color:var(--color-rose-200)]">
                   <strong className="text-[#fca5a5]">Otot Lurik</strong> — sel silindris panjang, inti di tepi (perifer), bergaris melintang jelas. <strong>Volunter</strong>; kontraksi cepat, mudah lelah. Lokasi: bisep, trisep, quadriceps.
                 </div>
               </div>
@@ -728,14 +726,13 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             </div>
 
             {/* Legend bar */}
-            <div className="bg-[#111827] px-4 py-1.5 flex items-center gap-6 border-t border-gray-700">
+            <div className="bg-[#111827] px-4 py-1.5 flex items-center gap-6 border-t border-gray-700 border-t-[color:var(--color-rose-200)] border-r-[color:var(--color-rose-200)] border-b-[color:var(--color-rose-200)] border-l-[color:var(--color-rose-200)]">
               <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#ef9090'}}/><span className="text-gray-300">Eosinofil — sitoplasma (warna Eosin)</span></span>
               <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#3730a3'}}/><span className="text-gray-300">Hematoksilin — inti sel</span></span>
               <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#7a3010'}}/><span className="text-gray-300">Diskus interkalasi</span></span>
               <span className="text-[8px] font-mono text-gray-500 ml-auto">Pewarnaan H&amp;E · SA.Move.Bio</span>
             </div>
           </div>
-
           {/* Antagonist & Synergist illustration */}
           <div className="bg-white border border-teal-100 rounded-3xl shadow-sm overflow-hidden">
             {/* Header */}
@@ -846,7 +843,6 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               <p className="text-[9px] text-gray-400 italic text-center">Anatomi otot manusia — Cara kerja otot antagonis &amp; sinergis · Biologi SMP/SMA</p>
             </div>
           </div>
-
           <NavigationButton text="Lanjut →" onClick={() => goToPage(10)} />
         </div>
       );
