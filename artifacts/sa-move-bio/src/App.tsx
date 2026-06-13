@@ -491,278 +491,248 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             </div>
           </div>
 
-          {/* Infographic: Three Muscle Types */}
-          <div className="bg-white border border-gray-100 rounded-3xl shadow-sm overflow-hidden">
-            {/* Infographic Header */}
-            <div className="bg-gradient-to-r from-[#355070] to-[#4a6fa5] px-4 py-3 flex items-center gap-2">
-              <span className="text-2xl">🔬</span>
-              <div>
-                <h3 className="font-black text-white text-base tracking-wide">ILUSTRASI ANATOMI: TIGA JENIS OTOT MANUSIA</h3>
-                <p className="text-blue-200 text-[10px] font-medium">Struktur Sel &amp; Jaringan Otot — Gaya Atlas Biologi Medis</p>
-              </div>
+          {/* Histology Plate: Three Muscle Types */}
+          <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md">
+            {/* Scientific plate header */}
+            <div className="bg-[#111827] px-4 py-2 flex items-center justify-between">
+              <span className="text-white font-mono text-[11px] font-bold tracking-widest">PERBANDINGAN HISTOLOGI JARINGAN OTOT — PEWARNAAN H&amp;E</span>
+              <span className="text-gray-400 font-mono text-[9px]">400× · Biologi Medis</span>
             </div>
 
             {/* === PANEL 1: OTOT LURIK === */}
-            <div className="border-b border-gray-100">
-              <div className="flex items-center gap-3 bg-rose-50 px-4 py-2 border-b border-rose-100">
-                <span className="text-lg">🦵</span>
-                <div className="flex-1">
-                  <span className="font-black text-rose-800 text-sm">Otot Lurik</span>
-                  <span className="text-rose-500 text-xs font-semibold ml-1">(Otot Skelet)</span>
+            {/* Three-panel histology grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+
+              {/* ===== PANEL 1: OTOT LURIK ===== */}
+              <div className="flex flex-col">
+                <div className="bg-[#1a0808] px-3 py-1.5 flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-[#fca5a5] font-bold tracking-widest uppercase">Otot Lurik</span>
+                  <span className="text-[8px] font-mono text-gray-500 ml-auto italic">Musculus skeletalis</span>
                 </div>
-                <span className="bg-rose-500 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-wide">SADAR / VOLUNTER</span>
+                <svg viewBox="0 0 200 180" width="100%" xmlns="http://www.w3.org/2000/svg">
+                  {/* slide glass — very pale eosinophilic wash */}
+                  <rect width="200" height="180" fill="#fce8e8"/>
+                  {/* connective tissue between fibers */}
+                  <rect x="0" y="0"   width="200" height="4"  fill="#f9d0d0"/>
+                  <rect x="0" y="36"  width="200" height="4"  fill="#f9d0d0"/>
+                  <rect x="0" y="72"  width="200" height="4"  fill="#f9d0d0"/>
+                  <rect x="0" y="108" width="200" height="4"  fill="#f9d0d0"/>
+                  <rect x="0" y="144" width="200" height="4"  fill="#f9d0d0"/>
+                  {/* FIBER 1 — eosinophilic cytoplasm */}
+                  <rect x="0" y="4"  width="200" height="32" fill="#ef9090"/>
+                  {/* A-bands dark, I-bands light — dense striations */}
+                  {[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90,96,102,108,114,120,126,132,138,144,150,156,162,168,174,180,186,192,198].map((x,i)=>(
+                    <rect key={i} x={x} y="4" width="3" height="32" fill="#c85050" opacity="0.45"/>
+                  ))}
+                  {/* light I-band lines */}
+                  {[3,9,15,21,27,33,39,45,51,57,63,69,75,81,87,93,99,105,111,117,123,129,135,141,147,153,159,165,171,177,183,189,195].map((x,i)=>(
+                    <rect key={i} x={x} y="4" width="3" height="32" fill="#fce8e8" opacity="0.35"/>
+                  ))}
+                  {/* peripheral nuclei fiber 1 */}
+                  <ellipse cx="22"  cy="6"  rx="11" ry="3" fill="#3730a3"/>
+                  <ellipse cx="100" cy="35" rx="11" ry="3" fill="#3730a3"/>
+                  <ellipse cx="178" cy="6"  rx="11" ry="3" fill="#3730a3"/>
+
+                  {/* FIBER 2 */}
+                  <rect x="0" y="40" width="200" height="32" fill="#f08080"/>
+                  {[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90,96,102,108,114,120,126,132,138,144,150,156,162,168,174,180,186,192,198].map((x,i)=>(
+                    <rect key={i} x={x} y="40" width="3" height="32" fill="#b84040" opacity="0.45"/>
+                  ))}
+                  {[3,9,15,21,27,33,39,45,51,57,63,69,75,81,87,93,99,105,111,117,123,129,135,141,147,153,159,165,171,177,183,189,195].map((x,i)=>(
+                    <rect key={i} x={x} y="40" width="3" height="32" fill="#fce8e8" opacity="0.35"/>
+                  ))}
+                  <ellipse cx="50"  cy="42" rx="11" ry="3" fill="#3730a3"/>
+                  <ellipse cx="155" cy="71" rx="11" ry="3" fill="#3730a3"/>
+
+                  {/* FIBER 3 */}
+                  <rect x="0" y="76" width="200" height="32" fill="#ef9090"/>
+                  {[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90,96,102,108,114,120,126,132,138,144,150,156,162,168,174,180,186,192,198].map((x,i)=>(
+                    <rect key={i} x={x} y="76" width="3" height="32" fill="#c85050" opacity="0.45"/>
+                  ))}
+                  {[3,9,15,21,27,33,39,45,51,57,63,69,75,81,87,93,99,105,111,117,123,129,135,141,147,153,159,165,171,177,183,189,195].map((x,i)=>(
+                    <rect key={i} x={x} y="76" width="3" height="32" fill="#fce8e8" opacity="0.35"/>
+                  ))}
+                  <ellipse cx="30"  cy="78" rx="11" ry="3" fill="#3730a3"/>
+                  <ellipse cx="130" cy="107" rx="11" ry="3" fill="#3730a3"/>
+
+                  {/* FIBER 4 */}
+                  <rect x="0" y="112" width="200" height="32" fill="#f08080"/>
+                  {[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90,96,102,108,114,120,126,132,138,144,150,156,162,168,174,180,186,192,198].map((x,i)=>(
+                    <rect key={i} x={x} y="112" width="3" height="32" fill="#b84040" opacity="0.45"/>
+                  ))}
+                  <ellipse cx="80"  cy="114" rx="11" ry="3" fill="#3730a3"/>
+                  <ellipse cx="170" cy="143" rx="11" ry="3" fill="#3730a3"/>
+
+                  {/* FIBER 5 */}
+                  <rect x="0" y="148" width="200" height="32" fill="#ef9090"/>
+                  {[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90,96,102,108,114,120,126,132,138,144,150,156,162,168,174,180,186,192,198].map((x,i)=>(
+                    <rect key={i} x={x} y="148" width="3" height="32" fill="#c85050" opacity="0.45"/>
+                  ))}
+                  <ellipse cx="45"  cy="150" rx="11" ry="3" fill="#3730a3"/>
+                  <ellipse cx="150" cy="179" rx="11" ry="3" fill="#3730a3"/>
+
+                  {/* callout line: striation */}
+                  <line x1="54" y1="4" x2="54" y2="175" stroke="#7f1d1d" strokeWidth="0.7" strokeDasharray="2,2" opacity="0.6"/>
+                  <text x="56" y="175" fontSize="5.5" fill="#7f1d1d" fontFamily="monospace">striasi</text>
+                  {/* callout: nucleus */}
+                  <line x1="22" y1="6" x2="4" y2="18" stroke="#1e1b4b" strokeWidth="0.7"/>
+                  <text x="2" y="27" fontSize="5" fill="#1e1b4b" fontFamily="monospace">inti</text>
+                  <text x="2" y="33" fontSize="5" fill="#1e1b4b" fontFamily="monospace">perifer</text>
+                </svg>
+                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed">
+                  <strong className="text-[#fca5a5]">Otot Lurik</strong> — sel silindris panjang, inti di tepi (perifer), bergaris melintang jelas. <strong>Volunter</strong>; kontraksi cepat, mudah lelah. Lokasi: bisep, trisep, quadriceps.
+                </div>
               </div>
-              <div className="flex gap-0">
-                {/* SVG illustration */}
-                <div className="bg-[#fff8f8] border-r border-rose-100 p-3 flex items-center justify-center" style={{minWidth: 200}}>
-                  <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
-                    {/* Background */}
-                    <rect width="200" height="160" fill="#fff8f8" rx="8"/>
-                    {/* Label: tampak penampang membujur */}
-                    <text x="100" y="12" textAnchor="middle" fontSize="7" fill="#9f1239" fontStyle="italic" fontFamily="serif">Penampang Membujur — Mikroskop Cahaya</text>
-                    {/* Fiber 1 */}
-                    <rect x="10" y="22" width="180" height="32" rx="5" fill="#fecdd3" stroke="#fb7185" strokeWidth="1.2"/>
-                    {/* striations fiber 1 */}
-                    {[24,34,44,54,64,74,84,94,104,114,124,134,144,154,164,174].map((x,i) => (
-                      <line key={i} x1={x} y1="22" x2={x} y2="54" stroke="#f43f5e" strokeWidth="0.7" opacity="0.5"/>
-                    ))}
-                    {/* Nuclei fiber 1 - peripheral */}
-                    <ellipse cx="30" cy="25" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    <ellipse cx="90" cy="52" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    <ellipse cx="155" cy="25" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    {/* Fiber 2 */}
-                    <rect x="10" y="60" width="180" height="32" rx="5" fill="#fda4af" stroke="#fb7185" strokeWidth="1.2"/>
-                    {[24,34,44,54,64,74,84,94,104,114,124,134,144,154,164,174].map((x,i) => (
-                      <line key={i} x1={x} y1="60" x2={x} y2="92" stroke="#f43f5e" strokeWidth="0.7" opacity="0.5"/>
-                    ))}
-                    <ellipse cx="60" cy="63" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    <ellipse cx="130" cy="89" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    {/* Fiber 3 */}
-                    <rect x="10" y="98" width="180" height="32" rx="5" fill="#fecdd3" stroke="#fb7185" strokeWidth="1.2"/>
-                    {[24,34,44,54,64,74,84,94,104,114,124,134,144,154,164,174].map((x,i) => (
-                      <line key={i} x1={x} y1="98" x2={x} y2="130" stroke="#f43f5e" strokeWidth="0.7" opacity="0.5"/>
-                    ))}
-                    <ellipse cx="45" cy="101" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    <ellipse cx="170" cy="127" rx="7" ry="3.5" fill="#be123c" opacity="0.75"/>
-                    {/* Callout: garis melintang */}
-                    <line x1="74" y1="38" x2="74" y2="148" stroke="#f43f5e" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    <text x="76" y="152" fontSize="6.5" fill="#be123c" fontWeight="bold" fontFamily="sans-serif">Garis melintang (lurik)</text>
-                    {/* Callout: inti sel */}
-                    <line x1="30" y1="25" x2="8" y2="15" stroke="#9f1239" strokeWidth="0.8"/>
-                    <text x="2" y="12" fontSize="6" fill="#9f1239" fontFamily="sans-serif" fontWeight="bold">Inti (perifer)</text>
-                  </svg>
+
+              {/* ===== PANEL 2: OTOT POLOS ===== */}
+              <div className="flex flex-col">
+                <div className="bg-[#0d0818] px-3 py-1.5 flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-[#c4b5fd] font-bold tracking-widest uppercase">Otot Polos</span>
+                  <span className="text-[8px] font-mono text-gray-500 ml-auto italic">Musculus levis</span>
                 </div>
-                {/* Description panel */}
-                <div className="flex-1 p-4 flex flex-col justify-between bg-white">
-                  <div>
-                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
-                      Bekerja secara <strong className="text-rose-700">sadar (volunter)</strong> — dikontrol oleh sistem saraf somatik. Melekat pada tulang rangka melalui tendon, menggerakkan tubuh sesuai kehendak.
-                    </p>
-                    <div className="space-y-1.5">
-                      {[
-                        ["Bentuk sel", "Silindris panjang (100–300 µm), berinti banyak di tepi sel"],
-                        ["Pola", "Ada garis melintang gelap-terang (pita A dan pita I)"],
-                        ["Kecepatan", "Kontraksi cepat, namun mudah lelah"],
-                        ["Stimulasi", "Sinyal dari otak melalui saraf motorik"],
-                      ].map(([k, v], i) => (
-                        <div key={i} className="flex gap-2 items-baseline">
-                          <span className="text-[9px] font-black text-rose-600 shrink-0 w-16">{k}</span>
-                          <span className="text-[10px] text-gray-600 leading-snug">{v}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-rose-50">
-                    <p className="text-[9px] font-bold text-rose-700 mb-1.5">Contoh lokasi:</p>
-                    <div className="flex flex-wrap gap-1">
-                      {["Bisep", "Trisep", "Otot paha (quadriceps)", "Deltoid", "Gastroknemius"].map(ex => (
-                        <span key={ex} className="bg-rose-100 text-rose-800 text-[9px] font-semibold px-2 py-0.5 rounded-full">{ex}</span>
-                      ))}
-                    </div>
-                  </div>
+                <svg viewBox="0 0 200 180" width="100%" xmlns="http://www.w3.org/2000/svg">
+                  {/* slide background — palest pink wash */}
+                  <rect width="200" height="180" fill="#f8f0fc"/>
+                  {/* stromal background wash */}
+                  <rect width="200" height="180" fill="#e9d5f5" opacity="0.25"/>
+
+                  {/* Longitudinal view — spindle cells packed together */}
+                  {/* Row 1: three elongated fusiform cells */}
+                  <ellipse cx="32"  cy="22" rx="30" ry="12" fill="#ddd6fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="32"  cy="22" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="100" cy="16" rx="30" ry="12" fill="#c4b5fd" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="100" cy="16" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="168" cy="24" rx="30" ry="12" fill="#ddd6fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="168" cy="24" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+
+                  {/* Row 2 offset */}
+                  <ellipse cx="60"  cy="50" rx="30" ry="12" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="0.5"/>
+                  <ellipse cx="60"  cy="50" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="140" cy="44" rx="30" ry="12" fill="#ddd6fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="140" cy="44" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+
+                  {/* Row 3 */}
+                  <ellipse cx="28"  cy="76" rx="30" ry="12" fill="#c4b5fd" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="28"  cy="76" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="100" cy="70" rx="30" ry="12" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="0.5"/>
+                  <ellipse cx="100" cy="70" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="172" cy="78" rx="30" ry="12" fill="#ede9fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="172" cy="78" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+
+                  {/* Row 4 */}
+                  <ellipse cx="55"  cy="104" rx="30" ry="12" fill="#ddd6fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="55"  cy="104" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="148" cy="98"  rx="30" ry="12" fill="#c4b5fd" stroke="#8b5cf6" strokeWidth="0.5"/>
+                  <ellipse cx="148" cy="98"  rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+
+                  {/* Row 5 */}
+                  <ellipse cx="32"  cy="130" rx="30" ry="12" fill="#ede9fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="32"  cy="130" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="110" cy="124" rx="30" ry="12" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="0.5"/>
+                  <ellipse cx="110" cy="124" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="175" cy="132" rx="20" ry="12" fill="#c4b5fd" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="175" cy="132" rx="7"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+
+                  {/* Row 6 */}
+                  <ellipse cx="68"  cy="158" rx="30" ry="12" fill="#ddd6fe" stroke="#7c3aed" strokeWidth="0.5"/>
+                  <ellipse cx="68"  cy="158" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+                  <ellipse cx="155" cy="162" rx="30" ry="12" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="0.5"/>
+                  <ellipse cx="155" cy="162" rx="8"  ry="4.5" fill="#4c1d95" opacity="0.8"/>
+
+                  {/* callout: nucleus central */}
+                  <line x1="32" y1="18" x2="6" y2="8" stroke="#2e1065" strokeWidth="0.7"/>
+                  <text x="2" y="7"  fontSize="5" fill="#2e1065" fontFamily="monospace">inti</text>
+                  <text x="2" y="13" fontSize="5" fill="#2e1065" fontFamily="monospace">sentral</text>
+                  {/* callout: cell shape */}
+                  <line x1="100" y1="28" x2="150" y2="170" stroke="#5b21b6" strokeWidth="0.6" strokeDasharray="2,2"/>
+                  <text x="108" y="170" fontSize="5" fill="#5b21b6" fontFamily="monospace">gelendong</text>
+                  <text x="108" y="176" fontSize="5" fill="#5b21b6" fontFamily="monospace">(fusiform)</text>
+                </svg>
+                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed">
+                  <strong className="text-[#c4b5fd]">Otot Polos</strong> — sel gelendong (fusiform), inti di tengah, <strong>tidak bergaris melintang</strong>. <strong>Involunter</strong>; kontraksi lambat, tahan lama. Lokasi: lambung, usus, pembuluh darah.
+                </div>
+              </div>
+
+              {/* ===== PANEL 3: OTOT JANTUNG ===== */}
+              <div className="flex flex-col">
+                <div className="bg-[#1a0a00] px-3 py-1.5 flex items-center gap-2">
+                  <span className="text-[10px] font-mono text-[#fcd34d] font-bold tracking-widest uppercase">Otot Jantung</span>
+                  <span className="text-[8px] font-mono text-gray-500 ml-auto italic">Myocardium</span>
+                </div>
+                <svg viewBox="0 0 200 180" width="100%" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="200" height="180" fill="#fef3e2"/>
+                  {/* stroma wash */}
+                  <rect width="200" height="180" fill="#fde68a" opacity="0.12"/>
+
+                  {/* === MAIN BRANCHING NETWORK === */}
+                  {/* Primary horizontal fiber A — thick band */}
+                  <path d="M0,52 Q30,48 55,52 L145,52 Q170,48 200,52" stroke="#e29050" strokeWidth="22" fill="none" strokeLinecap="butt" opacity="0.85"/>
+                  <path d="M0,52 Q30,48 55,52 L145,52 Q170,48 200,52" stroke="#f4b870" strokeWidth="18" fill="none" strokeLinecap="butt" opacity="0.7"/>
+                  {/* striations on fiber A */}
+                  {[8,20,32,44,56,68,80,92,104,116,128,140,152,164,176,188].map((x,i)=>(
+                    <line key={i} x1={x} y1="41" x2={x} y2="63" stroke="#a05020" strokeWidth="1" opacity="0.55"/>
+                  ))}
+                  {/* intercalated discs on A — thicker darker lines */}
+                  <line x1="72"  y1="41" x2="72"  y2="63" stroke="#7a3010" strokeWidth="2.5" opacity="0.85"/>
+                  <line x1="130" y1="41" x2="130" y2="63" stroke="#7a3010" strokeWidth="2.5" opacity="0.85"/>
+
+                  {/* Branch upward from fiber A at x=85 */}
+                  <path d="M85,41 Q88,22 100,14 Q112,8 130,12" stroke="#e29050" strokeWidth="18" fill="none" strokeLinecap="butt" opacity="0.8"/>
+                  <path d="M85,41 Q88,22 100,14 Q112,8 130,12" stroke="#f4b870" strokeWidth="14" fill="none" strokeLinecap="butt" opacity="0.65"/>
+                  {[0.2,0.45,0.7,0.88].map((t,i)=>{
+                    const bx = 85+t*(130-85); const by = 41+t*(12-41) - Math.sin(t*Math.PI)*6;
+                    return <line key={i} x1={bx-5} y1={by-5} x2={bx+5} y2={by+5} stroke="#a05020" strokeWidth="1" opacity="0.55"/>;
+                  })}
+                  {/* intercalated disc branch up */}
+                  <line x1="107" y1="18" x2="116" y2="8" stroke="#7a3010" strokeWidth="2.5" opacity="0.85" transform="rotate(35,107,18)"/>
+
+                  {/* Branch downward from fiber A at x=148 */}
+                  <path d="M148,63 Q150,85 145,105 Q140,118 150,128" stroke="#e29050" strokeWidth="18" fill="none" strokeLinecap="butt" opacity="0.8"/>
+                  <path d="M148,63 Q150,85 145,105 Q140,118 150,128" stroke="#f4b870" strokeWidth="14" fill="none" strokeLinecap="butt" opacity="0.65"/>
+                  {[0.25,0.55,0.8].map((t,i)=>{
+                    const bx = 148+t*(150-148); const by = 63+t*(128-63);
+                    return <line key={i} x1={bx-6} y1={by} x2={bx+6} y2={by} stroke="#a05020" strokeWidth="1" opacity="0.55"/>;
+                  })}
+                  <line x1="144" y1="110" x2="152" y2="110" stroke="#7a3010" strokeWidth="2.5" opacity="0.85"/>
+
+                  {/* Primary horizontal fiber B */}
+                  <path d="M0,140 Q35,136 70,140 L140,143 Q170,147 200,140" stroke="#e29050" strokeWidth="20" fill="none" strokeLinecap="butt" opacity="0.8"/>
+                  <path d="M0,140 Q35,136 70,140 L140,143 Q170,147 200,140" stroke="#f4b870" strokeWidth="16" fill="none" strokeLinecap="butt" opacity="0.65"/>
+                  {[8,20,32,44,56,68,80,92,104,116,128,140,152,164,176,188].map((x,i)=>(
+                    <line key={i} x1={x} y1="130" x2={x} y2="152" stroke="#a05020" strokeWidth="1" opacity="0.5"/>
+                  ))}
+                  <line x1="55"  y1="130" x2="55"  y2="152" stroke="#7a3010" strokeWidth="2.5" opacity="0.85"/>
+                  <line x1="118" y1="130" x2="118" y2="152" stroke="#7a3010" strokeWidth="2.5" opacity="0.85"/>
+
+                  {/* Nuclei — central oval, hematoxylin purple */}
+                  <ellipse cx="42"  cy="52"  rx="12" ry="5"   fill="#44209a" opacity="0.85"/>
+                  <ellipse cx="162" cy="52"  rx="12" ry="5"   fill="#44209a" opacity="0.85"/>
+                  <ellipse cx="112" cy="14"  rx="10" ry="4.5" fill="#44209a" opacity="0.85"/>
+                  <ellipse cx="148" cy="95"  rx="10" ry="4.5" fill="#44209a" opacity="0.85"/>
+                  <ellipse cx="40"  cy="140" rx="12" ry="5"   fill="#44209a" opacity="0.85"/>
+                  <ellipse cx="160" cy="143" rx="12" ry="5"   fill="#44209a" opacity="0.85"/>
+
+                  {/* Callouts */}
+                  <line x1="72" y1="52" x2="20" y2="172" stroke="#7a3010" strokeWidth="0.7" strokeDasharray="2,2" opacity="0.7"/>
+                  <text x="2"  y="173" fontSize="5"   fill="#7a3010" fontFamily="monospace">diskus</text>
+                  <text x="2"  y="179" fontSize="5"   fill="#7a3010" fontFamily="monospace">interkalasi</text>
+                  <line x1="85" y1="35" x2="4" y2="14" stroke="#92400e" strokeWidth="0.7"/>
+                  <text x="2"  y="12"  fontSize="5"   fill="#92400e" fontFamily="monospace">percabangan</text>
+                  <line x1="42" y1="47" x2="180" y2="12" stroke="#1e1b4b" strokeWidth="0.6"/>
+                  <text x="144" y="10" fontSize="5" fill="#1e1b4b" fontFamily="monospace">inti sentral</text>
+                </svg>
+                <div className="bg-[#111827] px-3 py-2 text-[9px] font-mono text-gray-300 leading-relaxed">
+                  <strong className="text-[#fcd34d]">Otot Jantung</strong> — sel bercabang, inti di tengah, bergaris melintang, terdapat <strong>diskus interkalasi</strong>. <strong>Involunter-ritmis</strong>; tidak pernah lelah. Lokasi: miokardium (dinding jantung).
                 </div>
               </div>
             </div>
 
-            {/* === PANEL 2: OTOT POLOS === */}
-            <div className="border-b border-gray-100">
-              <div className="flex items-center gap-3 bg-violet-50 px-4 py-2 border-b border-violet-100">
-                <span className="text-lg">🫁</span>
-                <div className="flex-1">
-                  <span className="font-black text-violet-800 text-sm">Otot Polos</span>
-                  <span className="text-violet-500 text-xs font-semibold ml-1">(Otot Visceral)</span>
-                </div>
-                <span className="bg-violet-500 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-wide">TIDAK SADAR / INVOLUNTER</span>
-              </div>
-              <div className="flex gap-0">
-                {/* SVG illustration */}
-                <div className="bg-[#faf8ff] border-r border-violet-100 p-3 flex items-center justify-center" style={{minWidth: 200}}>
-                  <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="160" fill="#faf8ff" rx="8"/>
-                    <text x="100" y="12" textAnchor="middle" fontSize="7" fill="#5b21b6" fontStyle="italic" fontFamily="serif">Penampang Membujur — Sel Gelendong</text>
-                    {/* Smooth muscle cells - spindle shaped, arranged in staggered rows */}
-                    {/* Row 1 */}
-                    <ellipse cx="35" cy="38" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="35" cy="38" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    <ellipse cx="100" cy="32" rx="28" ry="11" fill="#c4b5fd" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="100" cy="32" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    <ellipse cx="165" cy="40" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="165" cy="40" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    {/* Row 2 - offset */}
-                    <ellipse cx="60" cy="65" rx="28" ry="11" fill="#ede9fe" stroke="#a78bfa" strokeWidth="1"/>
-                    <ellipse cx="60" cy="65" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    <ellipse cx="130" cy="60" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="130" cy="60" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    {/* Row 3 */}
-                    <ellipse cx="35" cy="90" rx="28" ry="11" fill="#c4b5fd" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="35" cy="90" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    <ellipse cx="100" cy="95" rx="28" ry="11" fill="#ddd6fe" stroke="#a78bfa" strokeWidth="1"/>
-                    <ellipse cx="100" cy="95" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    <ellipse cx="165" cy="88" rx="28" ry="11" fill="#ede9fe" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="165" cy="88" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    {/* Row 4 */}
-                    <ellipse cx="60" cy="118" rx="28" ry="11" fill="#ddd6fe" stroke="#8b5cf6" strokeWidth="1"/>
-                    <ellipse cx="60" cy="118" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    <ellipse cx="140" cy="122" rx="28" ry="11" fill="#c4b5fd" stroke="#a78bfa" strokeWidth="1"/>
-                    <ellipse cx="140" cy="122" rx="7" ry="4" fill="#7c3aed" opacity="0.6"/>
-                    {/* Callouts */}
-                    <line x1="35" y1="34" x2="8" y2="14" stroke="#7c3aed" strokeWidth="0.8"/>
-                    <text x="2" y="12" fontSize="6" fill="#5b21b6" fontWeight="bold" fontFamily="sans-serif">Inti (tengah)</text>
-                    <line x1="130" y1="56" x2="160" y2="145" stroke="#7c3aed" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    <text x="105" y="153" fontSize="6.5" fill="#5b21b6" fontWeight="bold" fontFamily="sans-serif">Bentuk gelendong (fusiform)</text>
-                    <text x="105" y="161" fontSize="6" fill="#6d28d9" fontFamily="sans-serif">Tidak ada garis melintang</text>
-                  </svg>
-                </div>
-                {/* Description panel */}
-                <div className="flex-1 p-4 flex flex-col justify-between bg-white">
-                  <div>
-                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
-                      Bekerja secara <strong className="text-violet-700">tidak sadar (involunter)</strong> — dikontrol oleh sistem saraf otonom. Ditemukan di dinding organ dalam, mengatur pergerakan internal tubuh tanpa disadari.
-                    </p>
-                    <div className="space-y-1.5">
-                      {[
-                        ["Bentuk sel", "Gelendong (fusiform), runcing di kedua ujung, berinti satu di tengah"],
-                        ["Pola", "Tidak ada garis melintang — permukaan polos dan halus"],
-                        ["Kecepatan", "Kontraksi lambat, tahan lama, tidak mudah lelah"],
-                        ["Stimulasi", "Sistem saraf otonom, hormon, rangsang lokal"],
-                      ].map(([k, v], i) => (
-                        <div key={i} className="flex gap-2 items-baseline">
-                          <span className="text-[9px] font-black text-violet-600 shrink-0 w-16">{k}</span>
-                          <span className="text-[10px] text-gray-600 leading-snug">{v}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-violet-50">
-                    <p className="text-[9px] font-bold text-violet-700 mb-1.5">Contoh lokasi:</p>
-                    <div className="flex flex-wrap gap-1">
-                      {["Lambung", "Usus halus", "Usus besar", "Pembuluh darah", "Kandung kemih", "Rahim"].map(ex => (
-                        <span key={ex} className="bg-violet-100 text-violet-800 text-[9px] font-semibold px-2 py-0.5 rounded-full">{ex}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* === PANEL 3: OTOT JANTUNG === */}
-            <div>
-              <div className="flex items-center gap-3 bg-amber-50 px-4 py-2 border-b border-amber-100">
-                <span className="text-lg">❤️</span>
-                <div className="flex-1">
-                  <span className="font-black text-amber-800 text-sm">Otot Jantung</span>
-                  <span className="text-amber-500 text-xs font-semibold ml-1">(Otot Kardiak)</span>
-                </div>
-                <span className="bg-amber-500 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-wide">TIDAK SADAR / JANTUNG</span>
-              </div>
-              <div className="flex gap-0">
-                {/* SVG illustration */}
-                <div className="bg-[#fffbeb] border-r border-amber-100 p-3 flex items-center justify-center" style={{minWidth: 200}}>
-                  <svg viewBox="0 0 200 160" width="200" height="160" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="160" fill="#fffbeb" rx="8"/>
-                    <text x="100" y="12" textAnchor="middle" fontSize="7" fill="#92400e" fontStyle="italic" fontFamily="serif">Jaringan Otot Jantung — Sinsitium Fungsional</text>
-                    {/* Cardiac muscle - branched network */}
-                    {/* Main horizontal fiber */}
-                    <path d="M10,55 Q40,50 60,55 L120,55 Q150,50 190,55" stroke="#f59e0b" strokeWidth="14" fill="none" strokeLinecap="round" opacity="0.35"/>
-                    <path d="M10,55 Q40,50 60,55 L120,55 Q150,50 190,55" stroke="#fcd34d" strokeWidth="12" fill="none" strokeLinecap="round" opacity="0.5"/>
-                    <path d="M10,55 Q40,50 60,55 L120,55 Q150,50 190,55" stroke="#fde68a" strokeWidth="10" fill="none" strokeLinecap="round"/>
-                    {/* striations on fiber 1 */}
-                    {[25,40,55,70,85,100,115,130,145,160,175].map((x,i) => (
-                      <line key={i} x1={x} y1="49" x2={x} y2="61" stroke="#d97706" strokeWidth="0.8" opacity="0.6"/>
-                    ))}
-                    {/* Branch from top */}
-                    <path d="M80,55 Q85,35 95,25 Q105,18 120,22" stroke="#fcd34d" strokeWidth="10" fill="none" strokeLinecap="round" opacity="0.5"/>
-                    <path d="M80,55 Q85,35 95,25 Q105,18 120,22" stroke="#fde68a" strokeWidth="8" fill="none" strokeLinecap="round"/>
-                    {[0.2,0.45,0.7,0.9].map((t,i) => {
-                      const x = 80 + t*(120-80);
-                      const y = 55 + t*(22-55) - Math.sin(t*Math.PI)*8;
-                      return <line key={i} x1={x-4} y1={y-4} x2={x+4} y2={y+4} stroke="#d97706" strokeWidth="0.8" opacity="0.6"/>;
-                    })}
-                    {/* Branch downward */}
-                    <path d="M130,55 Q135,75 130,95 Q125,110 135,120" stroke="#fcd34d" strokeWidth="10" fill="none" strokeLinecap="round" opacity="0.5"/>
-                    <path d="M130,55 Q135,75 130,95 Q125,110 135,120" stroke="#fde68a" strokeWidth="8" fill="none" strokeLinecap="round"/>
-                    {/* Second horizontal fiber */}
-                    <path d="M10,105 Q50,100 80,105 L140,108 Q165,112 190,105" stroke="#fcd34d" strokeWidth="10" fill="none" strokeLinecap="round" opacity="0.5"/>
-                    <path d="M10,105 Q50,100 80,105 L140,108 Q165,112 190,105" stroke="#fde68a" strokeWidth="8" fill="none" strokeLinecap="round"/>
-                    {[25,40,55,70,85,100,115,130,145,160,175].map((x,i) => (
-                      <line key={i} x1={x} y1="100" x2={x} y2="112" stroke="#d97706" strokeWidth="0.8" opacity="0.6"/>
-                    ))}
-                    {/* Nuclei - central */}
-                    <ellipse cx="50" cy="55" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
-                    <ellipse cx="155" cy="55" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
-                    <ellipse cx="105" cy="30" rx="7" ry="3.5" fill="#b45309" opacity="0.7"/>
-                    <ellipse cx="130" cy="90" rx="7" ry="3.5" fill="#b45309" opacity="0.7"/>
-                    <ellipse cx="60" cy="105" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
-                    <ellipse cx="160" cy="105" rx="8" ry="4" fill="#b45309" opacity="0.7"/>
-                    {/* Intercalated discs */}
-                    <line x1="90" y1="49" x2="90" y2="61" stroke="#92400e" strokeWidth="2.5" opacity="0.9"/>
-                    <line x1="160" y1="49" x2="160" y2="61" stroke="#92400e" strokeWidth="2.5" opacity="0.9"/>
-                    <line x1="95" y1="100" x2="95" y2="112" stroke="#92400e" strokeWidth="2.5" opacity="0.9"/>
-                    {/* Callout: diskus interkalasi */}
-                    <line x1="90" y1="55" x2="65" y2="140" stroke="#92400e" strokeWidth="0.8" strokeDasharray="2,2"/>
-                    <text x="4" y="143" fontSize="6.5" fill="#92400e" fontWeight="bold" fontFamily="sans-serif">Diskus interkalasi</text>
-                    <text x="4" y="150" fontSize="6" fill="#92400e" fontFamily="sans-serif">(persambungan sel)</text>
-                    {/* Callout: percabangan */}
-                    <line x1="80" y1="40" x2="20" y2="15" stroke="#b45309" strokeWidth="0.8"/>
-                    <text x="2" y="12" fontSize="6" fill="#92400e" fontWeight="bold" fontFamily="sans-serif">Percabangan</text>
-                  </svg>
-                </div>
-                {/* Description panel */}
-                <div className="flex-1 p-4 flex flex-col justify-between bg-white">
-                  <div>
-                    <p className="text-xs text-gray-700 leading-relaxed mb-3">
-                      Bekerja secara <strong className="text-amber-700">tidak sadar, ritmis, dan terus-menerus</strong> sepanjang hayat — dikendalikan oleh nodus SA (pacu jantung alami). Memiliki struktur unik berupa percabangan sel yang membentuk jaringan sinsitium.
-                    </p>
-                    <div className="space-y-1.5">
-                      {[
-                        ["Bentuk sel", "Silindris bercabang, berinti 1–2 di tengah (sinsitium)"],
-                        ["Pola", "Ada garis lurik + diskus interkalasi di antara sel"],
-                        ["Kecepatan", "Kontraksi ritmis, tidak pernah lelah selama hidup"],
-                        ["Stimulasi", "Nodus SA/AV, sistem konduksi jantung, saraf otonom"],
-                      ].map(([k, v], i) => (
-                        <div key={i} className="flex gap-2 items-baseline">
-                          <span className="text-[9px] font-black text-amber-600 shrink-0 w-16">{k}</span>
-                          <span className="text-[10px] text-gray-600 leading-snug">{v}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-amber-50">
-                    <p className="text-[9px] font-bold text-amber-700 mb-1.5">Contoh lokasi:</p>
-                    <div className="flex flex-wrap gap-1">
-                      {["Miokardium", "Dinding Atrium", "Dinding Ventrikel", "Septum jantung"].map(ex => (
-                        <span key={ex} className="bg-amber-100 text-amber-800 text-[9px] font-semibold px-2 py-0.5 rounded-full">{ex}</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Footer */}
-            <div className="bg-gray-50 border-t border-gray-100 px-4 py-2 flex items-center gap-2">
-              <span className="text-[9px] text-gray-400 italic flex-1">Ilustrasi anatomi sel otot — Biologi SMP/SMA · Sumber: Atlas Histologi &amp; Sobotta</span>
-              <span className="text-[9px] text-gray-400">© SA.Move.Bio</span>
+            {/* Legend bar */}
+            <div className="bg-[#111827] px-4 py-1.5 flex items-center gap-6 border-t border-gray-700">
+              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#ef9090'}}/><span className="text-gray-300">Eosinofil — sitoplasma (warna Eosin)</span></span>
+              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#3730a3'}}/><span className="text-gray-300">Hematoksilin — inti sel</span></span>
+              <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#7a3010'}}/><span className="text-gray-300">Diskus interkalasi</span></span>
+              <span className="text-[8px] font-mono text-gray-500 ml-auto">Pewarnaan H&amp;E · SA.Move.Bio</span>
             </div>
           </div>
 
