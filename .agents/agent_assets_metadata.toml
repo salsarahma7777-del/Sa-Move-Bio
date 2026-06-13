@@ -24,3 +24,9 @@ id = "R2xFMgUWuJjuzQwWPVkZA"
 uri = "file://artifacts/sa-move-bio/public/bone-types.png"
 type = "image"
 title = "four types of human bones labeled Indonesian"
+
+[[generated]]
+id = "c7aC4f4aFsoIuUG7Ssl57"
+uri = "file://artifacts/sa-move-bio/public/synovial-joint.png"
+type = "image"
+title = "synovial joint cross section Indonesian labeled"

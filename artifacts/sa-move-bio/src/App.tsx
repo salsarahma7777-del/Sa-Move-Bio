@@ -298,10 +298,9 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
             <h3 className="font-bold text-orange-900 mb-3 text-base">🔬 Anatomi Sendi Sinovial</h3>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gray333.png/300px-Gray333.png"
-                alt="Sendi Sinovial"
-                loading="lazy"
-                className="max-h-[200px] object-contain rounded-xl bg-white shadow-sm"
+                src="/synovial-joint.png"
+                alt="Anatomi Sendi Sinovial — Tulang, Kartilago, Cairan Sinovial, Ligamen, Kapsul Sendi"
+                className="max-h-[240px] object-contain rounded-xl bg-white shadow-sm"
               />
               <ul className="text-sm space-y-2 text-orange-900">
                 <li>🦴 <strong>Tulang</strong> — dua tulang yang bersendi</li>
