@@ -172,39 +172,104 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
     case 7:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🦴 Tulang dan Fungsinya</h2>
-          <div className="flex justify-center mb-6">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/9/91/Human_skeleton_front_en.svg" 
-              alt="Kerangka Manusia" 
-              loading="lazy" 
-              className="max-h-[300px] object-contain rounded-2xl shadow-sm bg-gray-50"
-            />
-          </div>
-          <p className="text-gray-700 text-center text-lg mb-6">
-            Tulang merupakan alat gerak pasif yang membentuk rangka tubuh manusia.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">🦴 Tulang dan Fungsinya</h2>
+          <p className="text-center text-gray-600 mb-4">Tulang merupakan alat gerak <strong>pasif</strong> yang menyusun rangka tubuh manusia. Manusia dewasa memiliki ±206 tulang.</p>
+
+          {/* Skeleton + fungsi side by side */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+            <div className="flex flex-col items-center bg-blue-50 rounded-2xl p-4 border border-blue-100">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/91/Human_skeleton_front_en.svg"
+                alt="Kerangka Manusia"
+                loading="lazy"
+                className="max-h-[260px] object-contain"
+              />
+              <p className="text-xs text-blue-700 mt-2 font-medium text-center">Rangka Tubuh Manusia</p>
+            </div>
             <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100">
-              <h3 className="font-bold text-blue-900 mb-3 text-lg border-b border-blue-200 pb-2">Fungsi Tulang</h3>
-              <ul className="list-disc pl-5 space-y-1 text-blue-800">
-                <li>Menegakkan tubuh</li>
-                <li>Melindungi organ vital</li>
-                <li>Tempat melekatnya otot</li>
-                <li>Pembentukan sel darah</li>
-                <li>Penyimpanan mineral</li>
-              </ul>
-            </div>
-            <div className="bg-purple-50 p-5 rounded-2xl border border-purple-100">
-              <h3 className="font-bold text-purple-900 mb-3 text-lg border-b border-purple-200 pb-2">Jenis Tulang</h3>
-              <ul className="list-disc pl-5 space-y-1 text-purple-800">
-                <li>Tulang pipa</li>
-                <li>Tulang pipih</li>
-                <li>Tulang pendek</li>
-                <li>Tulang tidak beraturan</li>
+              <h3 className="font-bold text-blue-900 mb-3 text-base border-b border-blue-200 pb-2">⚙️ Fungsi Tulang</h3>
+              <ul className="space-y-2 text-blue-800 text-sm">
+                {[
+                  ["🏗️","Menegakkan dan membentuk tubuh"],
+                  ["🛡️","Melindungi organ vital (jantung, paru-paru, otak)"],
+                  ["💪","Tempat melekatnya otot"],
+                  ["🔴","Pembentukan sel darah merah & putih"],
+                  ["🧂","Penyimpanan mineral (Ca & P)"],
+                ].map(([icon, text], i) => (
+                  <li key={i} className="flex items-start gap-2"><span>{icon}</span><span>{text as string}</span></li>
+                ))}
               </ul>
             </div>
           </div>
+
+          {/* Bone structure */}
+          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4">
+            <h3 className="font-bold text-amber-900 mb-3 text-base">🔬 Struktur Tulang (Penampang)</h3>
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Illu_compact_spongy_bone.jpg/320px-Illu_compact_spongy_bone.jpg"
+                alt="Struktur Tulang Kompak dan Spons"
+                loading="lazy"
+                className="max-h-[180px] object-contain rounded-xl bg-white shadow-sm"
+              />
+              <ul className="text-sm space-y-2 text-amber-900">
+                <li><strong>Periosteum</strong> — lapisan terluar pelindung tulang</li>
+                <li><strong>Tulang Kompak</strong> — lapisan keras & padat di bagian luar</li>
+                <li><strong>Tulang Spons</strong> — bagian dalam, ringan & berongga</li>
+                <li><strong>Sumsum Tulang</strong> — penghasil sel darah</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bone types gallery */}
+          <div>
+            <h3 className="font-bold text-[#355070] text-base mb-3">📐 Jenis-Jenis Tulang</h3>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                {
+                  name: "Tulang Pipa",
+                  desc: "Panjang, berongga. Contoh: femur, humerus",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Femur_anterior.png/80px-Femur_anterior.png",
+                  color: "bg-purple-50 border-purple-100",
+                  textColor: "text-purple-900",
+                },
+                {
+                  name: "Tulang Pipih",
+                  desc: "Tipis & lebar. Contoh: tulang tengkorak, belikat",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Parietal_bone.png/100px-Parietal_bone.png",
+                  color: "bg-teal-50 border-teal-100",
+                  textColor: "text-teal-900",
+                },
+                {
+                  name: "Tulang Pendek",
+                  desc: "Kecil & kubus. Contoh: tulang pergelangan tangan & kaki",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Carpus_and_tarsus.jpg/100px-Carpus_and_tarsus.jpg",
+                  color: "bg-orange-50 border-orange-100",
+                  textColor: "text-orange-900",
+                },
+                {
+                  name: "Tulang Tidak Beraturan",
+                  desc: "Bentuk kompleks. Contoh: ruas tulang belakang",
+                  img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Fourth_cervical_vertebra.png/100px-Fourth_cervical_vertebra.png",
+                  color: "bg-rose-50 border-rose-100",
+                  textColor: "text-rose-900",
+                },
+              ].map((bone, i) => (
+                <div key={i} className={`${bone.color} border rounded-2xl p-3 flex flex-col items-center text-center gap-2`}>
+                  <img
+                    src={bone.img}
+                    alt={bone.name}
+                    loading="lazy"
+                    className="h-16 object-contain"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <p className={`font-bold text-sm ${bone.textColor}`}>{bone.name}</p>
+                  <p className="text-xs text-gray-600">{bone.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <NavigationButton text="Lanjut →" onClick={() => goToPage(8)} />
         </div>
       );
