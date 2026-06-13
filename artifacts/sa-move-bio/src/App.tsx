@@ -142,43 +142,20 @@ function PageContent({ page, goToPage }: { page: number, goToPage: (p: number) =
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🦴 Konsep Sistem Gerak Manusia</h2>
-          {/* 3-panel: Tulang | Sendi | Otot */}
-          <div className="grid grid-cols-3 gap-3 mb-4">
-            {[
-              {
-                label: "🦴 Tulang",
-                sub: "Alat Gerak Pasif",
-                img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Human_skeleton_front_en.svg",
-                color: "bg-blue-50 border-blue-200",
-                text: "text-blue-800",
-              },
-              {
-                label: "🔗 Sendi",
-                sub: "Penghubung Tulang",
-                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Gray333.png/300px-Gray333.png",
-                color: "bg-orange-50 border-orange-200",
-                text: "text-orange-800",
-              },
-              {
-                label: "💪 Otot",
-                sub: "Alat Gerak Aktif",
-                img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Muscles_anterior_labeled.jpg/200px-Muscles_anterior_labeled.jpg",
-                color: "bg-red-50 border-red-200",
-                text: "text-red-800",
-              },
-            ].map((item, i) => (
-              <div key={i} className={`${item.color} border rounded-2xl p-3 flex flex-col items-center text-center gap-1`}>
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  loading="lazy"
-                  className="h-36 object-contain"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                />
-                <p className={`font-bold text-sm ${item.text}`}>{item.label}</p>
-                <p className="text-[11px] text-gray-500">{item.sub}</p>
+          {/* AI-generated anatomy illustration */}
+          <div className="flex justify-center mb-2">
+            <div className="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden w-full max-w-sm">
+              <img
+                src="/anatomy-musculoskeletal.png"
+                alt="Ilustrasi Sistem Gerak Manusia — Tulang, Sendi, Otot"
+                className="w-full object-contain"
+              />
+              <div className="grid grid-cols-3 divide-x divide-gray-100 text-center text-xs py-2 bg-gray-50">
+                <div className="py-1 font-bold text-blue-700">🦴 Tulang</div>
+                <div className="py-1 font-bold text-orange-700">🔗 Sendi</div>
+                <div className="py-1 font-bold text-red-700">💪 Otot</div>
               </div>
-            ))}
+            </div>
           </div>
           <p className="text-gray-700 text-lg leading-relaxed text-center">
             Sistem gerak manusia merupakan sistem organ yang memungkinkan manusia melakukan berbagai aktivitas dan perpindahan posisi tubuh.

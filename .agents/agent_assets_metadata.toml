@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "gzo--0U-0iLO7XCcOmZhs"
+uri = "file://artifacts/sa-move-bio/public/anatomy-musculoskeletal.png"
+type = "image"
+title = "human musculoskeletal anatomy"
