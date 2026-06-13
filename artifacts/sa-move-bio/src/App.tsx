@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import NavBar from './components/NavBar';
 import ProgressBar from './components/ProgressBar';
 import NavigationButton from './components/NavigationButton';
 import Quiz from './components/Quiz';
@@ -22,6 +23,8 @@ export default function App() {
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-25 pointer-events-none z-0"></div>
       <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-peach-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-25 pointer-events-none z-0" style={{ backgroundColor: '#FFE5D4' }}></div>
       <div className="fixed top-[40%] left-[60%] w-[30%] h-[30%] bg-lavender-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-25 pointer-events-none z-0" style={{ backgroundColor: '#E8DFFB' }}></div>
+
+      <NavBar currentPage={currentPage} goToPage={goToPage} />
 
       <div className="max-w-[700px] mx-auto p-4 md:p-8 relative z-10">
         <Header />
