@@ -746,9 +746,77 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">⚙️ Mekanisme Gerak Manusia</h2>
           <p className="text-gray-600 text-center mb-4">Gerakan terjadi karena kerja sama antara <strong>otot</strong>, <strong>sendi</strong>, dan <strong>tulang</strong> secara berurutan.</p>
 
-          {/* Sequential mechanism illustration */}
+          {/* Sequential mechanism — 4 steps */}
           <div className="bg-white border border-emerald-100 rounded-3xl overflow-hidden shadow-sm">
-            <img src="/mekanisme-gerak.png" alt="Ilustrasi Sekuensial Mekanisme Gerak Manusia" className="w-full block"/>
+            {/* Header */}
+            <div className="bg-gradient-to-r from-emerald-600 to-teal-500 px-5 py-3">
+              <p className="text-white font-black text-sm tracking-wide text-center">ILUSTRASI SEKUENSIAL: MEKANISME GERAK MANUSIA</p>
+              <p className="text-emerald-100 text-xs text-center mt-0.5">Kontraksi Otot → Tarikan Tulang → Gerak Sendi → Perubahan Posisi</p>
+            </div>
+
+            {/* 4 steps */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-emerald-100">
+              {/* Step 1 */}
+              <div className="bg-red-50 p-4 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-red-500 text-white text-sm font-black flex items-center justify-center flex-shrink-0">1</span>
+                  <p className="font-black text-red-700 text-sm leading-tight">OTOT BERKONTRAKSI</p>
+                </div>
+                <ul className="text-xs text-gray-700 space-y-1.5 leading-snug list-none pl-0">
+                  <li className="flex gap-1.5"><span className="text-red-400 font-bold">•</span>Sinyal saraf motorik mencapai serabut otot</li>
+                  <li className="flex gap-1.5"><span className="text-red-400 font-bold">•</span>Filamen aktin &amp; miosin saling bergeser</li>
+                  <li className="flex gap-1.5"><span className="text-red-400 font-bold">•</span>Otot memendek <span className="font-semibold text-red-600">(kontraksi)</span></li>
+                </ul>
+              </div>
+
+              {/* Step 2 */}
+              <div className="bg-orange-50 p-4 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-orange-500 text-white text-sm font-black flex items-center justify-center flex-shrink-0">2</span>
+                  <p className="font-black text-orange-700 text-sm leading-tight">MENARIK TULANG</p>
+                </div>
+                <ul className="text-xs text-gray-700 space-y-1.5 leading-snug list-none pl-0">
+                  <li className="flex gap-1.5"><span className="text-orange-400 font-bold">•</span>Otot yang memendek menarik tulang melalui tendon</li>
+                  <li className="flex gap-1.5"><span className="text-orange-400 font-bold">•</span>Gaya tarikan disalurkan ke tulang yang melekat</li>
+                </ul>
+              </div>
+
+              {/* Step 3 */}
+              <div className="bg-teal-50 p-4 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-teal-500 text-white text-sm font-black flex items-center justify-center flex-shrink-0">3</span>
+                  <p className="font-black text-teal-700 text-sm leading-tight">SENDI MEMUNGKINKAN</p>
+                </div>
+                <ul className="text-xs text-gray-700 space-y-1.5 leading-snug list-none pl-0">
+                  <li className="flex gap-1.5"><span className="text-teal-400 font-bold">•</span>Sendi sebagai titik tumpu tulang bergerak</li>
+                  <li className="flex gap-1.5"><span className="text-teal-400 font-bold">•</span>Sesuai jenis sendinya: fleksi, rotasi, dll.</li>
+                  <li className="flex gap-1.5"><span className="text-teal-400 font-bold">•</span>Sendi engsel → fleksi &amp; ekstensi</li>
+                </ul>
+              </div>
+
+              {/* Step 4 */}
+              <div className="bg-blue-50 p-4 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-blue-500 text-white text-sm font-black flex items-center justify-center flex-shrink-0">4</span>
+                  <p className="font-black text-blue-700 text-sm leading-tight">PERUBAHAN POSISI TUBUH</p>
+                </div>
+                <ul className="text-xs text-gray-700 space-y-1.5 leading-snug list-none pl-0">
+                  <li className="flex gap-1.5"><span className="text-blue-400 font-bold">•</span>Tulang berpindah posisi → gerakan nyata</li>
+                  <li className="flex gap-1.5"><span className="text-blue-400 font-bold">•</span>Contoh: lengan bengkok <span className="font-semibold text-blue-600">(fleksi siku)</span></li>
+                  <li className="flex gap-1.5"><span className="text-blue-400 font-bold">•</span>Kaki melangkah, kepala menoleh, jari menulis</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Arrow flow bar */}
+            <div className="bg-gray-50 border-t border-emerald-100 px-4 py-2.5 flex items-center justify-center gap-1 flex-wrap">
+              {["Otot Berkontraksi","Menarik Tulang","Sendi Bergerak","Posisi Berubah"].map((s, i, arr) => (
+                <span key={s} className="flex items-center gap-1">
+                  <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${["bg-red-100 text-red-700","bg-orange-100 text-orange-700","bg-teal-100 text-teal-700","bg-blue-100 text-blue-700"][i]}`}>{i+1} {s}</span>
+                  {i < arr.length - 1 && <span className="text-gray-400 font-bold text-xs">→</span>}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Example movements */}
