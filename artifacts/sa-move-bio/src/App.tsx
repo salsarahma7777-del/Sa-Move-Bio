@@ -324,16 +324,16 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               <p className="text-xs text-blue-700 mt-2 font-medium text-center">Rangka Tubuh Manusia (Tampak Depan)</p>
             </div>
             <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100">
-              <h3 className="font-bold text-blue-900 mb-3 text-base border-b border-blue-200 pb-2">⚙️ Fungsi Tulang</h3>
+              <h3 className="font-bold text-blue-900 mb-3 text-base border-b border-blue-200 pb-2">Fungsi Tulang</h3>
               <ul className="space-y-2 text-blue-800 text-sm">
                 {[
-                  ["🏗️","Menegakkan dan membentuk tubuh"],
-                  ["🛡️","Melindungi organ vital (jantung, paru-paru, otak)"],
-                  ["💪","Tempat melekatnya otot"],
-                  ["🔴","Pembentukan sel darah merah & putih"],
-                  ["🧂","Penyimpanan mineral (Ca & P)"],
-                ].map(([icon, text], i) => (
-                  <li key={i} className="flex items-start gap-2"><span>{icon}</span><span>{text as string}</span></li>
+                  "Menegakkan dan membentuk tubuh",
+                  "Melindungi organ vital (jantung, paru-paru, otak)",
+                  "Tempat melekatnya otot",
+                  "Pembentukan sel darah merah & putih",
+                  "Penyimpanan mineral (Ca & P)",
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start gap-2"><span className="text-blue-400 font-bold">•</span><span>{text}</span></li>
                 ))}
               </ul>
             </div>
