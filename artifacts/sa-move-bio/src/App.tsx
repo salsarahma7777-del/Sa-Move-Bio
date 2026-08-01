@@ -312,7 +312,6 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">🦴 Tulang dan Fungsinya</h2>
           <p className="text-center text-gray-600 mb-4">Tulang merupakan alat gerak <strong>pasif</strong> yang menyusun rangka tubuh manusia. Manusia dewasa memiliki ±206 tulang.</p>
-
           {/* Skeleton + fungsi side by side */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
             <div className="flex flex-col items-center bg-blue-50 rounded-2xl p-4 border border-blue-100">
@@ -338,7 +337,6 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </ul>
             </div>
           </div>
-
           {/* Bone structure */}
           <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4">
             <h3 className="font-bold text-amber-900 mb-3 text-base">🔬 Struktur Tulang (Penampang)</h3>
@@ -359,10 +357,9 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </ul>
             </div>
           </div>
-
           {/* Bone types gallery */}
           <div>
-            <h3 className="font-bold text-[#355070] text-base mb-3">📐 Jenis-Jenis Tulang</h3>
+            <h3 className="font-bold text-[#355070] text-base mb-3">Jenis-Jenis Tulang</h3>
             <div className="grid grid-cols-2 gap-3 mb-4">
               {[
                 {
@@ -419,7 +416,6 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </p>
             </div>
           </div>
-
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(8)} />
         </div>
       );
