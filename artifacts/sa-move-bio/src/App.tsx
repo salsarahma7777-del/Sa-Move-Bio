@@ -9,7 +9,7 @@ type AnatomyLabel = 'tulang' | 'sendi' | 'otot' | null;
 
 const ANATOMY_PINS: Record<NonNullable<AnatomyLabel>, { x: number; y: number; color: string; desc: string }> = {
   tulang: { x: 43, y: 27, color: '#2563EB', desc: 'Tulang rusuk (costa) — melindungi jantung dan paru-paru' },
-  sendi:  { x: 24, y: 44, color: '#EA580C', desc: 'Sendi siku — sendi engsel penghubung tulang lengan atas dan bawah' },
+  sendi:  { x: 42, y: 40, color: '#EA580C', desc: 'Sendi kartilago — penghubung tulang rusuk dengan tulang dada (sternum)' },
   otot:   { x: 66, y: 47, color: '#DC2626', desc: 'Otot lengan bawah — menggerakkan pergelangan tangan dan jari' },
 };
 
