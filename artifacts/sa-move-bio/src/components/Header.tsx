@@ -13,12 +13,12 @@ export default function Header() {
           <p className="text-sm text-gray-600 max-w-lg mx-auto mb-4">
             Media Pembelajaran Sistem Gerak Manusia berbasis Problem Based Learning (PBL) dan Think Pair Share (TPS)
           </p>
-          <div className="flex justify-center gap-3 text-2xl mb-4">
-            <span>🧬</span>
-            <span>🔬</span>
-            <span>🦴</span>
-            <span>💪</span>
-            <span>⚙️</span>
+          <div className="flex justify-center mb-4">
+            <img
+              src="/skeleton-illustration.png"
+              alt="Human Skeletal System Anatomy"
+              className="h-48 object-contain drop-shadow-md"
+            />
           </div>
           <p className="text-xs font-medium text-teal-700 italic bg-teal-50 px-3 py-1.5 rounded-full inline-block mb-4">
             "Learning Biology Through Problem Based Learning, Think Pair Share, and Decision Making Skills"
