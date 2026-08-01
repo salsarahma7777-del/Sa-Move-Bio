@@ -435,11 +435,11 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                 className="max-h-[240px] object-contain rounded-xl bg-white shadow-sm"
               />
               <ul className="text-sm space-y-2 text-orange-900">
-                <li>🦴 <strong>Tulang</strong> — dua tulang yang bersendi</li>
-                <li>🟡 <strong>Kartilago</strong> — bantalan tulang rawan</li>
-                <li>💧 <strong>Cairan Sinovial</strong> — pelumas sendi</li>
-                <li>🎀 <strong>Ligamen</strong> — penghubung tulang dengan tulang</li>
-                <li>🔲 <strong>Kapsul Sendi</strong> — pembungkus sendi</li>
+                <li><strong>Tulang</strong> — dua tulang yang bersendi</li>
+                <li><strong>Kartilago</strong> — bantalan tulang rawan</li>
+                <li><strong>Cairan Sinovial</strong> — pelumas sendi</li>
+                <li><strong>Ligamen</strong> — penghubung tulang dengan tulang</li>
+                <li><strong>Kapsul Sendi</strong> — pembungkus sendi</li>
               </ul>
             </div>
           </div>
