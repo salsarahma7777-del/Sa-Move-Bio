@@ -148,12 +148,12 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🎯 Tujuan Pembelajaran</h2>
           <ul className="space-y-4">
             {[
-              "Menjelaskan struktur dan fungsi sistem gerak manusia.",
-              "Menganalisis hubungan tulang, sendi, dan otot.",
-              "Mengidentifikasi mekanisme gerak manusia.",
-              "Menganalisis gangguan sistem gerak.",
-              "Memecahkan masalah sistem gerak manusia.",
-              "Mengembangkan keterampilan pengambilan keputusan."
+              "Mengidentifikasi struktur dan fungsi penyusun sistem gerak manusia (tulang, sendi, dan otot).",
+              "Menganalisis hubungan antara struktur tulang, sendi, dan otot dengan mekanisme gerak manusia.",
+              "Menganalisis mekanisme kerja otot antagonis dan sinergis dalam menghasilkan gerakan tubuh.",
+              "Menganalisis berbagai gangguan atau kelainan pada sistem gerak manusia beserta penyebab dan upaya pencegahannya.",
+              "Mengevaluasi informasi atau permasalahan yang berkaitan dengan sistem gerak manusia berdasarkan bukti ilmiah.",
+              "Mengambil keputusan yang tepat dalam menyelesaikan permasalahan kontekstual tentang sistem gerak manusia berdasarkan hasil analisis bukti."
             ].map((text, i) => (
               <li key={i} className="flex gap-4 items-center bg-teal-50 p-4 rounded-xl text-[#355070] font-medium">
                 <div className="w-8 h-8 rounded-full bg-teal-500 text-white flex items-center justify-center shrink-0">{i + 1}</div>
