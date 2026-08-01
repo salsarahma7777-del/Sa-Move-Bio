@@ -5,6 +5,81 @@ import ProgressBar from './components/ProgressBar';
 import NavigationButton from './components/NavigationButton';
 import Quiz from './components/Quiz';
 
+type AnatomyLabel = 'tulang' | 'sendi' | 'otot' | null;
+
+const ANATOMY_PINS: Record<NonNullable<AnatomyLabel>, { x: number; y: number; color: string; desc: string }> = {
+  tulang: { x: 44, y: 64, color: '#2563EB', desc: 'Tulang paha (femur) — tulang terpanjang dan terkuat di tubuh' },
+  sendi: { x: 44, y: 76, color: '#EA580C', desc: 'Sendi lutut — sendi engsel yang menghubungkan femur dan tibia' },
+  otot:  { x: 20, y: 37, color: '#DC2626', desc: 'Otot deltoid — otot bahu yang menggerakkan lengan' },
+};
+
+function AnatomyViewer() {
+  const [active, setActive] = useState<AnatomyLabel>(null);
+
+  const toggle = (label: NonNullable<AnatomyLabel>) =>
+    setActive(prev => (prev === label ? null : label));
+
+  const pin = active ? ANATOMY_PINS[active] : null;
+
+  return (
+    <div className="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden w-full max-w-sm">
+      {/* image + overlay */}
+      <div className="relative">
+        <img
+          src="/anatomy-musculoskeletal.png"
+          alt="Ilustrasi Sistem Gerak Manusia — Tulang, Sendi, Otot"
+          className="w-full object-contain"
+        />
+        {pin && (
+          <div
+            className="absolute pointer-events-none"
+            style={{ left: `${pin.x}%`, top: `${pin.y}%`, transform: 'translate(-50%, -50%)' }}
+          >
+            {/* outer pulse ring */}
+            <span
+              className="absolute inline-flex rounded-full opacity-60 animate-ping"
+              style={{ width: 32, height: 32, background: pin.color, top: -16, left: -16 }}
+            />
+            {/* centre dot */}
+            <span
+              className="relative inline-flex rounded-full"
+              style={{ width: 16, height: 16, background: pin.color, boxShadow: `0 0 0 3px white` }}
+            />
+          </div>
+        )}
+        {pin && (
+          <div
+            className="absolute left-1/2 bottom-3 -translate-x-1/2 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl px-3 py-1.5 text-xs text-center font-medium shadow-md max-w-[90%]"
+            style={{ color: pin.color }}
+          >
+            {pin.desc}
+          </div>
+        )}
+      </div>
+      {/* clickable labels */}
+      <div className="grid grid-cols-3 divide-x divide-gray-100 text-center text-xs bg-gray-50">
+        {(['tulang', 'sendi', 'otot'] as const).map(key => {
+          const p = ANATOMY_PINS[key];
+          const isActive = active === key;
+          return (
+            <button
+              key={key}
+              onClick={() => toggle(key)}
+              className="py-2 font-bold transition-all duration-150 capitalize"
+              style={{
+                color: isActive ? 'white' : p.color,
+                background: isActive ? p.color : 'transparent',
+              }}
+            >
+              {key.charAt(0).toUpperCase() + key.slice(1)}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 22;
@@ -211,20 +286,9 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🦴 Konsep Sistem Gerak Manusia</h2>
-          {/* AI-generated anatomy illustration */}
+          {/* Interactive anatomy illustration */}
           <div className="flex justify-center mb-2">
-            <div className="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden w-full max-w-sm">
-              <img
-                src="/anatomy-musculoskeletal.png"
-                alt="Ilustrasi Sistem Gerak Manusia — Tulang, Sendi, Otot"
-                className="w-full object-contain"
-              />
-              <div className="grid grid-cols-3 divide-x divide-gray-100 text-center text-xs py-2 bg-gray-50">
-                <div className="py-1 font-bold text-blue-700">Tulang</div>
-                <div className="py-1 font-bold text-orange-700">Sendi</div>
-                <div className="py-1 font-bold text-red-700">Otot</div>
-              </div>
-            </div>
+            <AnatomyViewer />
           </div>
           <p className="text-gray-700 text-lg leading-relaxed text-center">
             Sistem gerak manusia merupakan sistem organ yang memungkinkan manusia melakukan berbagai aktivitas dan perpindahan posisi tubuh.
