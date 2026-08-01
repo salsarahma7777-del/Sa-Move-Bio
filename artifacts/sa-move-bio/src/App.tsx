@@ -187,19 +187,18 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-lg text-gray-600 mb-6">Materi akan membahas:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { label: "Konsep Sistem Gerak", page: 6, icon: "🧬" },
-              { label: "Tulang dan Fungsinya", page: 7, icon: "🦴" },
-              { label: "Sendi dan Jenis-Jenis Sendi", page: 8, icon: "🔗" },
-              { label: "Otot dan Mekanisme Kerja Otot", page: 9, icon: "💪" },
-              { label: "Mekanisme Gerak Manusia", page: 10, icon: "⚙️" },
-              { label: "Gangguan Sistem Gerak", page: 11, icon: "🏥" },
-            ].map(({ label, page, icon }) => (
+              { label: "Konsep Sistem Gerak", page: 6 },
+              { label: "Tulang dan Fungsinya", page: 7 },
+              { label: "Sendi dan Jenis-Jenis Sendi", page: 8 },
+              { label: "Otot dan Mekanisme Kerja Otot", page: 9 },
+              { label: "Mekanisme Gerak Manusia", page: 10 },
+              { label: "Gangguan Sistem Gerak", page: 11 },
+            ].map(({ label, page }) => (
               <button
                 key={page}
                 onClick={() => goToPage(page)}
                 className="flex items-center gap-3 bg-[#E8DFFB]/30 hover:bg-[#E8DFFB]/70 active:scale-95 transition-all p-4 rounded-xl font-medium text-[#6D597A] border border-[#E8DFFB] text-left cursor-pointer"
               >
-                <span className="text-xl">{icon}</span>
                 <span>{label}</span>
                 <span className="ml-auto text-[#6D597A]/50 text-sm">→</span>
               </button>
