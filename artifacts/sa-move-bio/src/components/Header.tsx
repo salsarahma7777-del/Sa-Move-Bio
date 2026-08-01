@@ -8,7 +8,7 @@ export default function Header() {
           🦴
         </div>
         <div>
-          <h1 className="text-3xl font-bold text-[#355070] mb-1">SA.Move.Bio</h1>
+          <h1 className="text-3xl font-bold text-[#355070] mb-1">Sa.Move.Bio</h1>
           <h2 className="text-lg font-medium text-[#6D597A] mb-3">Smart Movement Biology</h2>
           <p className="text-sm text-gray-600 max-w-lg mx-auto mb-4">
             Media Pembelajaran Sistem Gerak Manusia berbasis Problem Based Learning (PBL) dan Think Pair Share (TPS)
