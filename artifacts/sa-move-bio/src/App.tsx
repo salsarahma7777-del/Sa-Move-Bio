@@ -349,10 +349,13 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                 className="max-h-[220px] object-contain rounded-xl bg-white shadow-sm"
               />
               <ul className="text-sm space-y-2 text-amber-900">
-                <li><strong>Periosteum</strong> — lapisan terluar pelindung tulang</li>
-                <li><strong>Tulang Kompak</strong> — lapisan keras & padat di bagian luar</li>
-                <li><strong>Tulang Spons</strong> — bagian dalam, ringan & berongga</li>
-                <li><strong>Sumsum Tulang</strong> — penghasil sel darah</li>
+                <li><strong>Periosteum</strong> — lapisan terluar yang melindungi dan membungkus tulang</li>
+                <li><strong>Tulang Kompak</strong> — lapisan keras & padat di bagian luar tulang</li>
+                <li><strong>Tulang Spons</strong> — bagian dalam, ringan & berongga seperti spons</li>
+                <li><strong>Sumsum Tulang</strong> — jaringan penghasil sel darah merah & putih</li>
+                <li><strong>Rongga Sumsum</strong> — ruang tengah tempat sumsum tulang merah/kuning berada</li>
+                <li><strong>Endosteum</strong> — lapisan tipis yang melapisi bagian dalam rongga sumsum</li>
+                <li><strong>Epifisis</strong> — ujung tulang yang lebih lebar, tempat sendi bertemu</li>
               </ul>
             </div>
           </div>
