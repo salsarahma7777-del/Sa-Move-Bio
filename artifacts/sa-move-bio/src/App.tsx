@@ -29,15 +29,6 @@ export default function App() {
         <Header />
         <ProgressBar currentPage={currentPage} totalPages={totalPages} />
 
-        {currentPage > 1 && (
-          <button
-            data-testid="btn-back-page"
-            onClick={() => goToPage(currentPage - 1)}
-            className="mb-4 flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 border border-gray-200 text-[#355070] font-semibold shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 text-sm"
-          >
-            ← Kembali
-          </button>
-        )}
         
         <div key={currentPage} className="animate-fade-slide-up">
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-gray-100 relative">
@@ -139,7 +130,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <p className="font-medium text-lg">Silakan mengerjakan pre-test yang akan dibagikan oleh guru.</p>
             <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(3)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(3)} />
         </div>
       );
     case 3:
@@ -161,7 +152,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </li>
             ))}
           </ul>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(4)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(4)} />
         </div>
       );
     case 4:
@@ -186,7 +177,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </li>
             ))}
           </ol>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(5)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(5)} />
         </div>
       );
     case 5:
@@ -214,7 +205,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </button>
             ))}
           </div>
-          <NavigationButton text="Mulai dari Awal →" onClick={() => goToPage(6)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Mulai dari Awal →" onClick={() => goToPage(6)} />
         </div>
       );
     case 6:
@@ -250,7 +241,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-gray-600 text-center italic">
             "Ketiga komponen tersebut bekerja sama sehingga manusia dapat berdiri, berjalan, berlari, menulis, dan melakukan aktivitas lainnya."
           </p>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(7)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(7)} />
         </div>
       );
     case 7:
@@ -363,7 +354,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             </div>
           </div>
 
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(8)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(8)} />
         </div>
       );
     case 8:
@@ -468,7 +459,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             </p>
           </div>
 
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(9)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(9)} />
         </div>
       );
     case 9:
@@ -743,7 +734,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-white border border-teal-100 rounded-3xl overflow-hidden shadow-sm">
             <img src="/antagonis-sinergis.png" alt="Otot Antagonis dan Sinergis" className="w-full block"/>
           </div>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(10)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(10)} />
         </div>
       );
     case 10:
@@ -844,7 +835,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             </div>
           </div>
 
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(11)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(11)} />
         </div>
       );
     case 11:
@@ -873,7 +864,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </div>
             ))}
           </div>
-          <NavigationButton text="Lanjut ke Video →" onClick={() => goToPage(12)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Video →" onClick={() => goToPage(12)} />
         </div>
       );
     case 12:
@@ -893,7 +884,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-yellow-800 font-medium">
             <p>Perhatikan struktur tulang, sendi, dan otot yang ditampilkan dalam video. Catat informasi penting yang akan membantu dalam menyelesaikan masalah.</p>
           </div>
-          <NavigationButton text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(13)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(13)} />
         </div>
       );
     case 13:
@@ -911,7 +902,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-center font-medium text-gray-600 italic bg-gray-50 py-3 rounded-xl border border-gray-200">
             Hubungkan kasus ini dengan materi sistem gerak yang telah kamu pelajari!
           </p>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(14)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(14)} />
         </div>
       );
     case 14:
@@ -939,7 +930,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-center text-teal-800 bg-teal-50 p-4 rounded-xl">
             Gunakan materi yang telah dipelajari untuk mengidentifikasi komponen sistem gerak yang berhubungan dengan kasus.
           </p>
-          <NavigationButton text="Lanjut ke Think →" onClick={() => goToPage(15)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Think →" onClick={() => goToPage(15)} />
         </div>
       );
     case 15:
@@ -957,7 +948,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-center text-gray-600 italic font-medium">
             Tulis jawabanmu di buku catatan sebelum melanjutkan ke tahap diskusi.
           </p>
-          <NavigationButton text="Lanjut ke Pair →" onClick={() => goToPage(16)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Pair →" onClick={() => goToPage(16)} />
         </div>
       );
     case 16:
@@ -975,7 +966,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-emerald-50 text-emerald-800 text-center p-4 rounded-xl font-medium border border-emerald-200">
             ⏳ Waktu diskusi: ±10 menit. Pastikan kedua pihak berkontribusi dalam diskusi!
           </div>
-          <NavigationButton text="Lanjut ke Share →" onClick={() => goToPage(17)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Share →" onClick={() => goToPage(17)} />
         </div>
       );
     case 17:
@@ -993,7 +984,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-orange-50 text-orange-800 text-center p-4 rounded-xl font-medium border border-orange-200">
             🎤 Presentasi singkat: ±3-5 menit per kelompok.
           </div>
-          <NavigationButton text="Lanjut ke Analisis →" onClick={() => goToPage(18)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Analisis →" onClick={() => goToPage(18)} />
         </div>
       );
     case 18:
@@ -1033,7 +1024,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-gradient-to-r from-teal-400 to-emerald-400 text-white p-6 rounded-2xl text-center shadow-md font-bold text-lg mt-6">
             Setelah menganalisis, pilih solusi terbaik dan berikan alasannya!
           </div>
-          <NavigationButton text="Lanjut ke Kuis →" onClick={() => goToPage(19)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(19)} />
         </div>
       );
     case 19:
@@ -1054,7 +1045,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <p className="font-medium text-lg">Silakan mengerjakan post-test yang akan dibagikan oleh guru.</p>
             <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
-          <NavigationButton text="Lanjut →" onClick={() => goToPage(21)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(21)} />
         </div>
       );
     case 21:
@@ -1080,7 +1071,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               Menjaga kesehatan sistem gerak dengan olahraga teratur, postur yang baik, dan asupan kalsium yang cukup sangat penting untuk kualitas hidup yang optimal.
             </p>
           </div>
-          <NavigationButton text="Selesai" onClick={() => goToPage(22)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(22)} />
         </div>
       );
     case 22:
