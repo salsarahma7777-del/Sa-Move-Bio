@@ -220,9 +220,9 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                 className="w-full object-contain"
               />
               <div className="grid grid-cols-3 divide-x divide-gray-100 text-center text-xs py-2 bg-gray-50">
-                <div className="py-1 font-bold text-blue-700">🦴 Tulang</div>
-                <div className="py-1 font-bold text-orange-700">🔗 Sendi</div>
-                <div className="py-1 font-bold text-red-700">💪 Otot</div>
+                <div className="py-1 font-bold text-blue-700">Tulang</div>
+                <div className="py-1 font-bold text-orange-700">Sendi</div>
+                <div className="py-1 font-bold text-red-700">Otot</div>
               </div>
             </div>
           </div>
