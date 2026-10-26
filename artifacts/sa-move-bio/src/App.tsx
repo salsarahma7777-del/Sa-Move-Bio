@@ -943,14 +943,14 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <iframe 
               width="100%" 
               height="400" 
-              src="https://www.youtube.com/embed/5xZYFPJ0fps" 
+              src="https://www.youtube.com/embed/feWy9u4Zoeo?start=160&end=253" 
               allowFullScreen 
               style={{ border: 'none' }}
-              title="Video Pembelajaran Sistem Gerak"
+              title="Video Pembelajaran Kontraksi dan Relaksasi Otot"
             ></iframe>
           </div>
           <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-yellow-800 font-medium">
-            <p>Perhatikan struktur tulang, sendi, dan otot yang ditampilkan dalam video. Catat informasi penting yang akan membantu dalam menyelesaikan masalah.</p>
+            <p>Simak video pembelajaran tentang kontraksi dan relaksasi otot pada menit 2:40–4:13.</p>
           </div>
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(13)} />
         </div>
