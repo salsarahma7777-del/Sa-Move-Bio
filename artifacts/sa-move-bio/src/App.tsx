@@ -873,27 +873,13 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🏥 Gangguan dan Penyakit Sistem Gerak</h2>
-          <div className="flex justify-center mb-6">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Scoliosis.png/320px-Scoliosis.png" 
-              alt="Skoliosis" 
-              loading="lazy" 
-              className="max-h-[250px] object-contain rounded-2xl shadow-sm bg-white"
+          <div className="bg-white border border-orange-100 rounded-2xl p-2 overflow-hidden">
+            <img
+              src="/kelainan-sistem-gerak.png"
+              alt="Infografik contoh penyakit dan kelainan pada sistem gerak manusia"
+              className="block w-full h-auto rounded-xl"
+              loading="lazy"
             />
-          </div>
-          <div className="space-y-4">
-            {[
-              { n: "Skoliosis", d: "Kelainan tulang belakang yang melengkung ke samping.", color: "border-blue-500" },
-              { n: "Kifosis", d: "Kelainan tulang belakang membungkuk ke belakang.", color: "border-purple-500" },
-              { n: "Lordosis", d: "Kelainan tulang belakang melengkung ke depan.", color: "border-teal-500" },
-              { n: "Osteoporosis", d: "Pengeroposan tulang akibat berkurangnya massa tulang.", color: "border-orange-500" },
-              { n: "Fraktura", d: "Patah tulang akibat benturan atau kecelakaan.", color: "border-red-500" },
-            ].map((g, i) => (
-              <div key={i} className={`bg-white shadow-sm border-l-4 ${g.color} p-4 rounded-r-xl rounded-l-sm`}>
-                <h3 className="font-bold text-gray-800 text-lg">{g.n}</h3>
-                <p className="text-gray-600">{g.d}</p>
-              </div>
-            ))}
           </div>
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(12)} />
         </div>
