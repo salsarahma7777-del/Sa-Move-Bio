@@ -811,6 +811,20 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-white border border-teal-100 rounded-3xl overflow-hidden shadow-sm">
             <img src="/antagonis-sinergis.png" alt="Otot Antagonis dan Sinergis" className="w-full block"/>
           </div>
+          <div className="space-y-3">
+            <div className="aspect-video bg-black rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/feWy9u4Zoeo?start=160&end=253"
+                title="Video kontraksi dan relaksasi otot"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-yellow-800 font-medium">
+              <p>Simak video pembelajaran tentang kontraksi dan relaksasi otot pada menit 2:40–4:13.</p>
+            </div>
+          </div>
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(10)} />
         </div>
       );
@@ -902,15 +916,6 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               loading="lazy"
             />
           </div>
-          <div className="bg-white border border-emerald-100 rounded-2xl p-2 overflow-hidden">
-            <img
-              src="/otot-antagonis-sinergis.png"
-              alt="Ilustrasi otot antagonis dan otot sinergis saat fleksi dan ekstensi siku"
-              className="block w-full h-auto rounded-xl"
-              loading="lazy"
-            />
-          </div>
-
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(11)} />
         </div>
       );
