@@ -82,7 +82,7 @@ function AnatomyViewer() {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 21;
+  const totalPages = 16;
   const [siswa, setSiswa] = useState({ nama: '', noAbsen: '', kelas: '' });
 
   const goToPage = (page: number) => {
@@ -881,115 +881,15 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               loading="lazy"
             />
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(12)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Analisis →" onClick={() => goToPage(12)} />
         </div>
       );
     case 12:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">❓ Orientasi Masalah</h2>
-          <div className="bg-amber-100 border border-amber-300 p-6 rounded-2xl shadow-sm text-amber-900 text-lg leading-relaxed">
-            <p className="mb-4">
-              Seorang siswa sering membawa tas yang sangat berat setiap hari ke sekolah. Dalam beberapa bulan, ia mengalami nyeri punggung yang cukup parah.
-            </p>
-            <p className="font-bold text-xl text-amber-800">
-              Mengapa hal tersebut dapat terjadi? Bagaimana cara mencegah dan mengatasinya?
-            </p>
-          </div>
-          <p className="text-center font-medium text-gray-600 italic bg-gray-50 py-3 rounded-xl border border-gray-200">
-            Hubungkan kasus ini dengan materi sistem gerak yang telah kamu pelajari!
-          </p>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(13)} />
-        </div>
-      );
-    case 13:
-      return (
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🔍 Observasi</h2>
-          <div className="bg-white border border-gray-200 shadow-sm p-6 rounded-2xl">
-            <p className="text-gray-700 font-medium mb-4 pb-2 border-b">Checklist Observasi:</p>
-            <div className="space-y-4">
-              {[
-                "Amati gambar dan video sistem gerak manusia",
-                "Identifikasi bagian tulang, sendi, dan otot yang berperan",
-                "Catat struktur tulang belakang yang relevan",
-                "Hubungkan dengan kasus nyeri punggung"
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-6 h-6 border-2 border-teal-500 rounded flex items-center justify-center bg-teal-50">
-                    <span className="text-teal-600 text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700">{text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="text-center text-teal-800 bg-teal-50 p-4 rounded-xl">
-            Gunakan materi yang telah dipelajari untuk mengidentifikasi komponen sistem gerak yang berhubungan dengan kasus.
-          </p>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Think →" onClick={() => goToPage(14)} />
-        </div>
-      );
-    case 14:
-      return (
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🧠 Think — Berpikir Mandiri</h2>
-          <div className="bg-[#E8DFFB] p-8 rounded-3xl shadow-sm text-[#355070]">
-            <h3 className="font-bold text-xl mb-4">Pikirkan secara mandiri:</h3>
-            <ul className="list-disc pl-6 space-y-3 font-medium text-lg">
-              <li>Mengapa membawa beban berat dapat menyebabkan nyeri punggung?</li>
-              <li>Bagian sistem gerak mana yang paling terpengaruh?</li>
-              <li>Apa solusi yang dapat dilakukan untuk mencegah hal ini?</li>
-            </ul>
-          </div>
-          <p className="text-center text-gray-600 italic font-medium">
-            Tulis jawabanmu di buku catatan sebelum melanjutkan ke tahap diskusi.
-          </p>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Pair →" onClick={() => goToPage(15)} />
-        </div>
-      );
-    case 15:
-      return (
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">👥 Pair — Diskusi Berpasangan</h2>
-          <div className="bg-emerald-100 p-8 rounded-3xl shadow-sm text-emerald-900">
-            <h3 className="font-bold text-xl mb-4">Diskusikan dengan teman sebangkumu:</h3>
-            <ul className="list-disc pl-6 space-y-3 font-medium text-lg">
-              <li>Bandingkan hasil pemikiranmu dengan teman</li>
-              <li>Temukan persamaan dan perbedaan pendapat</li>
-              <li>Bangun solusi bersama yang lebih lengkap</li>
-            </ul>
-          </div>
-          <div className="bg-emerald-50 text-emerald-800 text-center p-4 rounded-xl font-medium border border-emerald-200">
-            ⏳ Waktu diskusi: ±10 menit. Pastikan kedua pihak berkontribusi dalam diskusi!
-          </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Share →" onClick={() => goToPage(16)} />
-        </div>
-      );
-    case 16:
-      return (
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📢 Share — Presentasi Kelas</h2>
-          <div className="bg-[#FFE5D4] p-8 rounded-3xl shadow-sm text-orange-900">
-            <h3 className="font-bold text-xl mb-4">Presentasikan hasil diskusi kelompok:</h3>
-            <ul className="list-disc pl-6 space-y-3 font-medium text-lg">
-              <li>Sampaikan jawaban kelompok dengan percaya diri</li>
-              <li>Dengarkan presentasi kelompok lain</li>
-              <li>Catat poin-poin penting dari diskusi kelas</li>
-            </ul>
-          </div>
-          <div className="bg-orange-50 text-orange-800 text-center p-4 rounded-xl font-medium border border-orange-200">
-            🎤 Presentasi singkat: ±3-5 menit per kelompok.
-          </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Analisis →" onClick={() => goToPage(17)} />
-        </div>
-      );
-    case 17:
-      return (
-        <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📊 Analisis dan Evaluasi</h2>
           <p className="text-gray-700 text-center text-lg mb-6">
-            Berdasarkan orientasi masalah, observasi, dan diskusi, analisis berbagai alternatif solusi:
+            Analisis kelebihan dan kekurangan beberapa upaya menjaga kesehatan sistem gerak berikut:
           </p>
           
           <div className="space-y-4">
@@ -1021,20 +921,20 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-gradient-to-r from-teal-400 to-emerald-400 text-white p-6 rounded-2xl text-center shadow-md font-bold text-lg mt-6">
             Setelah menganalisis, pilih solusi terbaik dan berikan alasannya!
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(18)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(13)} />
         </div>
       );
-    case 18:
+    case 13:
       return (
         <div className="space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-[#355070] mb-3">📝 Kuis Pengambilan Keputusan</h2>
             <p className="text-gray-600 font-medium">Pilih jawaban yang paling tepat berdasarkan pemahaman sistem gerak manusia!</p>
           </div>
-          <Quiz onComplete={() => goToPage(19)} />
+          <Quiz onComplete={() => goToPage(14)} />
         </div>
       );
-    case 19:
+    case 14:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📝 Post-Test</h2>
@@ -1042,10 +942,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <p className="font-medium text-lg">Silakan mengerjakan post-test yang akan dibagikan oleh guru.</p>
             <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(20)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(15)} />
         </div>
       );
-    case 20:
+    case 15:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📌 Kesimpulan</h2>
@@ -1068,10 +968,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               Menjaga kesehatan sistem gerak dengan olahraga teratur, postur yang baik, dan asupan kalsium yang cukup sangat penting untuk kualitas hidup yang optimal.
             </p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(21)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(16)} />
         </div>
       );
-    case 21:
+    case 16:
       return (
         <div className="space-y-8 text-center py-8">
           <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-400 mb-2">🎉 Terima Kasih! 🎉</h2>
