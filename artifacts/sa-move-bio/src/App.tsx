@@ -894,22 +894,13 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           </div>
 
           {/* Example movements */}
-          <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4">
-            <h3 className="font-bold text-emerald-800 text-sm mb-3">🏃 Contoh Gerakan dalam Kehidupan</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              {[
-                { icon: "💪", label: "Membengkokkan lengan", sub: "Fleksi siku" },
-                { icon: "🚶", label: "Berjalan", sub: "Fleksi & ekstensi lutut" },
-                { icon: "🏃", label: "Berlari", sub: "Siklus gaya berjalan" },
-                { icon: "✍️", label: "Menulis", sub: "Gerak jari & pergelangan" },
-              ].map((ex) => (
-                <div key={ex.label} className="bg-white rounded-xl p-3 text-center border border-emerald-100">
-                  <div className="text-2xl mb-1">{ex.icon}</div>
-                  <p className="text-[10px] font-bold text-emerald-800">{ex.label}</p>
-                  <p className="text-[9px] text-gray-400 mt-0.5">{ex.sub}</p>
-                </div>
-              ))}
-            </div>
+          <div className="bg-white border border-emerald-100 rounded-2xl p-2 overflow-hidden">
+            <img
+              src="/contoh-gerakan-kehidupan.png"
+              alt="Contoh gerakan dalam kehidupan: membengkokkan lengan, berjalan, berlari, dan menulis"
+              className="block w-full h-auto rounded-xl"
+              loading="lazy"
+            />
           </div>
 
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(11)} />
