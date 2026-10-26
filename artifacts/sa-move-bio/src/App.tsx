@@ -850,6 +850,11 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
                 Browser Anda tidak mendukung pemutaran video.
               </video>
             </div>
+            <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl text-center text-emerald-900">
+              <p>
+                <strong>Kesimpulan:</strong> Sinyal saraf → Otot berkontraksi dan relaksasi → Tendon menarik tulang → Sendi bergerak → Tubuh bergerak
+              </p>
+            </div>
           </div>
 
           {/* Example movements */}
