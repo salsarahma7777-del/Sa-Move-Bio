@@ -565,10 +565,15 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               <span className="text-rose-800 font-mono text-[11px] font-bold tracking-widest">PERBANDINGAN HISTOLOGI JARINGAN OTOT — PEWARNAAN H&amp;E</span>
               <span className="text-rose-400 font-mono text-[9px]">400× · Biologi Medis</span>
             </div>
+            <img
+              src="/histology-muscle-atlas.png"
+              alt="Atlas histologi otot lurik, otot polos, dan otot jantung"
+              className="block w-full h-auto object-contain"
+            />
 
             {/* === PANEL 1: OTOT LURIK === */}
             {/* Three-panel histology grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+            <div className="hidden">
 
               {/* ===== PANEL 1: OTOT LURIK ===== */}
               <div className="flex flex-col">
@@ -795,7 +800,7 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             </div>
 
             {/* Legend bar */}
-            <div className="bg-rose-50 px-4 py-1.5 flex items-center gap-6 border-t border-rose-200">
+            <div className="hidden">
               <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#ef9090'}}/><span className="text-rose-700">Eosinofil — sitoplasma (warna Eosin)</span></span>
               <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#3730a3'}}/><span className="text-violet-700">Hematoksilin — inti sel</span></span>
               <span className="text-[8px] font-mono flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-sm" style={{background:'#7a3010'}}/><span className="text-amber-700">Diskus interkalasi</span></span>
