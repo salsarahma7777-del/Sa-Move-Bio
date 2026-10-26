@@ -82,7 +82,7 @@ function AnatomyViewer() {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 16;
+  const totalPages = 15;
   const [siswa, setSiswa] = useState({ nama: '', noAbsen: '', kelas: '' });
 
   const goToPage = (page: number) => {
@@ -881,60 +881,20 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               loading="lazy"
             />
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Analisis →" onClick={() => goToPage(12)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(12)} />
         </div>
       );
     case 12:
-      return (
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📊 Analisis dan Evaluasi</h2>
-          <p className="text-gray-700 text-center text-lg mb-6">
-            Analisis kelebihan dan kekurangan beberapa upaya menjaga kesehatan sistem gerak berikut:
-          </p>
-          
-          <div className="space-y-4">
-            <div className="bg-white border border-blue-200 rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-blue-50 p-3 font-bold text-blue-900 border-b border-blue-200">1. Mengurangi beban tas</div>
-              <div className="p-4 grid grid-cols-2 gap-4 text-sm">
-                <div><span className="text-green-600 font-bold block mb-1">Kelebihan:</span> Langsung mengurangi tekanan</div>
-                <div><span className="text-red-500 font-bold block mb-1">Kekurangan:</span> Mungkin tidak praktis</div>
-              </div>
-            </div>
-            
-            <div className="bg-white border border-purple-200 rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-purple-50 p-3 font-bold text-purple-900 border-b border-purple-200">2. Memperbaiki postur</div>
-              <div className="p-4 grid grid-cols-2 gap-4 text-sm">
-                <div><span className="text-green-600 font-bold block mb-1">Kelebihan:</span> Jangka panjang efektif</div>
-                <div><span className="text-red-500 font-bold block mb-1">Kekurangan:</span> Butuh kebiasaan</div>
-              </div>
-            </div>
-            
-            <div className="bg-white border border-teal-200 rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-teal-50 p-3 font-bold text-teal-900 border-b border-teal-200">3. Olahraga penguatan otot punggung</div>
-              <div className="p-4 grid grid-cols-2 gap-4 text-sm">
-                <div><span className="text-green-600 font-bold block mb-1">Kelebihan:</span> Memperkuat sistem gerak</div>
-                <div><span className="text-red-500 font-bold block mb-1">Kekurangan:</span> Butuh waktu rutin</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-teal-400 to-emerald-400 text-white p-6 rounded-2xl text-center shadow-md font-bold text-lg mt-6">
-            Setelah menganalisis, pilih solusi terbaik dan berikan alasannya!
-          </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(13)} />
-        </div>
-      );
-    case 13:
       return (
         <div className="space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-[#355070] mb-3">📝 Kuis Pengambilan Keputusan</h2>
             <p className="text-gray-600 font-medium">Pilih jawaban yang paling tepat berdasarkan pemahaman sistem gerak manusia!</p>
           </div>
-          <Quiz onComplete={() => goToPage(14)} />
+          <Quiz onComplete={() => goToPage(13)} />
         </div>
       );
-    case 14:
+    case 13:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📝 Post-Test</h2>
@@ -942,10 +902,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <p className="font-medium text-lg">Silakan mengerjakan post-test yang akan dibagikan oleh guru.</p>
             <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(15)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(14)} />
         </div>
       );
-    case 15:
+    case 14:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📌 Kesimpulan</h2>
@@ -968,10 +928,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               Menjaga kesehatan sistem gerak dengan olahraga teratur, postur yang baik, dan asupan kalsium yang cukup sangat penting untuk kualitas hidup yang optimal.
             </p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(16)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(15)} />
         </div>
       );
-    case 16:
+    case 15:
       return (
         <div className="space-y-8 text-center py-8">
           <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-400 mb-2">🎉 Terima Kasih! 🎉</h2>
