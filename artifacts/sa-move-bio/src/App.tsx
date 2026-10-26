@@ -82,7 +82,7 @@ function AnatomyViewer() {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 22;
+  const totalPages = 21;
   const [siswa, setSiswa] = useState({ nama: '', noAbsen: '', kelas: '' });
 
   const goToPage = (page: number) => {
@@ -895,30 +895,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               </div>
             ))}
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Video →" onClick={() => goToPage(12)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(12)} />
         </div>
       );
     case 12:
-      return (
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🎥 Video Pembelajaran Sistem Gerak</h2>
-          <div className="bg-black rounded-[1rem] overflow-hidden shadow-lg">
-            <iframe 
-              width="100%" 
-              height="400" 
-              src="https://www.youtube.com/embed/feWy9u4Zoeo?start=160&end=253" 
-              allowFullScreen 
-              style={{ border: 'none' }}
-              title="Video Pembelajaran Kontraksi dan Relaksasi Otot"
-            ></iframe>
-          </div>
-          <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-yellow-800 font-medium">
-            <p>Simak video pembelajaran tentang kontraksi dan relaksasi otot pada menit 2:40–4:13.</p>
-          </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Orientasi Masalah →" onClick={() => goToPage(13)} />
-        </div>
-      );
-    case 13:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">❓ Orientasi Masalah</h2>
@@ -933,10 +913,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-center font-medium text-gray-600 italic bg-gray-50 py-3 rounded-xl border border-gray-200">
             Hubungkan kasus ini dengan materi sistem gerak yang telah kamu pelajari!
           </p>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(14)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(13)} />
         </div>
       );
-    case 14:
+    case 13:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🔍 Observasi</h2>
@@ -961,10 +941,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-center text-teal-800 bg-teal-50 p-4 rounded-xl">
             Gunakan materi yang telah dipelajari untuk mengidentifikasi komponen sistem gerak yang berhubungan dengan kasus.
           </p>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Think →" onClick={() => goToPage(15)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Think →" onClick={() => goToPage(14)} />
         </div>
       );
-    case 15:
+    case 14:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🧠 Think — Berpikir Mandiri</h2>
@@ -979,10 +959,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <p className="text-center text-gray-600 italic font-medium">
             Tulis jawabanmu di buku catatan sebelum melanjutkan ke tahap diskusi.
           </p>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Pair →" onClick={() => goToPage(16)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Pair →" onClick={() => goToPage(15)} />
         </div>
       );
-    case 16:
+    case 15:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">👥 Pair — Diskusi Berpasangan</h2>
@@ -997,10 +977,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-emerald-50 text-emerald-800 text-center p-4 rounded-xl font-medium border border-emerald-200">
             ⏳ Waktu diskusi: ±10 menit. Pastikan kedua pihak berkontribusi dalam diskusi!
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Share →" onClick={() => goToPage(17)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Share →" onClick={() => goToPage(16)} />
         </div>
       );
-    case 17:
+    case 16:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📢 Share — Presentasi Kelas</h2>
@@ -1015,10 +995,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-orange-50 text-orange-800 text-center p-4 rounded-xl font-medium border border-orange-200">
             🎤 Presentasi singkat: ±3-5 menit per kelompok.
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Analisis →" onClick={() => goToPage(18)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Analisis →" onClick={() => goToPage(17)} />
         </div>
       );
-    case 18:
+    case 17:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📊 Analisis dan Evaluasi</h2>
@@ -1055,20 +1035,20 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="bg-gradient-to-r from-teal-400 to-emerald-400 text-white p-6 rounded-2xl text-center shadow-md font-bold text-lg mt-6">
             Setelah menganalisis, pilih solusi terbaik dan berikan alasannya!
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(19)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(18)} />
         </div>
       );
-    case 19:
+    case 18:
       return (
         <div className="space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-[#355070] mb-3">📝 Kuis Pengambilan Keputusan</h2>
             <p className="text-gray-600 font-medium">Pilih jawaban yang paling tepat berdasarkan pemahaman sistem gerak manusia!</p>
           </div>
-          <Quiz onComplete={() => goToPage(20)} />
+          <Quiz onComplete={() => goToPage(19)} />
         </div>
       );
-    case 20:
+    case 19:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📝 Post-Test</h2>
@@ -1076,10 +1056,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <p className="font-medium text-lg">Silakan mengerjakan post-test yang akan dibagikan oleh guru.</p>
             <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(21)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(20)} />
         </div>
       );
-    case 21:
+    case 20:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📌 Kesimpulan</h2>
@@ -1102,10 +1082,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               Menjaga kesehatan sistem gerak dengan olahraga teratur, postur yang baik, dan asupan kalsium yang cukup sangat penting untuk kualitas hidup yang optimal.
             </p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(22)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(21)} />
         </div>
       );
-    case 22:
+    case 21:
       return (
         <div className="space-y-8 text-center py-8">
           <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-400 mb-2">🎉 Terima Kasih! 🎉</h2>

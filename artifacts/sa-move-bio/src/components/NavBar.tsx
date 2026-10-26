@@ -6,11 +6,10 @@ const TABS = [
   { label: 'Tujuan',    startPage: 3  },
   { label: 'Petunjuk',  startPage: 4  },
   { label: 'Materi',    startPage: 5  },
-  { label: 'Video',     startPage: 12 },
-  { label: 'Orientasi', startPage: 13 },
-  { label: 'Kuis',      startPage: 19 },
-  { label: 'Post-Test', startPage: 20 },
-  { label: 'Kesimpulan',startPage: 21 },
+  { label: 'Orientasi', startPage: 12 },
+  { label: 'Kuis',      startPage: 18 },
+  { label: 'Post-Test', startPage: 19 },
+  { label: 'Kesimpulan',startPage: 20 },
 ];
 
 function getActiveTab(page: number) {
