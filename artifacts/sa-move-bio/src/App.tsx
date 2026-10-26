@@ -287,8 +287,18 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🦴 Konsep Sistem Gerak Manusia</h2>
           {/* Interactive anatomy illustration */}
-          <div className="flex justify-center mb-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start w-full max-w-3xl mx-auto mb-2">
             <AnatomyViewer />
+            <figure className="w-full bg-white rounded-3xl shadow-md border border-gray-100 p-3">
+              <img
+                src="/skeleton-labeled.png"
+                alt="Kerangka manusia tampak depan dengan nama tulang"
+                className="w-full max-h-[440px] object-contain"
+              />
+              <figcaption className="text-xs text-center text-gray-600 mt-2">
+                Kerangka manusia dan nama tulang
+              </figcaption>
+            </figure>
           </div>
           <p className="text-gray-700 text-lg leading-relaxed text-center">
             Sistem gerak manusia merupakan sistem organ yang memungkinkan manusia melakukan berbagai aktivitas dan perpindahan posisi tubuh.
