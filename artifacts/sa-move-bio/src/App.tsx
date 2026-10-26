@@ -902,6 +902,14 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               loading="lazy"
             />
           </div>
+          <div className="bg-white border border-emerald-100 rounded-2xl p-2 overflow-hidden">
+            <img
+              src="/otot-antagonis-sinergis.png"
+              alt="Ilustrasi otot antagonis dan otot sinergis saat fleksi dan ekstensi siku"
+              className="block w-full h-auto rounded-xl"
+              loading="lazy"
+            />
+          </div>
 
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(11)} />
         </div>
