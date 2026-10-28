@@ -285,7 +285,12 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
     case 6:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">🦴 Konsep Sistem Gerak Manusia</h2>
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">
+            <span className="inline-block mb-3 rounded-xl bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-700">
+              Sintak PBL : Fase 1 Orientasi peserta didik pada masalah
+            </span>
+            <span>🦴 Konsep Sistem Gerak Manusia</span>
+          </h2>
           {/* Interactive anatomy illustration */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start w-full max-w-3xl mx-auto mb-2">
             <AnatomyViewer />
@@ -320,7 +325,12 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
     case 7:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">🦴 Tulang dan Fungsinya</h2>
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">
+            <span className="inline-block mb-3 rounded-xl bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-700">
+              Sintak PBL : Fase 2 Mengorganisasikan peserta didik untuk belajar + TPS Think
+            </span>
+            <span>🦴 Tulang dan Fungsinya</span>
+          </h2>
           <p className="text-center text-gray-600 mb-4">Tulang merupakan alat gerak <strong>pasif</strong> yang menyusun rangka tubuh manusia. Manusia dewasa memiliki ±206 tulang.</p>
           {/* Skeleton + fungsi side by side */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
@@ -432,7 +442,12 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
     case 8:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">🔗 Sendi dan Macam-Macam Sendi</h2>
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">
+            <span className="inline-block mb-3 rounded-xl bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-700">
+              Sintak PBL : Fase 3 Membimbing penyelidikan individu/kelompok + TPS Pair
+            </span>
+            <span>🔗 Sendi dan Macam-Macam Sendi</span>
+          </h2>
           <p className="text-center text-gray-600 mb-4">Sendi adalah hubungan antara dua tulang atau lebih. Sendi memungkinkan terjadinya gerakan yang beragam.</p>
 
           {/* Synovial joint anatomy */}
@@ -537,7 +552,14 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
     case 9:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">💪 Otot dan Mekanisme Kerja Otot</h2>
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">
+            <span className="inline-block mb-3 rounded-xl bg-teal-50 px-3 py-2 text-sm font-semibold leading-relaxed text-teal-700">
+              <span className="block">Sintak PBL : Fase 3 Membimbing penyelidikan</span>
+              <span className="block">Sintak TPS : Pair</span>
+              <span className="block">Sintak PBL : Fase 4 Mengembangkan dan menyajikan hasil karya + TPS Share</span>
+            </span>
+            <span>💪 Otot dan Mekanisme Kerja Otot</span>
+          </h2>
           <p className="text-center text-gray-600 mb-4">Otot adalah alat gerak <strong>aktif</strong> yang bekerja dengan cara berkontraksi (memendek) dan berelaksasi (memanjang).</p>
           {/* Anterior + Posterior muscle views */}
           <div className="grid grid-cols-2 gap-3">
@@ -831,7 +853,12 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
     case 10:
       return (
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">⚙️ Mekanisme Gerak Manusia</h2>
+          <h2 className="text-3xl font-bold text-[#355070] text-center mb-2">
+            <span className="inline-block mb-3 rounded-xl bg-teal-50 px-3 py-2 text-sm font-semibold text-teal-700">
+              Sintak PBL : Fase 5 Menganalisis dan mengevaluasi proses pemecahan masalah
+            </span>
+            <span>⚙️ Mekanisme Gerak Manusia</span>
+          </h2>
           <p className="text-gray-600 text-center mb-4">Gerakan terjadi karena kerja sama antara <strong>otot</strong>, <strong>sendi</strong>, dan <strong>tulang</strong> secara berurutan.</p>
 
           <div className="space-y-3">
