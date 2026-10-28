@@ -814,15 +814,15 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
           <div className="space-y-3">
             <div className="aspect-video bg-black rounded-2xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/feWy9u4Zoeo?start=160&end=253"
-                title="Video kontraksi dan relaksasi otot"
+                src="https://www.youtube.com/embed/3jipt2efHC4?start=40&end=80"
+                title="Video pembelajaran sistem gerak manusia"
                 className="w-full h-full border-0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
             </div>
             <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-yellow-800 font-medium">
-              <p>Simak video pembelajaran tentang kontraksi dan relaksasi otot pada menit 2:40–4:13.</p>
+              <p>Simak video pembelajaran sistem gerak manusia pada menit 0:40–1:20.</p>
             </div>
           </div>
           <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(10)} />
