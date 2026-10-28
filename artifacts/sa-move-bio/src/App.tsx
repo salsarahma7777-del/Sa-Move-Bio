@@ -82,7 +82,7 @@ function AnatomyViewer() {
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 15;
+  const totalPages = 16;
   const [siswa, setSiswa] = useState({ nama: '', noAbsen: '', kelas: '' });
 
   const goToPage = (page: number) => {
@@ -881,20 +881,48 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               loading="lazy"
             />
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(12)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke LKPD Digital →" onClick={() => goToPage(12)} />
         </div>
       );
     case 12:
+      return (
+        <div className="space-y-6 text-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#355070] mb-3">LKPD Digital</h2>
+            <p className="text-gray-600">
+              Pilih salah satu cara untuk membuka LKPD: pindai barcode atau klik tautan di bawah.
+            </p>
+          </div>
+          <div className="mx-auto w-full max-w-[300px] bg-white border border-teal-100 rounded-3xl p-3 shadow-sm">
+            <img
+              src="/lkpd-digital-qr.png"
+              alt="Barcode untuk membuka LKPD digital"
+              className="block w-full h-auto rounded-xl"
+              loading="lazy"
+            />
+          </div>
+          <a
+            href="https://agent-6ae19aa3def2d39a8a39--image-phase-2-d2b536.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block max-w-full break-all text-teal-700 underline underline-offset-4 font-semibold hover:text-teal-900"
+          >
+            https://agent-6ae19aa3def2d39a8a39--image-phase-2-d2b536.netlify.app/
+          </a>
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut ke Kuis →" onClick={() => goToPage(13)} />
+        </div>
+      );
+    case 13:
       return (
         <div className="space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-[#355070] mb-3">📝 Kuis Pengambilan Keputusan</h2>
             <p className="text-gray-600 font-medium">Pilih jawaban yang paling tepat berdasarkan pemahaman sistem gerak manusia!</p>
           </div>
-          <Quiz onComplete={() => goToPage(13)} />
+          <Quiz onComplete={() => goToPage(14)} />
         </div>
       );
-    case 13:
+    case 14:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📝 Post-Test</h2>
@@ -902,10 +930,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
             <p className="font-medium text-lg">Silakan mengerjakan post-test yang akan dibagikan oleh guru.</p>
             <p className="mt-2 opacity-80">Soal tidak ditampilkan pada media ini.</p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(14)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Lanjut →" onClick={() => goToPage(15)} />
         </div>
       );
-    case 14:
+    case 15:
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-bold text-[#355070] text-center mb-6">📌 Kesimpulan</h2>
@@ -928,10 +956,10 @@ function PageContent({ page, goToPage, siswa, setSiswa }: {
               Menjaga kesehatan sistem gerak dengan olahraga teratur, postur yang baik, dan asupan kalsium yang cukup sangat penting untuk kualitas hidup yang optimal.
             </p>
           </div>
-          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(15)} />
+          <NavigationButton onBack={() => goToPage(page - 1)} text="Selesai" onClick={() => goToPage(16)} />
         </div>
       );
-    case 15:
+    case 16:
       return (
         <div className="space-y-8 text-center py-8">
           <h2 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-400 mb-2">🎉 Terima Kasih! 🎉</h2>
